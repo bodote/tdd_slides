@@ -52,8 +52,6 @@ Schon lange vor 2007, was mich wirklich alt fühlen lässt, schrieb ich dies, we
 ## Typische Probleme in stark typisierten Sprachen wie Java oder C#: Notwendigkeit, Schnittstellen für Kollaborateure zu erstellen und Abhängigkeiten zu injizieren, was zur Verwendung von Dependency Injection überging und einfache Zusammensetzungen erschwerte.
 Typischerweise passiert Folgendes: In einer stark typisierten Sprache wie Java oder C# sagen Sie, oh, meine Kollaborateure, ich muss diese besser ersetzen, ich werde eine Schnittstelle für sie erstellen. Also anstatt etwas im Konstruktor meiner Klasse zu tun, wenn ich Komponenten verwenden möchte, sodass ich Verhalten effektiv zusammensetzen kann anstatt Vererbung zu verwenden, muss ich meine Abhängigkeiten injizieren. Früher verwendeten wir Dependency Injection für Dinge wie Strategiemuster oder Fabrikunterstützungsschichtung, bei der ich effektiv nichts über die konkrete Klasse in einer Schicht über mir wissen konnte, aber plötzlich verwendeten wir Schnittstellen, um all unsere Abhängigkeiten zu injizieren. Und das Ergebnis davon war, dass wir keine, man könnte mehr irgendwelche Arten von, was wir "Armer-Manns-DI" nennen, verwenden konnten, wo die Zusammensetzung von der Wurzel her kam und alles einfach, nun, ich kann einfach meine Abhängigkeiten neu aufbauen usw. und Konfigurationen parsen.
 
-
-
 # Teil 3
 
 ## Entwickler endeten damit, lange Ketten von Schnittstellen in Konstruktoren zu erstellen, was zu einer Abhängigkeit von IOC-Frameworks führte, um Codebasen zu verwalten.

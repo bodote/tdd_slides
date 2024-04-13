@@ -11,7 +11,7 @@ toc: false
 classes: wide
 ---
 
-# Von TDD zu BDD
+# Von TDD zu BDD (Part 1)
 
 Wenn ich von Behavior Driven Development spreche, was denkst du dann?
 
@@ -27,7 +27,7 @@ Wenn du in BDD involviert warst, denkst du vielleicht an die Zusammenarbeit zwis
 
 ## Was also ist BDD und warum ist es wichtig?
 
-Wie viele erfolgreichen Ideen, wird BDD teilweise missverstanden.   Dan North und Chris Mats bei ThoughtWorks haben versucht einen besseren Weg zu formulieren, um die Ideen, die wir in unseren Projekten als so wertvoll empfanden, zu kommunizieren und zu lehren.
+Wie viele erfolgreichen Ideen, wird BDD teilweise missverstanden. [Dan North und Chris Mats bei ThoughtWorks haben versucht einen besseren Weg zu formulieren](https://www.behaviourdriven.org/), um die Ideen, die wir in unseren Projekten als so wertvoll empfanden, zu kommunizieren und zu lehren.
 
 ### BDD um TDD leichter zugänglich  machen
 
@@ -173,6 +173,7 @@ Aber jetzt hast du keine Ahnung, wie der getestete Code tatsächlich funktionier
 
 Nur um klar zu sein, dies sind dieselben Tests.
 
+## Ein  zweiter Ansatz ist effektiver, fördert Zusammenarbeit und ist weniger technisch komplex.
 Der zweite Ansatz ist aus einer ganzen Reihe von Gründen viel wertvoller. Im ersten Beispiel sehen wir bereits, dass dies schwerer zu verstehen ist. Um es zu verstehen, musst du viel mehr Dinge wissen.
 
 Du musst ein bisschen darüber wissen, wie Webseiten funktionieren, du musst wissen, was XPath ist und wie das funktioniert, und du musst ein bisschen über den Problemraum basierend auf einigen der Namen in den Labels vielleicht raten. Was ist, wenn Amazon in diesem Fall obskurere Namen verwendet hätte oder du die URL nicht erkennst?
@@ -187,6 +188,7 @@ Dies ist eine Art, wie der viel effektivere Weg, Dinge im zweiten Test zu spezif
 
 Wir werden später darauf zurückkommen.
 
+## Erster Test ist zu spezifisch und veraltet schnell, erfordert Neuschreiben bei Codeänderungen.
 Das andere Problem mit dem ersten Test ist, dass er eng mit dem Code, den er testet, gekoppelt ist. Die kleinste Änderung hier macht den Test ungültig. Wenn Amazon die ID eines Labels oder die Klasse eines Div ändert, wird dieser Test brechen. Tatsächlich garantiere ich dir, wenn du diesen Test ausführst, wird er fehlschlagen, denn ich habe ihn vor einigen Jahren geschrieben, und ich wäre erstaunt, wenn Amazon ihren Code seitdem nicht geändert hätte.
 
 Wenn ich diesen Test gegen die mobile Version oder gegen meinen Bucheinkaufsroboter ausführen möchte, ist dieser Test völlig nutzlos.
@@ -195,6 +197,7 @@ Ich müsste eine andere Version davon von Grund auf neu schreiben.
 
 Jetzt ist es wahr, dass all diese Details irgendwo existieren müssen, damit dieser Test funktioniert, aber selbst dann, wenn ich den Test so schreibe, gibt es keine echte Wiederverwendung. Also muss jeder ähnliche Test all diese Arbeit erneut machen.
 
+## Der zweite Test ist benutzerorientiert und robust gegenüber Implementierungsänderungen
 Hier ist der zweite Test wieder. Erinnere dich, dies ist derselbe Test.
 
 Der Test konzentriert sich vollständig auf das, was der Benutzer will, das Ziel, anstatt auf den Mechanismus.
@@ -202,7 +205,7 @@ Der Test konzentriert sich vollständig auf das, was der Benutzer will, das Ziel
 Indem wir dies tun, machen wir ihn sofort lesbar. Es ist klar für jeden, der jemals ein Buch kaufen wollte, auch wenn sie noch nie von Amazon gehört haben.
 
 Unter diesem Code gibt es genau denselben Code, den ich dir im ersten Test gezeigt habe, aber dieses Detail ist nicht in diesen Test eingedrungen. Wenn Amazon ihre Implementierung ändert, kann ich die Verrohrung unter diesem Test ändern, ohne den Test zu ändern, und dann wird der Test wieder bestehen. Man könnte sagen, dass dies auch für den ersten Test zutrifft, aber nicht auf die gleiche Weise. Es gibt hier zwei wichtige Unterschiede.
-
+## Der zweite Ansatz ist skalierbar und unterstützt Wartung und Klarheit in Tests.
 Erstens skaliert der zweite Ansatz besser. Indem ich meine Tests so organisiere, dass sie die Zuordnung dieser domänenebene Konzepte zur Implementierungsdetail meines Systems verbergen, ist es viel offensichtlicher, dass ich diese domänenebene Abstraktionen in anderen Tests wiederverwenden kann. Viele ähnliche Tests müssen Bücher suchen oder behaupten, dass ein bestimmter Artikel in einem Einkaufskorb ist, zum Beispiel.
 
 Also, wenn sich meine Implementierung meines Einkaufskorbs ändert, wie auch immer sie sich ändert, kann ich jetzt viele verschiedene Tests in einem einzigen Schritt reparieren.
@@ -219,6 +222,7 @@ Aber wie ich bereits beschrieben habe, kam BDD ursprünglich nicht wirklich dahe
 
 Es war breiter als das. Fast alles, was ich hier gesagt habe, ist gleichermaßen anwendbar, überall dort, wo wir einen Test schreiben.
 
+## BDD fordert einen Perspektivwechsel, um Software aus der Sicht des Endbenutzers zu betrachten, was zu einer benutzerorientierten Designweise führt.
 Eine der häufigeren Fragen, die ich bekomme, wenn ich über BDD spreche, ist von Teams, die an Plattformen oder Back-End-Systemen arbeiten, und um diese Frage zu paraphrasieren, lautet sie: Was meinst du, ich muss meine Tests aus der Perspektive eines Endbenutzers auf einer Webseite schreiben?
 
 Nun, nein, das ist es überhaupt nicht.
@@ -229,6 +233,7 @@ Also jetzt bist du gezwungen, darüber nachzudenken, es von außen zu entwerfen.
 
 Das hat auch viele Positives.
 
+## Schreiben von Tests vor dem Code fördert benutzerfreundliche und intuitive Softwaregestaltung.
 Wenn mein Test schwer zu schreiben ist, bedeutet das, dass mein Code schwer zu verwenden ist. Wenn ich meinen Test als Spezifikation anstatt als Test schreibe, werde ich ihn zuerst schreiben, bevor ich den Code schreibe, offensichtlich.
 
 Das ist wahr, egal auf welcher Ebene der Test ist.
@@ -237,30 +242,36 @@ Also bin ich jetzt die erste Person, die meine Software verwendet.
 
 Und es sei denn, ich bin irgendeine Art von Narr, werde ich mein eigenes Leben nicht schwieriger machen wollen. Unsere Tests als Spezifikationen zu behandeln bedeutet, dass wir gezwungen sind, die Perspektive eines Benutzers unserer Software einzunehmen.
 
+## BDD-Spezifikationen verbessern die Kommunikation und Verständlichkeit des Softwareverhaltens über verschiedene Benutzergruppen hinweg.
 Wenn dein Code irgendeine Art von Back-End-Plattform-Ding ist, dann sind deine Benutzer andere Programmierer, aber sie sind immer noch deine Benutzer. Und wo auch immer dein Code sitzt, wenn er einfacher zu verwenden ist, ist er besser.
 
 Wenn wir unsere hochrangigen Akzeptanztests als BDD-Spezifikationen schreiben, bevor wir an einem neuen Feature arbeiten, dokumentieren wir, was unser System tun soll, auf eine Weise, die für jeden zugänglich ist, egal welchen Hintergrund sie haben, ob sie verstehen, wie das System funktioniert oder nicht.
 
 Also, zusätzlich dazu, dass sie haltbarer im Angesicht von Veränderung als Ergebnis dieser Abstraktion sind, bieten unsere Tests jetzt eine bessere funktionale Beschreibung dessen, was die Software tatsächlich tut, und wir wissen, dass sie es tut, weil dieser Test bestanden hat.
 
+## Der BDD-Prozess ist eine Übersetzung des Benutzerbedarfs in technische Spezifikationen, durchgeführt in kleinen Schritten für Klarheit und Präzision.
 Um dies zu tun, verwenden wir die Sprache des Problems anstatt die Sprache der Lösung. Das bedeutet, dass wir eine bessere, effektivere Kommunikation zwischen allen Beteiligten etablieren.
 
 Ich habe kürzlich angefangen, dies als einen Prozess der Übersetzung zu denken.
 
 Und wie bei allem anderen Komplizierten werden wir einen besseren Job machen, wenn wir in einer Reihe von kleinen, einfacheren Schritten vorgehen können.
 
+## Beginn der Feature-Entwicklung basiert oft auf ungenauen Vermutungen über Benutzerbedürfnisse, die durch Benutzerfeedback konkretisiert werden.
 Wir beginnen mit einer ziemlich vagen Idee davon, was unsere Benutzer wollen. Das ist nicht falsch, dass es vage ist, es ist immer vage. Entwicklerteams wissen nicht, was Benutzer wollen, Produktbesitzer wissen nicht, was Benutzer wollen, Domänenexperten können raten, was die Benutzer wollen, aber sie wissen es nicht wirklich, und wenn du die Benutzer fragst, wissen sie es auch nicht.
 
 Also, wenn du an einem neuen Feature beginnst, ist es immer nur eine beste Vermutung. Es ist die beste Vermutung von jemandem, vielleicht ist es eine gute Vermutung, vielleicht nicht. Wir werden das wirklich nicht wissen, bis es in den Händen von Benutzern ist und sie uns sagen, denn obwohl Benutzer nicht wissen, was sie wollen, sind sie ziemlich gut darin, dir zu sagen, ob sie etwas mögen, das sie haben oder nicht, sobald sie es sehen können. Also ist es tatsächlich hilfreich, wenn unsere ersten Gedanken ein bisschen vage sind. Je spezifischer sie sind, desto wahrscheinlicher ist es, dass sie falsch sind.
 
+## Spezifische Implementierungsdetails sollten flexibel sein, um die Änderungsfähigkeit und Langlebigkeit des Codes zu gewährleisten.
 Wenn ich Bücher kaufe, muss ich sicherlich zum Laden gehen, ein Buch finden, das mir gefällt, und es in meinen Einkaufswagen legen, aber das Detail, ob das über eine Webseite, mein Telefon oder über meine neue gedankenkontrollierte Schnittstelle ist, ist Implementierungsdetail. Es ist meine Wahl und somit unvermeidlich wahrscheinlicher zu ändern und somit zerbrechlicher.
 
+## BDD ermöglicht es, von vagen Wünschen zu präzisen Lösungen zu gelangen, indem ein mehrstufiger Übersetzungsprozess verwendet wird.
 Also, vage zu sein, ist ein guter Anfang. Am anderen Ende dieses Prozesses ist der ganze Punkt dieser Übung, so präzise zu sein, dass selbst das Ultimatum in Pedanterie, ein Computer, den Schritten folgen kann. Hier ist also unsere Übersetzung: Unsere Aufgabe ist es, von einem vagen Wunsch zu einer spezifischen Lösung in Code zu gelangen. Der große Fehler, den die meisten Organisationen machen, ist der Versuch, diese Übersetzung in zu wenigen Schritten zu bewältigen. Die meisten Organisationen gehen direkt zur Lösung über und spezifizieren diese als Anforderungen.
 
+## Benutzergeschichten in BDD dienen dazu, vage Anforderungen zu verfeinern, unterstützt durch konkrete Beispiele als Akzeptanzkriterien.
 BDD behebt das, wir starten mit unserem vagen Wunsch und fangen diesen als Benutzergeschichte ein, die ihn ein wenig verfeinert, er wird ein bisschen präziser. Es darf allerdings nichts darüber aussagen, wie die Software tatsächlich funktioniert, stattdessen beschreibt es einen kleinen Zuwachs in der Funktionalität unseres Systems aus der Perspektive eines Benutzers davon. Als Nächstes kommen wir mit einer Reihe von konkreten Beispielen, die, wenn sie in unserem System existierten, demonstrieren würden, dass unser System das Nützliche in unserer Software tut, das wir es tun lassen wollen. Diese Beispiele sind Akzeptanzkriterien, sie sollten spezifischer sein als die Geschichte. Wenn wir sagen, unsere Geschichte handelte vom Bücherkaufen, könnten wir jetzt über ein Beispiel nachdenken, bei dem es um ein spezifisches Buch geht und was passiert.
-
+## BDD transformiert Szenarien in ausführbare Spezifikationen, die den Entwicklungsprozess leiten, mit einem Fokus auf benutzerdefinierte Ergebnisse statt Implementierungsdetails.
 Diese Szenarien sammeln wir zusammen, um unsere Spezifikation zu erfassen, und der nächste Schritt in unserem Übersetzungsprozess ist, diese Dinge ausführbar zu machen. Das bedeutet, die Installation unter unseren Testfällen zu implementieren. Jetzt haben wir eine ausführbare Spezifikation, die wir nutzen können, um den Rest unseres Entwicklungsprozesses voranzutreiben. Wenn diese Tests bestehen, ist unser Übersetzungsprozess abgeschlossen. Es gibt viel mehr Details zu BDD als dies, und seine Nutzung in der akzeptanztestgetriebenen Entwicklung unterscheidet sich ein wenig von seiner Nutzung in der testgetriebenen Entwicklung, aber in beiden Fällen hat die Perspektive von außen nach innen, der Fokus auf Ergebnisse statt auf Implementierungsdetails und die Behandlung der Tests, die wir schreiben, als Spezifikationen dessen, was wir wollen, dass unser Code tut, statt Tests, wie er funktioniert, einen enormen Einfluss auf unsere Ergebnisse in der Entwicklung.
-
+## BDD ist eine effektive Methode, um Qualität in den Entwurf zu integrieren und gleichzeitig Anpassungsfähigkeit bei sich ändernden Anforderungen und Sichtweisen zu ermöglichen.
 Dies ist bei weitem die effektivste Methode, Qualität in unsere Entwürfe zu treiben, während wir unsere Freiheit bewahren, unsere Meinung zu ändern, wenn wir mehr lernen und unsere Sicht auf das Problem und unsere Entwürfe sich ändern. 
 
 ## Quelle: 
