@@ -9,6 +9,7 @@ tags:
   - TDD
 toc: false
 classes: wide
+# source: https://youtu.be/gXh0iUt4TXA?si=Ed4oFFRCdP9tvXZO "An Ultimate Guide To BDD",  Kanal "Continuous Delivery" 
 ---
 
 # Von TDD zu BDD (Part 1)

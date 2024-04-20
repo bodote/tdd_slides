@@ -1,22 +1,87 @@
-Erzeuge nun eine Zusammenfassung in Stichpunkten von diesem  gerade übersetzten "Teil 2"  ebenfalls auf deutsch  
+---
+marp: true
+theme: default
+paginate: true
+style: |
+  section {
+    font-family: 'slabo 27px';
+    font-style: 'regular 400'  ;
+    background-color: #ffffff;
+  }
+  section.lead h1 {
+    text-align: center;
+  }
+  section.lead h3 {
+    text-align: center;
+  }
 
-# Teil 1
-## Dies ist kein grundlegender TDD-Vortrag, Erklärungen zu TDD werden nicht behandelt.
+backgroundImage: url(assets/images/BRANDAD_Logo.png)
+#backgroundImage: url(assets/mermaid/mermaid-test-1.svg)
 
-Das Erste, das man wissen sollte, ist, dass dies kein grundlegender TDD-Vortrag ist. Ich werde nicht erklären, wie man TDD durchführt, richtig. 
+backgroundSize: 150px 
+backgroundPosition: top 20px right 20px 
+header: 'TTD Wiederentdeckt'
+footer: '🔗brandad.dev  🔗bodote.github.io'
+# source: Jan Cooper - NDC Porto 2023 "TDD revisited"
+---
+<!-- _class: lead -->
+# **TTD Wiederentdeckt** 
+### Was falsch gelaufen ist
+### und was du dagegen tun kannst
+
+<!-- 
 ## Voraussetzung: Verständnis von TDD als Prozess, bei dem Tests vor dem Code geschrieben werden.
 Also würde ich erwarten, dass ihr zumindest versteht, dass TDD ein Prozess ist, bei dem wir Tests schreiben, bevor wir den Code schreiben. 
+
 ## Zyklus von Rot zu Grün und Refactoring: Fehlschlagende Tests schreiben und dann passieren lassen.
 Und es gibt einen Zyklus von Rot zu Grün und Refactoring, bei dem wir einen fehlschlagenden Test schreiben, dann diesen Test bestehen lassen. Und dann führen wir ein Refactoring durch, um die Qualität unseres Codes zu verbessern. Ihr solltet zumindest so viel wissen. Es spielt keine Rolle, ob ihr derzeit TDD praktiziert, es zählt nur, dass ihr versteht, worum es bei TDD geht und wie es allgemein präsentiert wird. 
+
 ## Kritik am vorherrschenden Ansatz der testgetriebenen Entwicklung, insbesondere an Ansätzen, die auf Unit-Tests und Mocks basieren.
 Ein weiterer Punkt zu diesem Vortrag ist, dass ich definitiv eine Kritik an dem haben werde, was oft als vorherrschender Ansatz für testgetriebene Entwicklung angesehen wird; ich werde eine Art Ansatz kritisieren, der auf Unit-Tests, Mocks und allem anderen basiert. Und sogar Gherkin-basierte Syntax-Stil Akzeptanztests. Wenn ihr eng damit verbunden seid und niemand euch jemals überzeugen wird, dass das der falsche Weg ist, etwas zu tun, möchtet ihr vielleicht jemand anderen finden, mit dem ihr sprechen könnt, denn das werde ich heute versuchen. Und wenn das nichts für euch ist, ich möchte nichts davon hören, richtig? Kein Grund, hier zu sein. Richtig. 
+
 ## Offenheit für neue Methoden erforderlich, besonders wenn bisherige Versuche mit TDD gescheitert sind.
+
 ## Ziel des Vortrags: Verständnis für alternative TDD-Methoden bieten, die möglicherweise besser funktionieren.
 Wenn ihr offen seid, werden wir versuchen, verschiedene Weisen des Vorgehens zu erklären. Und wenn ihr TDD ausprobiert habt und es für euch nicht funktioniert hat, könnte dies euch helfen zu verstehen warum, und könnte euch einen Weg aufzeigen, der vielleicht besser für euch funktioniert. Hoffentlich werdet ihr in der Lage sein, weniger, einfachere, bessere Tests zu schreiben. 
+
 ## Der Vortrag ist theoriebasiert, behandelt die korrekte Durchführung von TDD und ist nicht demo-lastig.
-Dies ist auch kein codebasierter Vortrag, richtig? Dies ist ein theoriebasierter Vortrag, der die Theorie erklärt, wie man TDD korrekt durchführt. Also, wenn ihr etwas demo-lastiges wollt, ist das auch nicht dieser Vortrag. Also, wer weglaufen will, ich bin wirklich froh, dass ihr geht und einen Vortrag findet, der für euch funktioniert, anstatt durch meinen Vortrag zu sinken und enttäuscht zu sein, weil er euch nicht das gegeben hat, was ihr wolltet, richtig? Eure Zeit. Ich will sie nicht verschwenden. Alles klar. Das meiste hiervon ist eintönig, identisch. An diesem Punkt ganz unten. Es gibt oft in Vorlesungsstil-Beziehungen ein bisschen den Eindruck, dass ich irgendwie, ihr wisst schon, der Experte bin und ihr nicht. Wir sind alle nur Softwareingenieure, ich hatte nur das Glück, früh in meiner Karriere zu einer Usergruppe zu sprechen, die ich leitete, wir wechselten uns mit dem Sprechen ab, weil es in den Anfangstagen von .NET keine Experten gab, die wir heranziehen konnten. Also habe ich das Vertrauensproblem, vor euch allen zu stehen und zu sprechen, überwunden, aber ich bin wirklich nicht klüger als ihr, richtig? Und ihr könntet dies tun, ihr braucht nur Publikum wie Usergruppen und so weiter lokal, wo ihr das Vertrauen aufbauen könnt, vor Leuten zu sprechen. .NET-Entwickler im Raum, ich arbeite an einem Open-Source-Projekt für Messaging namens Brighter und mache CTRs. Wir sind sehr offen für Beiträge aus der Open-Source-Community. Es gibt andere Open-Source- und kommerzielle Open-Source-Messaging-Frameworks, wir sind nicht besser oder schlechter, aber probiert uns aus. 
-## Diskussion über Irrtümer von TDD: TDD ist nicht gleichzusetzen mit Unit-Tests.
+Dies ist auch kein codebasierter Vortrag, richtig? Dies ist ein theoriebasierter Vortrag, der die Theorie erklärt, wie man TDD korrekt durchführt. Also, wenn ihr etwas demo-lastiges wollt, ist das auch nicht dieser Vortrag. 
+
+## ich bin auch kein Experte
+Es gibt oft in Vorlesungsstil-Beziehungen ein bisschen den Eindruck, dass ich irgendwie, ihr wisst schon, der Experte bin und ihr nicht. Wir sind alle nur Softwareingenieure, ich hatte nur das Glück, vor über 20 auf die Buch über XP und TDD von Kent Beck zu stolpern und bekam dann auch die Gelegenheit rel ungestört für 2 Jahre meine ersten Erfahrungen mit Java und TDD zu machen.
+
+aber ich bin wirklich nicht klüger als ihr? ich habe halt ein paar Sachen ausprobiert die nicht so gut funktioniert haben und ein paar die ganz gut funktioniert haben.
+
+## viele locales Optimum
+
+## vom Tretroller zum Fahrrad
+-->
+---
+## Wer ich bin:
+* Bodo Teichmann
+* Softwareentwickler seit mehr als 30 Jahren
+* "early adopter" von TDD 
+* 6 Jahre `C` Erfahrung, 10 Jahre `Java`
+* CI-Automatisierung, ein wenig `Angular`, diverse Script Sprachen, 
+* zuletzt 2 Jahre `Spring Boot` 
+
+---
+![bg right:40% 80%](assets/images/DEV_Logohoch.png)
+
+* Wir suchen Softwareentwickler, Scrummaster, Product Owner, UI/UX-ExpertInnen
+* Angular und Spring-boot
+* [brandad.dev](https://brandad.dev)
+
+---
+# Die Irrtümer von TDD
+--- 
+# Irrtum 1: Softwareentwickler schreiben Unittest 
+<!--  TDD ist nicht gleichzusetzen mit Unit-Tests.
 Alles klar, was ist die Agenda? Es gibt eigentlich keine Agenda, eigentlich ist saubere Architektur nicht mehr dabei. Und ich denke, wir werden einfach über die Irrtümer von TDD und die Prinzipien sprechen. Okay. Der erste und vielleicht bedeutendste Irrtum der testgetriebenen Entwicklung ist, dass Entwickler Unit-Tests schreiben. Nichts könnte weiter von der Wahrheit entfernt sein. 
+
+-->
+
+---
 
 ## TDD hat absolut nichts mit Unit-Tests zu tun. 
 
@@ -41,7 +106,7 @@ Es ist eine Variation des testgetriebenen Entwicklungsprozesses, bei dem der Cod
 Mit anderen Worten, wenn ich irgendeine Art von Kollaborateur habe, dann werde ich ihn durch ein Substitute ersetzen. Und ich werde in meinem Test die Aufrufe, die ich an dieses Substitute mache, überprüfen. 
 
 ## Vorausschauendes Design ist erforderlich, um zu verstehen, wie der Domänenraum in Objekte unterteilt wird, wobei Verantwortlichkeiten außerhalb des getesteten Objekts durch Mocks oder Stubs ersetzt werden.
-Eines der Probleme hierbei ist, dass dies im Allgemeinen ein vorausschauendes Design erfordert, ich muss vielleicht verstehen, vielleicht habe ich CRC-Karten verwendet, vielleicht hatte ich eine Tafel, warum ich meinen Domänenraum in Objekte unterteile, weil ich wissen muss, nun, diese Verantwortung liegt nicht beim getesteten Objekt, sie ist die Verantwortung von etwas anderem, das ich effektiv durch einen Mock oder ein Stopp ersetzen würde. Also mache ich ein vorausschauendes Design, ich lasse nicht die Tests mein Design informieren.
+Eines der Probleme hierbei ist, dass dies im Allgemeinen ein vorausschauendes Design erfordert, ich muss vielleicht verstehen, vielleicht habe ich [CRC-Karten (Class Responsibility Collaborator (CRC))](https://agilemodeling.com/artifacts/crcModel.htm) verwendet, vielleicht hatte ich eine Tafel, warum ich meinen Domänenraum in Objekte unterteile, weil ich wissen muss, nun, diese Verantwortung liegt nicht beim getesteten Objekt, sie ist die Verantwortung von etwas anderem, das ich effektiv durch einen Mock oder ein Stopp ersetzen würde. Also mache ich ein vorausschauendes Design, ich lasse nicht die Tests mein Design informieren.
 
 ## Alternativer Ansatz im Buch vorgestellt: Entdeckendes Design, bei dem während der Implementierung neue Klassen und Verantwortlichkeiten identifiziert werden.
 Eine Alternative dazu, die das Buch "Growing object onto a software test" im Grunde anbietet, ist die, dass man, während man mit seiner Implementierung als Reaktion auf den Test beginnt, erkennt, oh, dieser nächste Teil, der wahrscheinlich eine weitere Klasse sein muss und die Verantwortung weitergegeben werden muss. An diesem Punkt mache ich dann Entdeckungen. Also werde ich jetzt meine Tests für diesen Mock schreiben. Okay. 
