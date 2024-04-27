@@ -2,19 +2,53 @@
 marp: true
 theme: default
 paginate: true
+# font-family: 'Roboto Slab';
+# font-family: 'slabo 27px'; 
+# font-style: 'regular 400'  ;   
 style: |
   section {
     font-family: 'slabo 27px';
-    font-style: 'regular 400'  ;
     background-color: #ffffff;
   }
-  section.lead h1 {
+  section h1 {
+    text-align: left;
+    color: #060265;
+  }
+  section h2 {
+    text-align: left;
+    color: #014189;
+  }
+  section h3 {
+    text-align: left;
+    color: #005766
+  }
+  section p {
+    font-family: 'Roboto Slab';
+    text-align: left;
+    color: #017589
+  }
+  section li {
+    font-family: 'Roboto Slab';
+    text-align: left;
+    color: #017589
+  }
+   section.lead h1  {
+    color: #060265;
+    text-align: center
+  }
+  section.lead h2  {
+    color: #014189;
+    text-align: center
+  }
+  section.lead h3  {
+    color: #017589;
+    text-align: center
+  }
+   section.lead p {
+    font-family: 'Roboto Slab';
     text-align: center;
   }
-  section.lead h3 {
-    text-align: center;
-  }
-
+ 
 backgroundImage: url(assets/images/BRANDAD_Logo.png)
 #backgroundImage: url(assets/mermaid/mermaid-test-1.svg)
 
@@ -23,11 +57,31 @@ backgroundPosition: top 20px right 20px
 header: 'TTD Wiederentdeckt'
 footer: '🔗brandad.dev  🔗bodote.github.io'
 # source: Jan Cooper - NDC Porto 2023 "TDD revisited"
+
 ---
 <!-- _class: lead -->
-# **TTD Wiederentdeckt** 
-### Was falsch gelaufen ist
+# h1 class lead Headline test
+## h2 test 
+### h3 test
+**bold** normal **_italic_**
+* li _italic_
+* li **bold**
+
+---
+
+
+# h1 no class  Headline test
+## h2 test 
+### h3 test
+**bold** normal **_italic_**
+
+---
+
+<!-- _class: lead -->
+# TTD Wiederentdeckt 
+## Was falsch gelaufen ist
 ### und was du dagegen tun kannst
+
 
 <!-- 
 ## Voraussetzung: Verständnis von TDD als Prozess, bei dem Tests vor dem Code geschrieben werden.
@@ -77,23 +131,57 @@ aber ich bin wirklich nicht klüger als ihr? ich habe halt ein paar Sachen auspr
 --- 
 # Irrtum 1: Softwareentwickler schreiben Unittest 
 <!--  TDD ist nicht gleichzusetzen mit Unit-Tests.
-Alles klar, was ist die Agenda? Es gibt eigentlich keine Agenda, eigentlich ist saubere Architektur nicht mehr dabei. Und ich denke, wir werden einfach über die Irrtümer von TDD und die Prinzipien sprechen. Okay. Der erste und vielleicht bedeutendste Irrtum der testgetriebenen Entwicklung ist, dass Entwickler Unit-Tests schreiben. Nichts könnte weiter von der Wahrheit entfernt sein. 
+
+# Der erste und vielleicht bedeutendste Irrtum der testgetriebenen Entwicklung ist, dass Entwickler Unit-Tests schreiben. Nichts könnte weiter von der Wahrheit entfernt sein. 
 
 -->
 
 ---
+# Irrtum 1: Softwareentwickler schreiben Unittest 
+## TDD hat absolut nichts mit "Unit-Tests" zu tun. 
 
-## TDD hat absolut nichts mit Unit-Tests zu tun. 
+* [Zitat](https://en.wikipedia.org/wiki/Software_testing#Unit_testing) : "Unit testing refers to verifying the behavior of a relatively small portion of the code, a unit, in **isolation from the rest of the codebase**. A unit is often a function, module, method or class. [21] To isolate the unit, a test substitutes dependences with test doubles."
 
-Also, wenn ich auf Wikipedia schaue, kann ich eine vernünftige Definition von Unit-Testing bekommen, richtig. Wikipedia sagt, um Probleme, die auftreten können, zu isolieren. Jeder Testfall sollte unabhängig getestet werden, Ersatzmittel, wie Methoden-Stubs, Mock-Objekte, Fakes und Test-Harnesses können verwendet werden, um das Testen eines Moduls in Isolation zu unterstützen. Was bedeutet das? Richtig? 
+* Verwirrung um den Begriff "Unit" im zusammenhang mit "Test": "Junit5" als _Tool_ ist prima!
 
-## Unit-Tests konzentriert sich auf die Isolation von Fehlern in einer Komponente durch den Einsatz von Test-Doubles.
+<!--
+Also, wenn ich auf Wikipedia schaue, kann ich eine vernünftige Definition von Unit-Testing bekommen, richtig. Wikipedia sagt, um Probleme, die auftreten können, zu isolieren. Jeder Testfall sollte unabhängig getestet werden, Ersatzmittel, wie Methoden-Stubs, Mock-Objekte, Fakes und Test-Harnesses können verwendet werden, um das Testen eines Moduls in Isolation zu unterstützen. Was bedeutet das? Richtig? -->
 
-Es gab eine Zeit, als wir darüber sprachen, wie wir das Testen automatisieren würden, testeten wir Module, Module nebulös definiert, richtig? Es könnte eine Klasse sein, es könnte viel größer sein. Und die Idee war, dass das Modul als Black Box behandelt wird, und dein Test das Modul von außen prüft. Und du wolltest sicherstellen, dass alle Fehler, die dein Test dir gab, innerhalb der Box waren. Also alle Abhängigkeiten, die diese Box hat, würdest du mit einem Fake oder Ersatz ersetzen, das ist klassisches automatisiertes Testen. 
+--- 
 
-## Unit-Test Paradigma bitte nicht auf TDD anwenden 
-Okay. Das Problem ist, dies als Paradigma für testgetriebene Entwicklung anzuwenden. Also was passierte, als die testgetriebene Entwicklung aufkam, nahmen einige Leute, die mit automatisiertem Testen vertraut waren, an und begannen anderen Menschen beizubringen, TDD sei nur automatisiertes Testen, und das ist es nicht. Also gibt es einige Probleme damit, richtig? Das erste Problem ist, es gibt viel Fokus auf Isolation beim automatisierten Testen. Die Idee ist, dass ich für die Fehlerlokalisierung verstehen muss, dass alle Fehler in dieser Komponente sind, nicht in einem seiner Dependencies. Daher muss ich Mocks oder Test-Doubles verwenden, den ich für alle seine Dependencies einsetzte. Test-Doubles sind ein Begriff, den wir tendenziell verwenden, um diese Dinge zu beschreiben. Die Idee geht um ein Stunt-Double, richtig, etwas, das für den Schauspieler steht, den wir nicht der Gefahr aussetzen können.
+# Irrtum 1: TDD ≠ Unittesting
 
+* Unit-Tests laut Definition konzentriert sich auf die __Isolation__ von Fehlern in einer Komponente durch den **Einsatz von Test-Doubles**.
+
+--- 
+
+# Irrtum 1: Das große "Unit" Missverständnis (1) 
+
+* Isolation der Test: JA! : Isolation der getesteten "Units": vermeide wenn möglich
+* Unit = zusammengehörige Code-Teil (im Sinne von DDD ) , also ein "Modul" mit defnierter API : Prima !
+* Unit = Java- oder TypeScript - Klasse : großes **Missverständniss** !
+
+
+<!-- Es gab eine Zeit, als wir darüber sprachen, wie wir das Testen automatisieren würden, testeten wir Module, Module nebulös definiert, richtig? Es könnte eine Klasse sein, es könnte viel größer sein. Und die Idee war, dass das Modul als Black Box behandelt wird, und dein Test das Modul von außen prüft. Und du wolltest sicherstellen, dass alle Fehler, die dein Test dir gab, innerhalb der Box waren. Also alle Abhängigkeiten, die diese Box hat, würdest du mit einem Fake oder Ersatz ersetzen, das ist klassisches automatisiertes Testen. -->
+
+---
+
+# Irrtum 1: "Unit" Missverständnis (2)
+* "Unit" im Sinne von Kent Beck (Autor von TDD): GUT!
+* J-"Unit" als Tool: sehr hilfreich, (ebenso: Jasmin, Jest)
+* "Unit" als einzelne Klasse und "wegmocken" aller Dependecies : **SCHLECHT**!
+* Angulars automatische *.spec.ts für jedes *.ts : **SCHLECHT** ! 
+
+<!-- Okay. Das Problem ist, dies als Paradigma für testgetriebene Entwicklung anzuwenden. Also was passierte, als die testgetriebene Entwicklung aufkam, nahmen einige Leute, die mit automatisiertem Testen vertraut waren, an und begannen anderen Menschen beizubringen, TDD sei nur automatisiertes Testen, und das ist es nicht. Also gibt es einige Probleme damit, richtig? Das erste Problem ist, es gibt viel Fokus auf Isolation beim automatisierten Testen. Die Idee ist, dass ich für die Fehlerlokalisierung verstehen muss, dass alle Fehler in dieser Komponente sind, nicht in einem seiner Dependencies. Daher muss ich Mocks oder Test-Doubles verwenden, den ich für alle seine Dependencies einsetzte. Test-Doubles sind ein Begriff, den wir tendenziell verwenden, um diese Dinge zu beschreiben. Die Idee geht um ein Stunt-Double, richtig, etwas, das für den Schauspieler steht, den wir nicht der Gefahr aussetzen können. -->
+---
+
+# Irrtum 1 : Warum sind "Unit" Tests schlecht?
+## Weil : führt zu Tests die Refactoring extrem erschweren
+* zu enge Kopplung von Test zu Implementierung 
+* zu enge Kupplung an interna (private methods) der Implementierung
+
+
+<!-- 
 # Teil 2
 ## Einfluss von Unit-Tests führt dazu, dass Entwickler Klassen als Module betrachten und deren Abhängigkeiten durch Substitute ersetzen.
 Und so passiert es, dass viele Leute, die von Unit-Tests beeinflusst sind, eine Klasse nehmen, weil sie entscheiden, dass dies dem Äquivalent eines Moduls aus dem automatisierten Software-Engineering-Test entspricht. Und sie ersetzen alle ihre Abhängigkeiten durch Substitute. 
@@ -104,9 +192,19 @@ Und letztendlich führte dies zu einem Denkparadigma in der testgetriebenen Entw
 Es ist eine Variation des testgetriebenen Entwicklungsprozesses, bei dem der Code von außen nach innen geschrieben wird. Mit anderen Worten, man beginnt effektiv von außen mit der Art von Funktion oder Methode, die man testet. Und alle davon abhängigen Codes werden durch Mock-Objekte ersetzt, die die erwarteten indirekten Ausgaben des geschriebenen Codes überprüfen. 
 ## Abhängige Codes werden durch Mock-Objekte ersetzt, die die indirekten Ausgaben des geschriebenen Codes überprüfen.
 Mit anderen Worten, wenn ich irgendeine Art von Kollaborateur habe, dann werde ich ihn durch ein Substitute ersetzen. Und ich werde in meinem Test die Aufrufe, die ich an dieses Substitute mache, überprüfen. 
+-->
+---
 
+# Irrtum 1 : Warum sind "Unit" Tests schlecht?
+## Weil : Upfront-Design nötig
+* Test sollen das Design "treiben" ("driven") nicht umgekehrt
+* Vorteil von TDD fürs Design wird verschenkt
+<!--
 ## Vorausschauendes Design ist erforderlich, um zu verstehen, wie der Domänenraum in Objekte unterteilt wird, wobei Verantwortlichkeiten außerhalb des getesteten Objekts durch Mocks oder Stubs ersetzt werden.
 Eines der Probleme hierbei ist, dass dies im Allgemeinen ein vorausschauendes Design erfordert, ich muss vielleicht verstehen, vielleicht habe ich [CRC-Karten (Class Responsibility Collaborator (CRC))](https://agilemodeling.com/artifacts/crcModel.htm) verwendet, vielleicht hatte ich eine Tafel, warum ich meinen Domänenraum in Objekte unterteile, weil ich wissen muss, nun, diese Verantwortung liegt nicht beim getesteten Objekt, sie ist die Verantwortung von etwas anderem, das ich effektiv durch einen Mock oder ein Stopp ersetzen würde. Also mache ich ein vorausschauendes Design, ich lasse nicht die Tests mein Design informieren.
+-->
+
+---
 
 ## Alternativer Ansatz im Buch vorgestellt: Entdeckendes Design, bei dem während der Implementierung neue Klassen und Verantwortlichkeiten identifiziert werden.
 Eine Alternative dazu, die das Buch "Growing object onto a software test" im Grunde anbietet, ist die, dass man, während man mit seiner Implementierung als Reaktion auf den Test beginnt, erkennt, oh, dieser nächste Teil, der wahrscheinlich eine weitere Klasse sein muss und die Verantwortung weitergegeben werden muss. An diesem Punkt mache ich dann Entdeckungen. Also werde ich jetzt meine Tests für diesen Mock schreiben. Okay. 

@@ -15,26 +15,44 @@ footer: ' 🔗bodote.github.io'
 ---
 ![bg right:50% 70%](assets/images/TDD_Book.jpeg)
 # **Warum TTD ?**
+<!-- 
+* Buchcover ist die erste fundierte Veröffentlichung
+* zum Thema TDD von ca 2002 
+* vorher schon im Rahmen des "Extreme Programming" vom gleichen Autor in 1999 in Kapitel 18 auf nur 4 Seiten erwähnt.
+* also vor 22 Jahren,
+* der Autor selbst und viele anderen
+* haben das Konzept über die Jahre  in vielen Aspekte ergänzt
+* Grundkonzept ist aber nach wie vor gültige
 
+# Autor konnte aber die vielen Missverständnisse beim Lernen des Konzepts nicht vorhersehen.
+# daher kommen mache wichtige Punkte vielleicht nicht sofort klar rüber
+# daher wichtig auch, sich mit den häufigsten Fehler bei Anwendung des TDD Konzept zu befassen. 
+# z.B. Video von Ian Cooper 
+
+-->
 ---
 ![bg left:50% 100%](assets/images/mentimeter_qr_code_1.png)
 # Hast du TDD schon mal selbst ausprobiert?
 Umfrage: https://www.menti.com/al9bcx57niwx
 <!-- 
-* This is a comment that will not appear 
-* in the presentation, but you can see it in the 
-* Markdown source. 
+* 
 -->
 ---
 ![bg left:50% 70%](assets/images/gangs-of-four-design-patterns-book.png)
 # Warum solltet Ihr jemandem vertrauen... 
 ... der euch empfiehlt, TDD zu lernen? 
-<!-- This is a comment that will not appear in the presentation, but you can see it in the Markdown source. -->
+<!-- 
+* in der Geschichte der Softwareentwicklung gab es auch anderen grundlegende Werke die nach wie vor gültig sind, z.B. "Design Patterns" von 1994
+* die heute in vielen erfolgreichen Softwareprojekten und Fameworks (z.B. Spring Boot, Angular) nach wie vor verwendet werden
+* TDD gehört da aus meiner Sicht auch dazu
+ -->
 ---
 ![bg right:50% 68%](assets/images/Domain-Driven-Design.jpeg)
 # Warum solltet Ihr jemandem vertrauen... 
 ... obwohl du nicht sofort verstehst, warum das eine gute Idee ist?
-<!-- This is a comment that will not appear in the presentation, but you can see it in the Markdown source. -->
+<!-- 
+* oder Domain-Driven Design (ca 2003)
+ -->
 ---
 ![bg left:50% 68%](assets/images/HappySmiley.jpeg)
 # Reden wir darüber, wie Menschen (und Maschinen) lernen 
@@ -42,20 +60,28 @@ Umfrage: https://www.menti.com/al9bcx57niwx
 <!-- 
 # Radfahren
 # Singen oder ein Instrument 
-# (schlechte) Software schreiben die trotzdem funktioniert
-## schlechte Softwarearchitektur
-## schlechte automatische Testabdeckung. 
+# (schlechte) Software schreiben die zunächst trotzdem funktioniert
+## schlechte Softwarearchitektur, die zunächst nicht weiter auffällt
+## schlechte automatische Testabdeckung, die zunächst nicht weiter auffällt.
+# Computerspiele sind extrem nach dem Muster gestrickt möglichst schneller Feedback eines Erfolgserlebnisses zu vermitteln, damit der Spieler dabei bleibt.
  -->
 ---
 
 ![bg right:50% 68%](assets/images/hardWorkingSmily.jpeg)
 # Reden wir darüber, wie Menschen (und Maschinen) lernen 
 ... wenn das Lernen **KEIN schnelles** Feedback gibt
+z.B. 
+* schreiben lernen
+* Latein als Fremdsprache lernen
+<!--
+das ist leider deutlich weniger Fun , weil es kein schnelles Feedback einer Erfolgserlebnisses gibt
+-->
 
 ---
 # FRAGE: 
 Wer von euch hat etwas schwieriges mühsam gelernt und erst viel später den Nutzen verstanden ?
 <!-- 
+# DISKUSSION, 
 # NOTFALLS Beispiele:
 # Latein lernen und Jahrs später froh sein, dass man diese Studienvorraussetzung schon hat.
 # Singenübungen für größeren Stimmumfang 
@@ -73,12 +99,18 @@ Wer von euch hat etwas schwieriges mühsam gelernt und erst viel später den Nut
 
 # Warum ist TDD so (scheinbar) schwierig zu lernen?
 -> kein schnelles Feedback!
+<!--
+# kein schnelles Feedback, wenn es gut funktioniert
+# auch kein schnelles Feedback, wenn bei TDD Fehler gemacht werden
+# Feedbackschleife bemisst sich in Monaten oder gar Jahren
+# Hinweis auf TDD-Buch: gesammelte Erfahrung  über viele Jahre des Autors 
+-->
 
 ---
 
 ![bg right:40% 100%](assets/images/mentimeter_qr_code_2.png)
 
-# Wer kam schon mal zu einem schon länger bestehenden Softwareprojekt dazu, das nicht nur...
+# Wer kam schon mal zu einem schon länger bestehenden großen Softwareprojekt dazu, das nicht nur...
 * vorbildliche Testabdeckung hatte, 
 * also sehr stabil im Betrieb war, 
 * sondern auch durchdachte leicht verständliche Architektur hatte
@@ -141,7 +173,11 @@ backgroundImage: url(assets/images/Cannon-TDD.png)
 backgroundSize: 103% 103%
 backgroundPosition: top 0px right 0px-->
 
+<!--
+# Flowchart vom Autor Kent Beck selbst autorisiert 
+# zugehöriger Text im Substack Link zu finden.
 
+-->
 ---
 
 <!--  footer: '🔗bodote.github.io' 
@@ -154,9 +190,9 @@ backgroundPosition: top 20px right 20px
 # Wann passt TDD nicht ?
 
 <!--
-- legacy code mit schlechter Test-Code Abdeckung.
-- Frontend : Layout und Texte nicht mit TDD; 
-- Frontend - User interaction : sehr gut mit TDD
+- NEIN: legacy code mit schlechter Test-Code Abdeckung.
+- NEIN: Frontend : Layout und Texte nicht mit TDD; 
+- JA : Frontend - User interaction : sehr gut mit TDD
 -->
 
 ---
@@ -192,19 +228,19 @@ einzige zu dem Thema.
 
   > "Das Spring Team unterstützt und beführwortet TestDrivenDevelopment.
 
-- ["VMware Pivotal Labs Website](https://tanzu.vmware.com/content/blog/go-faster-write-tests-first)
+- [VMware Pivotal Labs Website](https://tanzu.vmware.com/content/blog/go-faster-write-tests-first)
 
   > "Wir praktizieren selbst TestDrivenDeveopment. Da heißt, bevor wir die Arbeit an einem neuen Feature beginnen, schreiben wir zuerst einen Test, der das gewünschte Verhalten genau beschreibt."
 
 - [IBM: Assessing test-driven development](https://collaboration.csc.ncsu.edu/laurie/Papers/MAXIMILIEN_WILLIAMS.PDF)
 
-  > **50% weniger Bugs** als bei "test last", minimaler geringere Produktivität
+  > **50% weniger Bugs** als bei "test last", [bei zunächst] minimaler geringere Produktivität 
 
 ---
 
 - [Microsoft: Evaluating the Efficacy of Test-Driven Development: Industrial Case Studies](https://d1wqtxts1xzle7.cloudfront.net/36509027/fp17288-bhat.pdf?1423032149=&response-content-disposition=inline%3B+filename%3DEvaluating_the_Efficacy_of_Test_Driven_D.pdf&Expires=1599907639&Signature=RuaKEjh7AbrkimLa5LGjb6zOpojv18srJrYQO7ONLNjWm586g6nxlDjGnYgubwIFYYp5fNkQulFn6YD3wpvud5bBhvwkO4nOOFMYyhATLdvHjHtW3vzm6ncsuqgwYTIKtrxbxAd7lQiEiue~D300FsgSLK6ZUk9DOssTqS0NZry6syc9I6IQYR6H2BRcnzf9oxvCTBWPzjSEBPi2cqYpyKbF1Y322XtLj7fdNTu8IVkmUULxwH3R1GVsEZrdpOAOJpM0b1ZAsJZEI0K3hiv~ENiV79hUjoyRu5xLaDeDWA4Nhg4Q-J8Zu8UQ18hQEjl0dOZnq7o4Xq~2-8jbuzDxIQ__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA)
 
-  > **Bugrate sinkt mit TDD um 62%-77%** , 15% -35% mehr Zeit für TDD notwendig.
+  > **Bugrate sinkt mit TDD um 62%-77%** , [initial] 15% -35% mehr Zeit für TDD notwendig.
 
 - [Metastudie, die 6 unterschiedliche andere Studien ausgewertet hat](https://digitalcommons.calpoly.edu/cgi/viewcontent.cgi?article=1027&context=csse_fac)
 
