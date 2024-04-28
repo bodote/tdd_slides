@@ -59,29 +59,6 @@ footer: '🔗brandad.dev  🔗bodote.github.io'
 # source: Jan Cooper - NDC Porto 2023 "TDD revisited"
 
 ---
-<!-- _class: lead -->
-# h1 class lead Headline test
-## h2 test 
-### h3 test
-**bold** normal **_italic_**
-* li _italic_
-* li **bold**
-
----
-
-
-# h1 no class  Headline test
-## h2 test 
-### h3 test
-**bold** normal **_italic_**
-
----
-
-<!-- _class: lead -->
-# TTD Wiederentdeckt 
-## Was falsch gelaufen ist
-### und was du dagegen tun kannst
-
 
 <!-- 
 ## Voraussetzung: Verständnis von TDD als Prozess, bei dem Tests vor dem Code geschrieben werden.
@@ -175,7 +152,7 @@ Also, wenn ich auf Wikipedia schaue, kann ich eine vernünftige Definition von U
 <!-- Okay. Das Problem ist, dies als Paradigma für testgetriebene Entwicklung anzuwenden. Also was passierte, als die testgetriebene Entwicklung aufkam, nahmen einige Leute, die mit automatisiertem Testen vertraut waren, an und begannen anderen Menschen beizubringen, TDD sei nur automatisiertes Testen, und das ist es nicht. Also gibt es einige Probleme damit, richtig? Das erste Problem ist, es gibt viel Fokus auf Isolation beim automatisierten Testen. Die Idee ist, dass ich für die Fehlerlokalisierung verstehen muss, dass alle Fehler in dieser Komponente sind, nicht in einem seiner Dependencies. Daher muss ich Mocks oder Test-Doubles verwenden, den ich für alle seine Dependencies einsetzte. Test-Doubles sind ein Begriff, den wir tendenziell verwenden, um diese Dinge zu beschreiben. Die Idee geht um ein Stunt-Double, richtig, etwas, das für den Schauspieler steht, den wir nicht der Gefahr aussetzen können. -->
 ---
 
-# Irrtum 1 : Warum sind "Unit" Tests schlecht?
+# Irrtum 1 : Warum sind "Unit" Tests schlecht? (1)
 ## Weil : führt zu Tests die Refactoring extrem erschweren
 * zu enge Kopplung von Test zu Implementierung 
 * zu enge Kupplung an interna (private methods) der Implementierung
@@ -195,110 +172,185 @@ Mit anderen Worten, wenn ich irgendeine Art von Kollaborateur habe, dann werde i
 -->
 ---
 
-# Irrtum 1 : Warum sind "Unit" Tests schlecht?
+# Irrtum 1 : Warum sind "Unit" Tests schlecht? (2)
 ## Weil : Upfront-Design nötig
 * Test sollen das Design "treiben" ("driven") nicht umgekehrt
 * Vorteil von TDD fürs Design wird verschenkt
 <!--
 ## Vorausschauendes Design ist erforderlich, um zu verstehen, wie der Domänenraum in Objekte unterteilt wird, wobei Verantwortlichkeiten außerhalb des getesteten Objekts durch Mocks oder Stubs ersetzt werden.
-Eines der Probleme hierbei ist, dass dies im Allgemeinen ein vorausschauendes Design erfordert, ich muss vielleicht verstehen, vielleicht habe ich [CRC-Karten (Class Responsibility Collaborator (CRC))](https://agilemodeling.com/artifacts/crcModel.htm) verwendet, vielleicht hatte ich eine Tafel, warum ich meinen Domänenraum in Objekte unterteile, weil ich wissen muss, nun, diese Verantwortung liegt nicht beim getesteten Objekt, sie ist die Verantwortung von etwas anderem, das ich effektiv durch einen Mock oder ein Stopp ersetzen würde. Also mache ich ein vorausschauendes Design, ich lasse nicht die Tests mein Design informieren.
+
+Eines der Probleme hierbei ist, dass dies im Allgemeinen ein vorausschauendes Design erfordert, ich muss vielleicht verstehen, vielleicht habe ich [CRC-Karten (Class Responsibility Collaborator (CRC))](https://agilemodeling.com/artifacts/crcModel.htm) verwendet, 
+vielleicht hatte ich eine Tafel, warum ich meinen Domänenraum in Objekte unterteile, 
+
+weil ich wissen muss, nun, diese Verantwortung liegt nicht beim getesteten Objekt, sie ist die Verantwortung von etwas anderem, das ich effektiv durch einen Mock oder ein Stopp ersetzen würde. Also mache ich ein vorausschauendes Design, ich lasse nicht die Tests mein Design informieren.
 -->
 
 ---
 
-## Alternativer Ansatz im Buch vorgestellt: Entdeckendes Design, bei dem während der Implementierung neue Klassen und Verantwortlichkeiten identifiziert werden.
-Eine Alternative dazu, die das Buch "Growing object onto a software test" im Grunde anbietet, ist die, dass man, während man mit seiner Implementierung als Reaktion auf den Test beginnt, erkennt, oh, dieser nächste Teil, der wahrscheinlich eine weitere Klasse sein muss und die Verantwortung weitergegeben werden muss. An diesem Punkt mache ich dann Entdeckungen. Also werde ich jetzt meine Tests für diesen Mock schreiben. Okay. 
-## Problem der herkömmlichen Methodik: Verständnis der Implementierungsdetails für das Testen notwendig, was zu einer Abhängigkeit von der Sichtbarkeit und Zugänglichkeit der Kollaborateure führt.
-Es gibt ein generelles Problem damit, richtig? Das begann unsere Entwicklung stark zu behindern. Und das ist, dass wir jetzt in unserem Test die Implementierungsdetails der Methode oder Klasse verstehen müssen, die wir im Grunde testen werden, wir müssen seine Details verstehen, weil wir die Interaktion, die er mit Kollaborateuren hat, um seine Arbeit zu erledigen, verstehen müssen. Wir neigen auch dazu, in die Welt gedrängt zu werden, in der die meisten dieser Kollaborateure öffentlich sind, Dinge, die wir sonst testen könnten, sie sind nicht intern oder privat, sie sind nicht verborgen. 
-## Historischer Kontext: Bereits  2007 erkannte die TDD-Community, dass das Paradigma des automatisierten Software-Engineerings übernommen wurde, was zu "fragilen Tests" führte.
-Schon lange vor 2007, was mich wirklich alt fühlen lässt, schrieb ich dies, weil die TDD-Community zu der Zeit verstand, dass die Leute in die falsche Richtung gingen. Und wir haben viel geschrien. Aber dieses Paradigma des automatisierten Software-Engineerings hatte wirklich übernommen. Und damals sagte ich, als ich mich umschaute, sah ich viele Leute, die Mocks verwenden, um all ihre Abhängigkeiten zu ersetzen. Meine Sorge ist, dass sie beginnen werden, auf die fragilen Testprobleme zu stoßen, die Mocks darstellen. Gerard Meszaros identifiziert die Probleme, auf die wir stoßen, als zwei spezifische Gerüche, über-spezifizierte Software und Verhaltensempfindlichkeit. 
-## Typische Probleme in stark typisierten Sprachen wie Java oder C#: Notwendigkeit, Schnittstellen für Kollaborateure zu erstellen und Abhängigkeiten zu injizieren, was zur Verwendung von Dependency Injection überging und einfache Zusammensetzungen erschwerte.
-Typischerweise passiert Folgendes: In einer stark typisierten Sprache wie Java oder C# sagen Sie, oh, meine Kollaborateure, ich muss diese besser ersetzen, ich werde eine Schnittstelle für sie erstellen. Also anstatt etwas im Konstruktor meiner Klasse zu tun, wenn ich Komponenten verwenden möchte, sodass ich Verhalten effektiv zusammensetzen kann anstatt Vererbung zu verwenden, muss ich meine Abhängigkeiten injizieren. Früher verwendeten wir Dependency Injection für Dinge wie Strategiemuster oder Fabrikunterstützungsschichtung, bei der ich effektiv nichts über die konkrete Klasse in einer Schicht über mir wissen konnte, aber plötzlich verwendeten wir Schnittstellen, um all unsere Abhängigkeiten zu injizieren. Und das Ergebnis davon war, dass wir keine, man könnte mehr irgendwelche Arten von, was wir "Armer-Manns-DI" nennen, verwenden konnten, wo die Zusammensetzung von der Wurzel her kam und alles einfach, nun, ich kann einfach meine Abhängigkeiten neu aufbauen usw. und Konfigurationen parsen.
+# Irrtum 2: TDD ist unflexibel
+* stimmt, wenn  zu viel Mocks  und  Tests  an die Implementierung statt an die Anforderungen gekoppelt sind
+* stimmt, wenn du den "refaktorieren" - Teil des TDD nicht wirklich ernst nimmst
+<!--
+ Wenig Refactoring ist ein Anzeichen dafür, dass effektiv ein Design im Voraus vorliegt, das du jetzt unter Test bekommen möchtest.
+* denn in der grünen Phase solltest du alles tun, was du kannst, um den Algorithmus zu finden, den du benötigst, um den Test zu bestehen. 
+Du kannst Code von Stack Overflow kopieren, das ist absolut in Ordnung in der grünen Phase. 
+Du kannst ChatGPT bitten, dir zu sagen, wie du den Code schreiben sollst, und ihn einfügen, das ist in der grünen Phase absolut in Ordnung. 
+* Du wirst den Code gut machen, sobald er den Test besteht, denn jetzt weißt du genau, welchen Code du brauchst, um den Test zu bestehen, und du kannst dann refaktorieren, um qualitativ hochwertigen Code zu schreiben.
+-->
+---
 
-# Teil 3
+# Irrtum 3: TDD kostet viel Zeit und verlangsamt die Entwicklung
+* ja, wenn du es falsch angehst (siehe Irrtum 1 und 2)
+* nein, denn du das Konzept wirklich ausnutzt
 
-## Entwickler endeten damit, lange Ketten von Schnittstellen in Konstruktoren zu erstellen, was zu einer Abhängigkeit von IOC-Frameworks führte, um Codebasen zu verwalten.
-Plötzlich hatten wir diese wirklich langen Schnittstellenketten in unseren Konstruktoren, was bedeutete, dass wir anfangen mussten, IOC-Frameworks zu verwenden, um unsere Codebasen aufzubauen. Wenn Sie sich jemals gefragt haben, Moment mal, meine Klasse scheint diese massiven Abhängigkeiten zu haben, ich kann tatsächlich nichts ohne IOC-Frameworks erstellen.
+<!--
+# negativ: 
+## zu viel mocks -> Refaktoring bricht die Tests-> kostst viel zeit das zu fixedn
+## geänderte Anforderungen->geänderte Test, aber die Test müsse leicht verständlich sein, was sie oft nicht sind
+# positiv
+## du sparst viel zeit beim suchen und fixen von Bugs, weil TDD-Software viel stabiler ist.
+## du sparst zeit beim Refactoring weil deine tests nicht dauernt brechen
+-->
 
-## Die Frage entsteht, ob die starke Abhängigkeit von IOC-Frameworks aufgrund massiver Abhängigkeiten vorteilhaft ist, wobei die vorgeschlagene Antwort negativ ist.
-Ist das das Richtige? Und die Antwort ist wahrscheinlich nein, wir haben uns irgendwie selbst gefangen, oder?
+---
 
-## Problem der Verhaltensempfindlichkeit: Änderungen in den Implementierungsdetails sollten Tests nicht brechen, die sich auf Verträge konzentrieren sollten und nicht auf Implementierungsspezifikationen.
-Was ich mit Verhaltensempfindlichkeit meine, meinen wir. Das Problem ist, dass wir im Grunde in der Lage sein sollten, die Implementierungsdetails unseres Codes zu ändern, ohne dass Tests brechen. Tests sollen sich auf den Vertrag konzentrieren. Aber tatsächlich konzentrieren sich unsere Tests auf die Implementierungsdetails. Und allgemein sehen Sie dieses Verhalten, wenn Sie versuchen, etwas zu ändern, und dann gehen Sie, ich muss 300 kaputte Tests reparieren, weil ich die Art und Weise geändert habe, wie wir diese Schnittstelle in der anderen Klasse aufgerufen haben. Das sollte nicht passieren.
+# Irrtum 4: TDD ist nur für erfahrene Entwickler
+* nein: nur  Denkweise und Lösungsstrategie ist anders, braucht Übung
+* unabhängig von Vorerfahrung
 
-## Häufiges Problem, bei dem geringfügige Änderungen im Code zu zahlreichen Testfehlern führen, was eine übermäßige Konzentration auf Implementierungsdetails in Tests hervorhebt.
-Sie ändern ein Implementierungsdetail, das Ihre Tests nicht brechen sollte. Und das führt auch zu diesem Problem, bei dem die Menschen aufhören zu refaktorisieren. Oder sie versuchen im Grunde, Änderungen zu vermeiden, weil es irgendwie so ist, ja, ich kann das nicht tun, so viele Tests werden brechen, das wird Tage dauern, um das zu beheben, lasst uns etwas anderes tun. Aber Tests sollten unseren Code geschmeidiger machen.
+<!--
+There's a notion that TDD is suitable only for experienced developers and that beginners or less experienced team members will struggle with the methodology. While TDD does require a certain level of discipline and understanding of testing principles, it can also be an invaluable learning tool for less experienced developers. TDD encourages developers to think critically about their code's design and behavior, which can accelerate the learning process and improve overall development skills.
 
-## Diese übermäßige Konzentration auf Implementierungsdetails entmutigt oft das Refactoring oder führt dazu, dass Entwickler Änderungen insgesamt vermeiden, aufgrund der hohen Kosten für die Behebung zahlreicher Tests.
-Sie sollen das Refactoring ermöglichen, warum verhindern sie es?
+Understanding and addressing these misconceptions is crucial for teams considering adopting TDD. By clarifying these misunderstandings, developers can more effectively harness TDD's benefits to improve software quality, reliability, and maintainability.
 
-## Tests sollen das Refactoring ermöglichen und den Code anpassbarer machen, nicht diese Verbesserungen verhindern.
-Also das Prinzip, das Sie verstehen müssen, ein Prinzip, das seit Beginn von TDD existiert, ist, dass die Entwickler Entwicklertests schreiben, manchmal auch Programmierertests genannt, keine Unit-Tests.
+This video discusses the speaker's experiences and insights into the practice and challenges of Test-Driven Development (TDD), exploring both its potential benefits and its common pitfalls. The speaker, who has been practicing TDD since around 2004, reflects on how TDD practice has evolved over time, the resistance to it, and how to effectively implement it to avoid common mistakes.
+-->
 
-## Die ursprüngliche Absicht von TDD ist, dass Entwickler Entwicklertests (oder Programmierertests) schreiben, die sich auf den Vertrag konzentrieren, nicht auf detaillierte Unit-Tests.
-Es ist erwähnenswert, also wenn Kent TDD by Example schreibt, Kent ist nicht der Urheber von TDD.
+---
 
-## Kent Beck, obwohl nicht der Urheber von TDD, dokumentierte bestehende Praktiken in "TDD by Example", diskutierte die breite Nutzung und das Verständnis von TDD-Prinzipien einschließlich Mock- und Akzeptanztests.
-Und er würde das zugeben, denke ich, Kent dokumentiert eine Praxis, die er und andere in verschiedenen Softwaregemeinschaften seit einiger Zeit verwenden. Und wenn Sie TDD by Example lesen können, enthält es Informationen über Marks-Akzeptanz, testgetriebene Entwicklung, viele Ideen, von denen die Leute denken, dass sie viel später kamen, sie wussten bereits darüber, sie verstanden es bereits und es wird diskutiert, richtig. Also dokumentiert er eine Praxis, die Menschen für ein breiteres Publikum verwenden.
+# Irrtum 5 : Verwende Mocks wo es nur geht
+* im Gegenteil: Mocks nur sehr sparsam verwenden
+* Mocks nur für **externe** Dependencies (externe Services, Filesystem)
 
-## Fehlinterpretation und Missbrauch des Begriffs "Unit-Tests", beeinflusst durch automatisierte Software-Engineering-Ansätze, führten zu einer Verzerrung der TDD-Praktiken.
-Und Kent sagt, ich nenne sie Unit-Tests. Aber sie entsprechen nicht sehr gut der akzeptierten Definition, die Unit-Tests waren, das ist die einzige Referenz zu Unit-Tests im ganzen Buch, Sie können es suchen, das ist das einzige Mal, dass es erwähnt wird. Was es bedeutet ist, dass wir gelegentlich in einem zwanglosen Gespräch Unit-Tests sagen, als er JUnit baute, bezog er sich auf sie als Unit-Tests. Es ist einer dieser Fehler, wissen Sie, Milliarden-Dollar-Fehler, richtig. Aber wie die Verwendung des Wortes Mikro mit Mikroservices, richtig?
+<!--
+# Wenn du viele Mocks in deinem Code für deine eigenen Codeteile verwendest, fürht das zwangsläufig zu einer
+engen Kopplung der Tests an deine IMplmentierung die Refactoring exterm erschwert und 
+# du musst deine Tests dauern ändern
+-->
 
-Die Leute begannen, auf einen Tangentenpfad von völlig falschen Ideen abzukommen. Und sie brachten Einheiten aus dem automatisierten Software-Engineering ein. Richtig? Also können wir verstehen, was wir besser machen sollten, wenn wir uns das Refactoring ansehen.
+---
 
-## Martin Fowler definiert Refactoring als Änderungen an der internen Struktur der Software, um sie einfacher zu verstehen und kostengünstiger zu modifizieren, ohne das beobachtbare Verhalten zu ändern, was TDD-Praktiken leiten sollte.
-Also das ist Martin Fowlers Definition von Refactoring, eine Änderung, die an der internen Struktur der Software vorgenommen wird, um sie einfacher zu verstehen und kostengünstiger zu modifizieren, ohne das beobachtbare Verhalten zu ändern. Refactoring ist sehr klar, oder? Ich habe ein beobachtbares Verhalten, Dinge, von denen andere Menschen abhängen, dass meine Klasse effektiv tut, richtig? Wenn ich ändern möchte, wie sie es tut, einen effizienteren Algorithmus, eine bessere Struktur, effektiv in kleinere Klassen aufbrechen, sollte ich das können. Richtig? Geleitet von meinen Tests, um sicherzustellen, dass ich effektiv nichts kaputt mache. Also rot grün refaktorisieren ist der TDD-Zyklus. Refactoring ist der letzte Schritt.
+# Irrtum 6: die Namen meiner Test-Methoden sind egal
+* wenn das Denkst schießt du dir selber ins Knie, 
+* das Problem potenziert sich , wenn du auch noch viele Mock verwendest
 
-## Der TDD-Zyklus (Rot-Grün-Refaktorisieren) verpasst oft die 'Refaktorisieren'-Phase, was zu angesammelten Design- und Codequalitätsproblemen führt.
-Oft sehen Sie Leute, die TDD praktizieren, gehen? Ja. Ich meine, wir machen einfach viel Rot und Grün, wir refaktorisieren nie wirklich. Richtig, das ist ein Geruch. Es ist ein Geruch, der effektiv zeigt, was passiert ist, Sie haben ein Design im Voraus, das Sie jetzt unter Test bekommen möchten. Denn in der grünen Phase sollten Sie alles tun, was Sie können, um den Algorithmus zu finden, den Sie benötigen, um den Test zu bestehen. Also können Sie Code von Stack Overflow kopieren, das ist absolut in Ordnung. In der grünen Phase können Sie ChatGPT bitten, Ihnen zu sagen, wie Sie den Code schreiben sollen, und ihn einfügen. Das ist absolut in Ordnung.
+<!--
 
-## In der "grünen" Phase von TDD können alle notwendigen Mittel verwendet werden, um den Test zu bestehen, einschließlich das Kopieren von Code, mit der Erwartung, dass der Code während der Refaktorisierungsphase verfeinert wird.
-Und in der grünen Phase machen Sie den Code gut, sobald er den Test besteht, denn jetzt wissen Sie genau, welchen Code Sie benötigen, um den Test zu bestehen. Und dann können Sie refaktorisieren, um qualitativ hochwertigen Code zu schreiben, richtig? Sie können verbessern, was Ihnen Chat GPT gegeben hat. So ist Ihr Code einen Vertrag ausgesetzt. Und was wir wollen, dass Sie tun, ist diesen Vertrag zu testen, ich kann diesen Vertrag umsetzen, und dann Tests haben, die sagen, ich erfülle weiterhin diesen Vertrag. Aber Sie sollten besser ändern, wie Sie diesen Vertrag umsetzen, ohne Ihre Tests zu brechen.
+-->
 
-## Die Verwendung von Mocks führt oft zu brüchigen Tests, die bei jeder Implementierungsänderung brechen, was dem TDD-Prinzip widerspricht, den Vertrag und nicht die Implementierung zu testen.
-Und das Problem mit Mocks ist, dass jedes Mal, wenn Sie versuchen, die Implementierungsdetails
+---
 
- zu ändern, Ihre Tests weiterhin brechen werden, sagte Kent irgendwann Mitte der Teenagerjahre im Grunde, wenn das Verhalten eines Programms aus der Sicht eines Beobachters stabil ist, sollte kein Test geändert werden, mit anderen Worten, wenn ich refaktoriere und den Vertrag ändere, die Implementierung anstatt den Vertrag. Und ich sollte die Tests nicht ändern. Richtig? Also ist es ein vertragsorientierter Ansatz zum Testen in TDD, richtig. Verhalten ist der Vertrag, die API, die Sie aussetzen, mit anderen Worten, die öffentlichen Methoden einer Klasse, richtig.
+# Irrtum 7: BDD ist toll: der PO schreibt jetzt meine Tests
+* das wird nicht passieren
+* BDD - tools wie Gerking oder JBehave führen zu nichts als Overhead für den Entwickler
+* besser : JGiven: Entwickler schreibt, PO liest
 
-## Kent Beck betonte einen vertragsorientierten Ansatz in TDD, der dafür plädiert, dass Tests an das Verhalten des Codes gekoppelt und von der Struktur des Codes entkoppelt werden, um sicherzustellen, dass Tests die Funktionalität und nicht die Code-Struktur selbst validieren.
-Und wieder sagte Kent noch kürzlich, weil diese ganze Sache, wissen Sie, wir scheinen nie gegen die schlechten Ideen des automatisierten Software-Engineerings zu gewinnen. Tests sollten an das Verhalten des Codes gekoppelt und von der Struktur des Codes entkoppelt werden, wobei Tests, die auf beidem scheitern, gesehen werden. Mit anderen Worten, die Tests drücken den Vertrag aus, den Sie von dieser bestimmten Klasse sehen möchten. Nicht wie Sie sich entschieden haben, das zu implementieren.
+---
 
-## Ein Treffen mit namhaften Persönlichkeiten wie DHH (Schöpfer von Ruby on Rails), Kent Beck und Martin Fowler diskutierte die Fallstricke einer fehlerhaften Anwendung der TDD-Prinzipien, insbesondere wie eine übermäßige Abhängigkeit von Mocks und Unit-Tests aus dem automatisierten Software-Engineering effektive TDD-Praktiken behindert.
-Es gab ein großes Treffen mit DHH, dem größeren Ruby on Rails enfant, dem Zerebral unserer Branche, Kent Beck, Oxford, Martin Fowler, weil DHH auf seine übliche Weise, um Klicks zu erhalten, effektiv sagte, ich habe mit TDD abgeschlossen. Und ich fühle mich gut dabei zu sagen, dass es mir im Grunde genommen nichts Gutes getan hat, ich lande mit diesen Test-Suiten, die es schwierig machen, meinen Code zu ändern und alles andere, richtig. Und die Sache ist, ich denke, um fair zu sein, was er getan hat, ist sehr in den Ansatz des automatisierten Software-Engineering Unit-Test-basierten Ansatz des aktiven Testens gefallen. Und Ken sagte in diesem Interview, dass der Dialog, den Martin im Grunde zwischen den beiden geschaffen hat, mein persönlicher Stil ist, ich gehe einfach nicht sehr weit den Mock-Pfad hinunter, Ihr Test ist komplett an die Implementierung der Schnittstelle gekoppelt. Natürlich können Sie nichts ändern, ohne die Tests zu brechen.
+# Aus Irrtum 6 + 7 kann was gutes entstehen (1):
+* schreibe deine Tests-Methoden so, dass der PO den Test lesen, verstehe und gegen seine Anforderungen und Akzeptatzkriterien abgleichen kann
+* Prima: denn dann verstehst du selber die Tests auch gleich, wenn du nach 4 Woche nochmal was ändern muss (weil der PO die Anforderungen geändert hat) 
 
-# Teil 4a (17:33-)
-## TDD vermeidet Mock-basiertes Testen und konzentriert sich stattdessen auf direkte Zustandsänderungen zwischen Vorbedingungen und Nachbedingungen.
-Wir machen also nicht diese Art von Mock-basiertem Testen, richtig? Denn das bedeutet effektiv, dass wir das zu testende Objekt durch indirekte Ausgaben beobachten, nicht einfach durch die Feststellung, dass es einen Zustand davor gibt, einen Zustand danach und ich habe ihn irgendwie transformiert, richtig Vorbedingungen und Nachbedingungen. Das ist wirklich, worauf du dich konzentrieren willst, richtig? Vorbedingungen und Nachbedingungen, wie würde die Welt aussehen, bevor ich das gemacht habe? Dieses Verhalten ausüben? Wie sieht die Welt jetzt aus. Also ist dies eigentlich die Definition des Unit-Tests, richtig?
-## Unit-Tests in TDD zielen darauf ab, Defekte auf eine einzelne Einheit wie eine Methode oder Klasse zu lokalisieren, wobei nur die neueste Codeänderung impliziert wird, falls ein Fehler auftritt.
-Fehler, jeder Unit-Test soll nur eine einzige Einheit implizieren, eine Methodenklasse oder ein Modul oder Paket. So lokalisieren Unit-Tests Defekte durch Substitution. Dies ist die Definition eines Programmierer- oder Entwicklertests, den Sie in der testgetriebenen Entwicklung verwenden. Ein Fehler eines Programms oder eines Tests unter testgetriebener Entwicklung impliziert nur die neueste Änderung.
-Die Art und Weise, wie Sie die Defektlokalisierung durchführen, ist, dass ich eine Reihe von grünen Tests habe, ich mache eine kleine Änderung an meinem Code. Wenn nun Tests rot werden, die zuvor grün waren, ist der Defekt auf den Code, den ich gerade geschrieben habe, lokalisiert.
-## Kleine, inkrementelle Codeänderungen werden in TDD gefördert, um die Defektlokalisierung zu erleichtern und den Bedarf an umfangreicher Fehlersuche zu reduzieren.
-Dies ist der Grund, warum wir in TDD empfehlen, kleine Sprünge zu machen, was ist der kleinste Verhaltensinkrement, den Sie jetzt testen könnten? Denn das lokalisiert den Defekt. Kent hat eine Sache mit dem Fahren in Gängen, was ich denke, Amerikaner verwirren könnte, denn ich bin mir ziemlich sicher, dass sie automatisch statt mit Schaltung fahren. Aber worüber er spricht, ist die Idee, dass je höher der Gang, den du trägst, desto mehr Code schreibst du auf einmal, desto sicherer musst du sein, was du tust, desto mehr musst du fühlen, ich habe das 1000 Mal gemacht, es ist okay, ich kann 80 Zeilen Code schreiben, ohne dass es zu viele Defekte gibt, ich bin gut, desto unwohler fühlst du dich. Je kleiner die Menge des Codes, desto enger muss der Test sein, den du schreiben musst, um im Wesentlichen zu verstehen, wo die Defekte sind. Also bekomme ich typischerweise Fragen dazu, oh, wenn er auf diese Weise über TDD spricht.
+---
 
-## Der inkrementelle Ansatz von TDD ermöglicht effektives Testen von größeren Systemen, wie HTTP-APIs, durch das Management des Umfangs von Codeänderungen.
-Kann ich das mit TDD für meine HTTP-API machen. Und die Antwort ist sicher, du könntest, wenn das für dich funktioniert, aber du machst einen großen Sprung. Also ist die Defektlokalisierung jetzt genau über diesen Bereich deines Web-Controllers, das Marshalling im Grunde, von Sachen in Format usw., ganz bis zu deinem Handler, wenn das eigentlich ganz einfach ist, vielleicht fühlst du dich wohl dabei, auf einer Ebene zu fahren, wo du effektiv diese großen Sprünge machst. Und du bist damit einverstanden, herauszufinden, wo Defekte sind, richtig? Wenn nicht, willst du ein bisschen niedriger gehen, richtig. Vielleicht willst du eine Adapterarchitektur unterstützen und das Armen testen. Oder vielleicht ist es ein wirklich komplexer Algorithmus, und du möchtest weiter unten bei der einzelnen Klasse testen. Aber es liegt irgendwie an dir, eine Wahl zu treffen. TDD hat wirklich keine Regel, außer in einem Gang zu fahren, in dem du dich wohl fühl
+# Aus Irrtum 6 + 7 kann was gutes entstehen (2):
+## einfaches Beispiel:
+<!--
+ *** IDEE: Zuhörer zwei Gruppen , erste Gruppe schaut 15sec den ersten test an 2. gruppe 15 den zweiten ***
+Du könntest einen Test so schreiben:
+-->
 
-st, dass du den Defekt in der Menge des Codes, den du gerade committed hast, lokalisieren kannst. Und wenn du dich oft im Debugger wiederfindest, machst du einen zu großen Sprung. Richtig? Die echten Hardcore-TDD-Leute von Ende der 90er bis Anfang der 2000er Jahre sagten,
+---
 
-## Traditionelle TDD-Ratschläge betonen das Löschen großer, problematischer Codeabschnitte, um handhabbare Inkremente zu erhalten und die Abhängigkeit von Debugging zu vermeiden.
-Oh, wenn du eine ganze Menge hinzugefügt hast, wenn du so etwas wie 100 Zeilen Code hinzugefügt hast, und dann Sachen kaputt machst, nur im Test, brich ab, lösche diesen Code und versuche es erneut, richtig? Und das ist ziemlich hardcore. Mir ist es recht, ich wäre wie, du kannst einen Debugger verwenden, richtig. Aber der Grund, warum ich diese Regel hatte, war, die Leute davon zu überzeugen, nicht 200 Zeilen Code mit jedem Test zu schreiben, denn du müsstest 200 Zeilen Code verlieren. Also ist der Grund für die Regel, den Leuten im Grunde zu sagen, spring nicht zu weit. Okay. Aber eine vollständige Definition der testgetriebenen Entwicklung ist das CT-Wiki, das irgendwie langsam verblasst, so wie, wissen Sie, unsere Geschichte im Internet stetig getötet wird, was nie eine großartige Sache ist, sagt testgetriebene Entwicklung produziert Entwicklertests, das Versagen eines Testfalls impliziert nur die jüngste Bearbeitung des Entwicklers.
-## Der Kerngedanke von TDD ist, Entwicklertests zu produzieren, die sich auf die neuesten Änderungen konzentrieren, ohne ausgiebigen Gebrauch von Mocks oder Debugging, und sich auf minimale und präzise Codeänderungen konzentrieren.
-Das impliziert, dass Entwickler keine Mock-Objekte verwenden müssen, um ihren Code in testbare Einheiten aufzuteilen. Und es impliziert, dass ein Entwickler immer das Debugging vermeiden kann, indem er die letzte Bearbeitung rückgängig macht, richtig. Also neige ich dazu, im lockeren Gespräch, wo ich kann, Entwickler- oder Programmierertests zu verwenden, auch ich werde gelegentlich das Wort Einheit verwenden, richtig, weil es so verbreitet geworden ist.
 
-# Teil 4b (-27:09)
-## TDD zeichnet sich durch minimales Design im Voraus aus und konzentriert sich stattdessen darauf, die Implementierung schrittweise durch einen vertragsgetriebenen Ansatz zu entdecken.
-TDD ist ein Entdeckungsprozess, richtig? Mit anderen Worten, Sie versuchen, nicht im Voraus große Mengen an Design zu machen, sondern nehmen Ihren Vertrag und erkunden dann langsam die benötigte Implementierung. Daher verwenden Sie nicht in dem Maße Mock-Objekte, wie Sie es in seinem klassischen Modell tun würden, Sie müssen das zu testende Objekt nicht isolieren.
-## Im Gegensatz zu klassischen Modellen stützt sich TDD nicht stark auf Mock-Objekte, was die natürliche Verwendung neuer Objekte innerhalb von Konstruktoren ohne Abhängigkeitsinjektion ermöglicht.
-Es gibt einige Fälle und Mock-Objekte, über die wir in einer Minute sprechen werden. Und das bedeutet im Wesentlichen, dass Sie Dinge tun können, wie mit New eine Klasse in Ihrer Komponente im Konstruktor zu erstellen, anstatt sie zu injizieren. Es ist erstaunlich befreiend, wenn man sagen kann: Hey, ich muss DI nicht für alles verwenden, richtig. Es gibt einen Anwendungsfall, bei dem wir effektiv über die Verwendung von Ersatzstoffen nachdenken möchten. Also die Verwirrung um den Unit-Test stammt eigentlich am meisten von dieser Aussage von Kent: Wie sollten die Tests sich gegenseitig beeinflussen? Überhaupt nicht.
-## Kent Beck betonte, dass Tests unabhängig voneinander und parallel ausgeführt werden sollten, um Geschwindigkeit zu gewährleisten und die Arbeitsabläufe der Entwickler nicht zu stören, und verwendete den Begriff "Unit", um diese Isolation zu beschreiben.
-Also, als er den Begriff Unit verwendete, war seine Sache, dass Ihre Tests parallel laufen können. Tests müssen schnell sein, denn wir wollen Ihren Fluss nicht unterbrechen und Sie zwingen, aus der Arbeit herauszukommen, die Sie schrittweise zur Lösung einer Anforderung machen, indem Sie Sie dazu bringen, Kaffee zu machen, während Ihre Tests laufen, richtig? Wir wollen das nicht, wir wollen, dass Tests sind: Ich drücke einen Knopf, innerhalb von 30 Sekunden ist alles grün, ich kann weitermachen, richtig. Wenn er jedoch sagt, ich führe meine Tests aus, sie wollen ausgefalleneren Kaffee, dann ist das eine Katastrophe. Denn ich unterbreche meinen Fluss, das Modell wird abgebrochen, ich muss wieder von vorne anfangen. Kents Sache war die Isolation der Tests voneinander. Und deshalb hat er unbeabsichtigt das Wort Unit verwendet. Und das hat alle Probleme ein wenig verursacht, Tests sind voneinander isoliert, so dass sie parallel laufen können, was sie schnell hält.
+```java
+@Test
+void test10() {
+    driverPath =
+            new File("/Users/bodo.teichmann/dev/learning/tddJavaMaven/chromedriver-mac-arm64/chromedriver");
+    ChromeDriverService service = new ChromeDriverService.Builder()
+            .usingDriverExecutable(driverPath)
+            .build();
+    WebDriver driver = new ChromeDriver(service);
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    try {
+        driver.get("https://bodote.github.io/");
+        String title = driver.getTitle();
+        assertEquals("Die meisten Menschen… - Bodos Software Blog", title);
+        WebElement searchLink =
+                wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("fa-search")));
+        searchLink.click();
+        WebElement searchBox = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("search")));
+        searchBox.sendKeys("TDD");
+        WebElement post =
+                wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("TDD Where it did go wrong")));
+        post.click();
+        WebElement postHeader = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("page-title")));
+        assertEquals("TDD Where it did go wrong", postHeader.getText());
+        List<WebElement> foundLinks = wait.until(
+                ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//li//ul/li/a | //li//ol/li/a")));
+        var found = foundLinks.stream().anyMatch(link -> link.getText().contains("because"));
+        assertTrue(found);
+    } finally {
+        driver.quit(); // Make sure to quit the driver to free up resources
+    }
+}
+```
 
-## Häufige Probleme beim Testen entstehen aus gemeinsam genutzten Fixtures, bei denen Tests denselben Zustand ändern und die Ergebnisse der anderen beeinflussen, was zu unvorhersehbaren Ergebnissen führt.
-Das häufigste Problem, das dazu führt, dass Tests nicht zusammen ausgeführt werden können, ist das, was wir eine gemeinsam genutzte Fixture nennen. Mit anderen Worten, das bedeutet, dass effektiv zwei Tests denselben Zustand ändern. Wenn Sie beispielsweise eine Tabelle in einer Datenbank haben. Und eine Sache sagt, ich werde die Anzahl der Zeilen zählen, nachdem ich diese Operation durchgeführt habe. Ein anderer Test sagt, ich werde einige Zeilen hinzufügen, und wenn Sie diese beiden ausführen, werden sie in zufälliger Reihenfolge ausgeführt. Und im Wesentlichen, wenn derjenige, der die anderen Zeilen hinzufügt, im falschen Moment läuft, könnte er die Ergebnisse der anderen beeinflussen und er bekommt einen fehlerhaften Test, der gelegentlich fehlschlägt, richtig? Oder statisch. In Sprachen wie C# verwenden wir statische Variablen. So haben Sie effektiv einen globalen Zustand, und Sie beeinflussen den globalen Zustand in Ihrem Test. Also, wenn Sie eine gemeinsam genutzte Fixture haben, müssen Sie das Problem mit einer gemeinsam genutzten Fixture vermeiden
+<!--Und es sagt nicht, was dieser Code tun soll.
 
-. Eine Möglichkeit, dies zu tun, ist die Verwendung einer Test-App oder eines Mocks oder Fakes, es ist nicht der einzige Weg.
+Wenn du das genau studierst und etwas über Webentwicklung und Selenium, das Selenium-Testframework, weißt, könntest du vielleicht nach sorgfältigem Lesen herausfinden, was dieser Test tut.
 
-## Um Probleme mit gemeinsam genutzten Fixtures zu mildern, können Mocks oder Fakes verwendet werden, insbesondere bei I/O-Operationen, die langsam sind oder externe Abhängigkeiten beinhalten, um Testgeschwindigkeit und -unabhängigkeit zu gewährleisten.
-Es ist also ziemlich üblich zu entscheiden, ich werde dieses Ding, das I/O durchführt, wie das Sprechen mit einer Datenbank, mit einem Mock ersetzen, um das Problem mit der gemeinsam genutzten Fixture zu vermeiden. Ein anderer Grund, warum wir einen Mock für I/O verwenden möchten, ist einfach die Geschwindigkeit. Richtig? Wenn dieses Ding langsam ist, fragil, weil es irgendeine Art von Netzwerkverbindung involviert oder mit Ressourcen spricht, die möglicherweise nicht verfügbar sind. Um das Problem zu vermeiden, dass Tests unterbrechen, sind sie fragil oder Tests dauern lange. Auch das ist ein weiterer Grund, etwas durch einen Mock zu ersetzen, um TDD nach Beispiel zu machen, Kents Hintergrund dreht sich alles um Mocks, aber das ist der Grund, warum sie sie verwenden wollen. Richtig? Um Ihre Tests schneller und unabhängig laufen zu lassen, nicht um das zu testende Objekt zu isolieren. Okay. Lassen Sie uns ein wenig tiefer graben.
-## TDD fördert laut Wikipedia FALSCHERWEISE das Schreiben von Tests für jede neue Funktion und fördert einen Test-First-Ansatz, der sicherstellt, dass jedes Funktionsstück ordnungsgemäß definiert und isoliert ist, bevor es implementiert wird.
-Das Nächste, was ich sehe, ist, dass den Leuten beigebracht wird, Okay, bevor Sie irgendeine Methode schreiben, schreiben Sie einen Test für diese Methode. Typischerweise haben die Leute als Auslöser für einen neuen Test das Schreiben einer neuen Funktion. Selbst Wikipedia, gesegnet sei es, sagt, schreibe einen Test, der eine Funktion definiert oder die Verbesserung einer Funktion fördert. Okay, Wikipedia liegt sehr falsch. Okay, das scheint sinnvoll, richtig? Wir haben im Grunde darüber gesprochen, Tests zu sagen, während Sie Vorbedingungen haben? Wie sieht die Welt aus, bevor ich meinen Test durchführe? Ich habe Nachbedingungen, wie sieht die Welt aus, nachdem ich persönlich meine Funktion ausgeführt habe? Das scheint sinnvoll, das wäre ein guter Eingriffspunkt, richtig? Die Implementierung ist nur, wie diese Funktion umgesetzt wird.
+Oder ich könnte den Test so schreiben, und jetzt weißt du genau, was dieser Code tun soll.
+-->
+--- 
+
+
+```java
+@Test
+void should_find_a_blog_about_TDD() {
+  given().a_web_site("https://bodote.github.io/");
+  when().search_menu_is_clicked().and().search_term_$_is_typed("TDD");
+  then().blog_post_$_should_be_found("TDD Where it did go wrong")
+          .and()
+          .when_clicked_$_should_be_the_title("TDD Where it did go wrong");
+}
+
+```
+
+--- 
+
+Der 2. Test erzeugt einen Report mit  `jGiven`:
+```
+Test Class: jgiven.BlogTest
+
+ Should find a blog about TDD
+
+   Given a web site "https://bodote.github.io/"
+    When search menu is clicked
+     And search term "TDD" is typed
+    Then blog post "TDD Where it did go wrong" should be found
+     And when clicked "TDD Where it did go wrong" should be the title
+```
+---
+
+# Sehr gut lesbare Testmethoden:
+* helfen, sich schnell im Testcode zurecht zu finden, wenn sich Anforderungen ändern.
+* dienen nun **tatsächlich** als Dokumentation
+
+
+<!-- jetzt hast du keine Ahnung, wie der getestete Code tatsächlich funktioniert. Du weißt nicht einmal, ob dies eine Webanwendung ist.
+
+Nur um klar zu sein, dies sind dieselben Tests.-->
+---
+
