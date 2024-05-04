@@ -12,6 +12,8 @@ backgroundImage: url(assets/images/BRANDAD_Logo.png)
 backgroundSize: 150px 
 backgroundPosition: top 20px right 20px 
 footer: ' 🔗bodote.github.io'
+
+
 ---
 ![bg right:50% 70%](assets/images/TDD_Book.jpeg)
 # **Warum TTD ?**
@@ -30,6 +32,7 @@ footer: ' 🔗bodote.github.io'
 # z.B. Video von Ian Cooper 
 
 -->
+
 ---
 ![bg left:50% 100%](assets/images/mentimeter_qr_code_1.png)
 # Hast du TDD schon mal selbst ausprobiert?
@@ -37,6 +40,21 @@ Umfrage: https://www.menti.com/al9bcx57niwx
 <!-- 
 * 
 -->
+---
+## Wer ich bin:
+* Bodo Teichmann
+* Softwareentwickler seit mehr als 30 Jahren
+* "early adopter" von TDD 
+* 6 Jahre `C` Erfahrung, 10 Jahre `Java`
+* CI-Automatisierung, ein wenig `Angular`, diverse Script Sprachen, 
+* zuletzt 2 Jahre `Spring Boot` 
+
+---
+![bg right:40% 80%](assets/images/DEV_Logohoch.png)
+
+* Wir suchen Softwareentwickler, Scrummaster, Product Owner, UI/UX-ExpertInnen
+* Angular und Spring-boot
+* [brandad.dev](https://brandad.dev)
 ---
 ![bg left:50% 70%](assets/images/gangs-of-four-design-patterns-book.png)
 # Warum solltet Ihr jemandem vertrauen... 

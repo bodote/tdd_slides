@@ -59,7 +59,8 @@ footer: '🔗brandad.dev  🔗bodote.github.io'
 # source: Jan Cooper - NDC Porto 2023 "TDD revisited"
 
 ---
-
+# TDD (Wieder-)Entdecken
+## Fallen und Missverständnisse vermeiden
 <!-- 
 ## Voraussetzung: Verständnis von TDD als Prozess, bei dem Tests vor dem Code geschrieben werden.
 Also würde ich erwarten, dass ihr zumindest versteht, dass TDD ein Prozess ist, bei dem wir Tests schreiben, bevor wir den Code schreiben. 
@@ -104,8 +105,40 @@ aber ich bin wirklich nicht klüger als ihr? ich habe halt ein paar Sachen auspr
 * [brandad.dev](https://brandad.dev)
 
 ---
+
+![bg right:50% 85%](assets/images/Missconceptions_TDD.webp)
 # Die Irrtümer von TDD
+
 --- 
+
+![bg left:70% 90%](assets/images/tdd-cycle.png)
+# TDD, ganz einfach ?
+
+---
+
+<!-- 
+footer: '🔗substack.com/home/post/p-139601698'  
+backgroundImage: url(assets/images/Cannon-TDD.png) 
+backgroundSize: 103% 103%
+backgroundPosition: top 0px right 0px
+-->
+
+
+<!--
+# Flowchart vom Autor Kent Beck selbst autorisiert 
+# zugehöriger Text im Substack Link zu finden.
+
+-->
+
+
+---
+
+<!--  footer: '🔗bodote.github.io' 
+backgroundImage: url(assets/images/BRANDAD_Logo.png)
+backgroundSize: 150px 
+backgroundPosition: top 20px right 20px
+-->
+![bg right:50% 80%](assets/images/Devs_Not_Unittests.jpeg)
 # Irrtum 1: Softwareentwickler schreiben Unittest 
 <!--  TDD ist nicht gleichzusetzen mit Unit-Tests.
 
@@ -125,10 +158,15 @@ aber ich bin wirklich nicht klüger als ihr? ich habe halt ein paar Sachen auspr
 Also, wenn ich auf Wikipedia schaue, kann ich eine vernünftige Definition von Unit-Testing bekommen, richtig. Wikipedia sagt, um Probleme, die auftreten können, zu isolieren. Jeder Testfall sollte unabhängig getestet werden, Ersatzmittel, wie Methoden-Stubs, Mock-Objekte, Fakes und Test-Harnesses können verwendet werden, um das Testen eines Moduls in Isolation zu unterstützen. Was bedeutet das? Richtig? -->
 
 --- 
-
+![bg left:50% 80%](assets/images/TDD_vs_Unittest_isolation.webp)
 # Irrtum 1: TDD ≠ Unittesting
 
 * Unit-Tests laut Definition konzentriert sich auf die __Isolation__ von Fehlern in einer Komponente durch den **Einsatz von Test-Doubles**.
+
+<!-- 
+# __Isolation__ von Fehlern in einer Komponente scheint erstmal eine Gute Idee
+# ist es aber nicht
+-->
 
 --- 
 
@@ -152,7 +190,7 @@ Also, wenn ich auf Wikipedia schaue, kann ich eine vernünftige Definition von U
 <!-- Okay. Das Problem ist, dies als Paradigma für testgetriebene Entwicklung anzuwenden. Also was passierte, als die testgetriebene Entwicklung aufkam, nahmen einige Leute, die mit automatisiertem Testen vertraut waren, an und begannen anderen Menschen beizubringen, TDD sei nur automatisiertes Testen, und das ist es nicht. Also gibt es einige Probleme damit, richtig? Das erste Problem ist, es gibt viel Fokus auf Isolation beim automatisierten Testen. Die Idee ist, dass ich für die Fehlerlokalisierung verstehen muss, dass alle Fehler in dieser Komponente sind, nicht in einem seiner Dependencies. Daher muss ich Mocks oder Test-Doubles verwenden, den ich für alle seine Dependencies einsetzte. Test-Doubles sind ein Begriff, den wir tendenziell verwenden, um diese Dinge zu beschreiben. Die Idee geht um ein Stunt-Double, richtig, etwas, das für den Schauspieler steht, den wir nicht der Gefahr aussetzen können. -->
 ---
 
-# Irrtum 1 : Warum sind "Unit" Tests schlecht? (1)
+# Irrtum 1: Warum sind "Unit" Tests schlecht? (1)
 ## Weil : führt zu Tests die Refactoring extrem erschweren
 * zu enge Kopplung von Test zu Implementierung 
 * zu enge Kupplung an interna (private methods) der Implementierung
@@ -172,7 +210,7 @@ Mit anderen Worten, wenn ich irgendeine Art von Kollaborateur habe, dann werde i
 -->
 ---
 
-# Irrtum 1 : Warum sind "Unit" Tests schlecht? (2)
+# Irrtum 1: Warum sind "Unit" Tests schlecht? (2)
 ## Weil : Upfront-Design nötig
 * Test sollen das Design "treiben" ("driven") nicht umgekehrt
 * Vorteil von TDD fürs Design wird verschenkt
@@ -186,7 +224,7 @@ weil ich wissen muss, nun, diese Verantwortung liegt nicht beim getesteten Objek
 -->
 
 ---
-
+![bg right:50% 80%](assets/images/SpagettiCode.webp)
 # Irrtum 2: TDD ist unflexibel
 * stimmt, wenn  zu viel Mocks  und  Tests  an die Implementierung statt an die Anforderungen gekoppelt sind
 * stimmt, wenn du den "refaktorieren" - Teil des TDD nicht wirklich ernst nimmst
@@ -198,7 +236,7 @@ Du kannst ChatGPT bitten, dir zu sagen, wie du den Code schreiben sollst, und ih
 * Du wirst den Code gut machen, sobald er den Test besteht, denn jetzt weißt du genau, welchen Code du brauchst, um den Test zu bestehen, und du kannst dann refaktorieren, um qualitativ hochwertigen Code zu schreiben.
 -->
 ---
-
+![bg left:50% 80%](assets/images/Dali_time.webp)
 # Irrtum 3: TDD kostet viel Zeit und verlangsamt die Entwicklung
 * ja, wenn du es falsch angehst (siehe Irrtum 1 und 2)
 * nein, denn du das Konzept wirklich ausnutzt
@@ -213,10 +251,12 @@ Du kannst ChatGPT bitten, dir zu sagen, wie du den Code schreiben sollst, und ih
 -->
 
 ---
-
+![bg right:50% 80%](assets/images/DerWegIstDasZiel.webp)
 # Irrtum 4: TDD ist nur für erfahrene Entwickler
 * nein: nur  Denkweise und Lösungsstrategie ist anders, braucht Übung
 * unabhängig von Vorerfahrung
+* verstehe TDD eher als einen **langen UND sehr interessanter** Weg, 
+* verstehe TDD **nicht als Ziel** an dem man schnell ankommen will
 
 <!--
 There's a notion that TDD is suitable only for experienced developers and that beginners or less experienced team members will struggle with the methodology. While TDD does require a certain level of discipline and understanding of testing principles, it can also be an invaluable learning tool for less experienced developers. TDD encourages developers to think critically about their code's design and behavior, which can accelerate the learning process and improve overall development skills.
@@ -227,8 +267,8 @@ This video discusses the speaker's experiences and insights into the practice an
 -->
 
 ---
-
-# Irrtum 5 : Verwende Mocks wo es nur geht
+![bg left:50% 80%](assets/images/Mocks_ambiguity.webp)
+# Irrtum 5: Verwende Mocks wo es nur geht
 * im Gegenteil: Mocks nur sehr sparsam verwenden
 * Mocks nur für **externe** Dependencies (externe Services, Filesystem)
 
@@ -239,7 +279,7 @@ engen Kopplung der Tests an deine IMplmentierung die Refactoring exterm erschwer
 -->
 
 ---
-
+![bg right:50% 80%](assets/images/NamenSindNichtNurSchallUndRauch.webp)
 # Irrtum 6: die Namen meiner Test-Methoden sind egal
 * wenn das Denkst schießt du dir selber ins Knie, 
 * das Problem potenziert sich , wenn du auch noch viele Mock verwendest
@@ -249,22 +289,26 @@ engen Kopplung der Tests an deine IMplmentierung die Refactoring exterm erschwer
 -->
 
 ---
-
+![bg left:50% 80%](assets/images/ProductOwerNotWritingTestSpec.webp)
 # Irrtum 7: BDD ist toll: der PO schreibt jetzt meine Tests
+* BDD = "Behaviour Driven Development" 
 * das wird nicht passieren
 * BDD - tools wie Gerking oder JBehave führen zu nichts als Overhead für den Entwickler
 * besser : JGiven: Entwickler schreibt, PO liest
-
+<!--
+# BDD : es geht nicht um Tools sonder ums Konzept
+# BDD: besserer Name für TDD ? 
+-->
 ---
-
+![bg right:50% 80%](assets/images/SchnellesVerstehen.webp)
 # Aus Irrtum 6 + 7 kann was gutes entstehen (1):
-* schreibe deine Tests-Methoden so, dass der PO den Test lesen, verstehe und gegen seine Anforderungen und Akzeptatzkriterien abgleichen kann
-* Prima: denn dann verstehst du selber die Tests auch gleich, wenn du nach 4 Woche nochmal was ändern muss (weil der PO die Anforderungen geändert hat) 
+* schreibe  Tests-Methoden so, dass der PO den Test lesen, verstehen und gegen seine Anforderungen und Akzeptanzkriterien abgleichen kann
+* Prima: jetzt verstehst du selber die Tests auch nach 4 Woche noch!
 
 ---
 
 # Aus Irrtum 6 + 7 kann was gutes entstehen (2):
-## einfaches Beispiel:
+ einfaches Beispiel:
 <!--
  *** IDEE: Zuhörer zwei Gruppen , erste Gruppe schaut 15sec den ersten test an 2. gruppe 15 den zweiten ***
 Du könntest einen Test so schreiben:
@@ -320,7 +364,9 @@ Oder ich könnte den Test so schreiben, und jetzt weißt du genau, was dieser Co
 @Test
 void should_find_a_blog_about_TDD() {
   given().a_web_site("https://bodote.github.io/");
-  when().search_menu_is_clicked().and().search_term_$_is_typed("TDD");
+  when().search_menu_is_clicked()
+          .and()
+          .search_term_$_is_typed("TDD");
   then().blog_post_$_should_be_found("TDD Where it did go wrong")
           .and()
           .when_clicked_$_should_be_the_title("TDD Where it did go wrong");
@@ -353,4 +399,7 @@ Test Class: jgiven.BlogTest
 
 Nur um klar zu sein, dies sind dieselben Tests.-->
 ---
+![bg right:100% 50%](assets/images/TheEnd.webp)
+The End
+___
 
