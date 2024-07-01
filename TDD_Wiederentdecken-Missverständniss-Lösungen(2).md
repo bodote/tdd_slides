@@ -54,7 +54,7 @@ backgroundImage: url(assets/images/BRANDAD_Logo.png)
 
 backgroundSize: 150px 
 backgroundPosition: top 20px right 20px 
-header: 'TTD Wiederentdeckt'
+header: 'TDD Wiederentdeckt'
 footer: '🔗brandad.dev  🔗bodote.github.io'
 # source: Jan Cooper - NDC Porto 2023 "TDD revisited"
 
@@ -193,7 +193,7 @@ Also, wenn ich auf Wikipedia schaue, kann ich eine vernünftige Definition von U
 # Irrtum 1: Warum sind "Unit" Tests schlecht? (1)
 ## Weil : führt zu Tests die Refactoring extrem erschweren
 * zu enge Kopplung von Test zu Implementierung 
-* zu enge Kupplung an interna (private methods) der Implementierung
+* zu enge Kopplung an Interna (private methods) der Implementierung
 
 
 <!-- 
@@ -239,7 +239,7 @@ Du kannst ChatGPT bitten, dir zu sagen, wie du den Code schreiben sollst, und ih
 ![bg left:50% 80%](assets/images/Dali_time.webp)
 # Irrtum 3: TDD kostet viel Zeit und verlangsamt die Entwicklung
 * ja, wenn du es falsch angehst (siehe Irrtum 1 und 2)
-* nein, denn du das Konzept wirklich ausnutzt
+* nein, wenn du das Konzept wirklich ausnutzt
 
 <!--
 # negativ: 
@@ -281,8 +281,8 @@ engen Kopplung der Tests an deine IMplmentierung die Refactoring exterm erschwer
 ---
 ![bg right:50% 80%](assets/images/NamenSindNichtNurSchallUndRauch.webp)
 # Irrtum 6: die Namen meiner Test-Methoden sind egal
-* wenn das Denkst schießt du dir selber ins Knie, 
-* das Problem potenziert sich , wenn du auch noch viele Mock verwendest
+* wenn du das denkst, schießt du dir selber ins Knie, 
+* das Problem potenziert sich, wenn du auch noch viele Mocks verwendest
 
 <!--
 
@@ -293,7 +293,7 @@ engen Kopplung der Tests an deine IMplmentierung die Refactoring exterm erschwer
 # Irrtum 7: BDD ist toll: der PO schreibt jetzt meine Tests
 * BDD = "Behaviour Driven Development" 
 * das wird nicht passieren
-* BDD - tools wie Gerking oder JBehave führen zu nichts als Overhead für den Entwickler
+* BDD - tools wie Gherkin oder JBehave führen zu nichts als Overhead für den Entwickler
 * besser : JGiven: Entwickler schreibt, PO liest
 <!--
 # BDD : es geht nicht um Tools sonder ums Konzept
@@ -325,7 +325,7 @@ void test10() {
     ChromeDriverService service = new ChromeDriverService.Builder()
             .usingDriverExecutable(driverPath)
             .build();
-    WebDriver driver = new ChromeDriver(service);
+    WebDriver driver = new ChromeDriver(service);f
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     try {
         driver.get("https://bodote.github.io/");
@@ -398,6 +398,10 @@ Test Class: jgiven.BlogTest
 <!-- jetzt hast du keine Ahnung, wie der getestete Code tatsächlich funktioniert. Du weißt nicht einmal, ob dies eine Webanwendung ist.
 
 Nur um klar zu sein, dies sind dieselben Tests.-->
+---
+# Quellen: 
+* https://bodote.github.io/blog/TDD-Video-Tips
+* praktisch alle Fehler schon selbst begangen, also eigene Erfahrung
 ---
 ![bg right:100% 50%](assets/images/TheEnd.webp)
 The End

@@ -15,32 +15,51 @@ footer: ' 🔗bodote.github.io'
 
 
 ---
-![bg right:50% 70%](assets/images/TDD_Book.jpeg)
-# **Warum TTD ?**
-<!-- 
-* Buchcover ist die erste fundierte Veröffentlichung
-* zum Thema TDD von ca 2002 
-* vorher schon im Rahmen des "Extreme Programming" vom gleichen Autor in 1999 in Kapitel 18 auf nur 4 Seiten erwähnt.
-* also vor 22 Jahren,
-* der Autor selbst und viele anderen
-* haben das Konzept über die Jahre  in vielen Aspekte ergänzt
-* Grundkonzept ist aber nach wie vor gültige
+![bg right:50% 100%](assets/images/tdd-cycle.png)
+# **Warum Test Driven Development (TDD) ?**
 
-# Autor konnte aber die vielen Missverständnisse beim Lernen des Konzepts nicht vorhersehen.
-# daher kommen mache wichtige Punkte vielleicht nicht sofort klar rüber
-# daher wichtig auch, sich mit den häufigsten Fehler bei Anwendung des TDD Konzept zu befassen. 
-# z.B. Video von Ian Cooper 
+
+<!-- 
+* Herzlich Willkommen zum Vortag TDD
+
+Test-driven Development (TDD): Warum ist das eine sehr gute Idee ?
+
+* Schön dass Ihr da seid! 
+
+Selbst in großen Software-Projekten wird oft erst ganz am Ende getestet – warum aber halten so viele Entwickelnde fast schon dogmatisch an dieser „Test Last“-Philosophie fest? 
+
+Im Vortrag gehen wir dieser Frage gemeinsam auf den Grund. Auf dem Weg zu einer Antwort klären wir außerdem, was mit Test-driven Development und Test First überhaupt gemeint ist, untersuchen den Status Quo und tragen mit einem Blick in Literatur sowie einschlägige Studien die vielen nachgewiesenen Vorteile dieser Entwicklungsmethoden zusammen. 
+
+Wir wollen Vorurteile abbauen und die wichtigsten Fragen rund um Test-driven Development beantworten.
+
+In diesem rund 45minütigen Vortrag erfährst du, wer TDD „erfunden“ hat, was dahinter steckt, welche Versprechungen TDD macht, welche bekannten Softwareprojekte und -Teams TDD verwenden und was die empirische Forschung dazu bis dato herausgefunden hat.
+
+-->
+---
+![bg left:50% 70%](assets/images/questionmark.jpg)
+# Warum bis **du** hier ?
+
+<!--
+* Stimmen aus dem Publikum, jeweils 1-2 Sätze
+* Warum ausgerechnet in einem TDD - Vortrag ?
+
+* Warum bin ich hier ? 
+* Euch zu erklären WARUM Ihr euch näher mit dem Thema befassen sollte
+* ich erkläre NICHT wie TDD im Detail funktioniert (mach ein Tutorial oder les ein Buch zum Thema )
+* KEIN Workshop 
+* NICHT für Fortgeschrittenen, für die Fortgeschrittenen ist der NÄchste Vortrag in 1 Stunde
 
 -->
 
 ---
-![bg left:50% 100%](assets/images/mentimeter_qr_code_1.png)
+![bg right:50% 90%](assets/images/mentimeter_qr_code_1.png)
 # Hast du TDD schon mal selbst ausprobiert?
 Umfrage: https://www.menti.com/al9bcx57niwx
 <!-- 
-* 
+* https://www.menti.com/al9bcx57niwx
 -->
 ---
+![bg left:50% 70%](assets/images/Bodo_kofferPortät_ausschnitt.jpg)
 ## Wer ich bin:
 * Bodo Teichmann
 * Softwareentwickler seit mehr als 30 Jahren
@@ -49,16 +68,11 @@ Umfrage: https://www.menti.com/al9bcx57niwx
 * CI-Automatisierung, ein wenig `Angular`, diverse Script Sprachen, 
 * zuletzt 2 Jahre `Spring Boot` 
 
----
-![bg right:40% 80%](assets/images/DEV_Logohoch.png)
 
-* Wir suchen Softwareentwickler, Scrummaster, Product Owner, UI/UX-ExpertInnen
-* Angular und Spring-boot
-* [brandad.dev](https://brandad.dev)
 ---
 ![bg left:50% 70%](assets/images/gangs-of-four-design-patterns-book.png)
 # Warum solltet Ihr jemandem vertrauen... 
-... der euch empfiehlt, TDD zu lernen? 
+... der euch empfiehlt, **X**  zu lernen? 
 <!-- 
 * in der Geschichte der Softwareentwicklung gab es auch anderen grundlegende Werke die nach wie vor gültig sind, z.B. "Design Patterns" von 1994
 * die heute in vielen erfolgreichen Softwareprojekten und Fameworks (z.B. Spring Boot, Angular) nach wie vor verwendet werden
@@ -67,10 +81,21 @@ Umfrage: https://www.menti.com/al9bcx57niwx
 ---
 ![bg right:50% 68%](assets/images/Domain-Driven-Design.jpeg)
 # Warum solltet Ihr jemandem vertrauen... 
-... obwohl du nicht sofort verstehst, warum das eine gute Idee ist?
+... obwohl du nicht sofort verstehst, warum **Y**  eine gute Idee ist?
 <!-- 
 * oder Domain-Driven Design (ca 2003)
  -->
+---
+![bg left:50% 68%](assets/images/bookManyPages.jpeg)
+# Dicke (theoretische) Bücher lesen ?
+oder doch lieber
+# "learning by doing" ? 
+<!--
+* Es gibt viele Konzepte in der Softwareentwicklung für die man erst mal eine 
+theoretische Idee , ein mentales Modell braucht um sich der Sache praktisch anzunähern
+
+* Manche sind intuitiver andere nicht. 
+-->
 ---
 ![bg left:50% 68%](assets/images/HappySmiley.jpeg)
 # Reden wir darüber, wie Menschen (und Maschinen) lernen 
@@ -115,6 +140,31 @@ Wer von euch hat etwas schwieriges mühsam gelernt und erst viel später den Nut
 
 ---
 
+![bg right:50% 70%](assets/images/TDD_Book.jpeg)
+# **Test Driven Development**
+* Grundidee: Test First! 
+* Also: Wir schreiben automatisch Tests **BEVOR** wir den Produktions-Code schreiben 
+
+
+<!-- 
+* Buchcover ist die erste fundierte Veröffentlichung
+* zum Thema TDD von ca 2002 
+* vorher schon im Rahmen des "Extreme Programming" vom gleichen Autor in 1999 in Kapitel 18 auf nur 4 Seiten erwähnt.
+* also vor 22 Jahren,
+* der Autor selbst und viele anderen
+* haben das Konzept über die Jahre  in vielen Aspekte ergänzt
+* Grundkonzept ist aber nach wie vor gültige
+
+# Autor konnte aber die vielen Missverständnisse beim Lernen des Konzepts nicht vorhersehen.
+# daher kommen mache wichtige Punkte vielleicht nicht sofort klar rüber
+# daher wichtig auch, sich mit den häufigsten Fehler bei Anwendung des TDD Konzept zu befassen. 
+# z.B. Video von Ian Cooper 
+
+* nicht unbedingt der beste Einstieg ins Thema aber das erste grundlegende Buch vom "Erfinder" selbst
+* Idee basiert auf jahrelanger Vorerfahrung und Expermentieren des Autors 
+
+-->
+---
 # Warum ist TDD so (scheinbar) schwierig zu lernen?
 -> kein schnelles Feedback!
 <!--
@@ -288,6 +338,10 @@ einzige zu dem Thema.
 
 # Danke für eure Aufmerksamkeit!
 
----
 
-ENDE
+---
+![bg right:40% 80%](assets/images/DEV_Logohoch.png)
+# Übrigens: 
+* Wir suchen Softwareentwickler, Scrummaster, Product Owner, UI/UX-ExpertInnen
+* Angular und Spring-boot
+* [brandad.dev](https://brandad.dev)
