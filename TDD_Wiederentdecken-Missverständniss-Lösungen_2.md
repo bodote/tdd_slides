@@ -8,6 +8,7 @@ paginate: true
 style: |
   section {
     font-family: 'slabo 27px';
+    font-style: 'regular 400'  ;
     background-color: #ffffff;
   }
   section h1 {
@@ -33,20 +34,26 @@ style: |
     color: #017589
   }
    section.lead h1  {
-    color: #060265;
-    text-align: center
+    color: #134001;
+    text-align: left
   }
   section.lead h2  {
-    color: #014189;
-    text-align: center
+    color: #134001;
+    text-align: left
   }
   section.lead h3  {
-    color: #017589;
-    text-align: center
+    color: #134001;
+    text-align: left
   }
    section.lead p {
     font-family: 'Roboto Slab';
-    text-align: center;
+    text-align: left;
+    color: #1E6900;
+  }
+  section.lead li {
+    font-family: 'Roboto Slab';
+    text-align: left;
+    color: #31A802
   }
  
 backgroundImage: url(assets/images/BRANDAD_Logo.png)
@@ -61,34 +68,88 @@ footer: '🔗brandad.dev  🔗bodote.github.io'
 ---
 # TDD (Wieder-)Entdecken
 ## Fallen und Missverständnisse vermeiden
-<!-- 
+
+<!--
+* Herzlich Willkommen zum Vortag TDD
+
+Test-driven Development (TDD): Warum ist das eine sehr gute Idee ?
+
+* Schön dass Ihr da seid! 
+# An Test-driven Development gescheitert? Hier erfährst du, warum.
+
+
+Immer wieder hörst und liest du von TDD in Konferenzbeiträgen und Fachartikeln – aber die meisten von uns kennen niemanden persönlich, der wirklich konsequent TDD „macht“. Warum ist das so? Warum ist TDD so schwer zu lernen, welche Missverständniss und Fallen führen uns in die Irre und wie kannst du es doch schaffen, Projekte mit TDD zum Erfolg zu führen?
+
+So viel schon mal vorweg: Für „Greenfield“-Projekte auf grüner Wieser, ist TDD perfekt. Bei anderen Projekten sind es manchmal die Umstände und die Projekthistorie, die TDD tatsächlich unmöglich machen. Wir versuchen herauszufinden, wie du das in deinen Projekten erkennst – und klären alle weiteren Fragen, die du zum Thema noch so mitbringst. Let's discuss!
+-->
+---
+![bg left:50% 70%](assets/images/questionmark.jpg)
+# Warum bis **du** hier ?
+
+<!--
+* kann schon früher starten bis die Nachzügler kommen
+
+* Stimmen aus dem Publikum, jeweils 1-2 Sätze
+* was erwartest du ?
+* Warum ausgerechnet in einem TDD - Vortrag ?
+-->
+
+---
+
+# Was Ihr mitbringen solltet
+
+* Verständnis der Grundbegriffe von TDD
+* mindestens mal ein Tutorial mit einem praktische Beispiel gemacht
+* Durchhaltevermögen auch bei schwierigen Situationen
+* keine Pläne noch jahrelang in einem Legacy - Projekt ohne Testabdeckung zu arbeiten
+
+<!--
+# Warum bin ICH hier und was biete ich hier an  ? 
+
 ## Voraussetzung: Verständnis von TDD als Prozess, bei dem Tests vor dem Code geschrieben werden.
 Also würde ich erwarten, dass ihr zumindest versteht, dass TDD ein Prozess ist, bei dem wir Tests schreiben, bevor wir den Code schreiben. 
 
 ## Zyklus von Rot zu Grün und Refactoring: Fehlschlagende Tests schreiben und dann passieren lassen.
-Und es gibt einen Zyklus von Rot zu Grün und Refactoring, bei dem wir einen fehlschlagenden Test schreiben, dann diesen Test bestehen lassen. Und dann führen wir ein Refactoring durch, um die Qualität unseres Codes zu verbessern. Ihr solltet zumindest so viel wissen. Es spielt keine Rolle, ob ihr derzeit TDD praktiziert, es zählt nur, dass ihr versteht, worum es bei TDD geht und wie es allgemein präsentiert wird. 
+Zyklus von Rot zu Grün der Test und dann Refactoring: 
+  * einen fehlschlagenden Test schreiben, 
+  * dann diesen Test bestehen lassen. 
+  * Refactoring durchfürhen, um die Qualität unseres Codes zu verbessern. 
+-->
 
-## Kritik am vorherrschenden Ansatz der testgetriebenen Entwicklung, insbesondere an Ansätzen, die auf Unit-Tests und Mocks basieren.
-Ein weiterer Punkt zu diesem Vortrag ist, dass ich definitiv eine Kritik an dem haben werde, was oft als vorherrschender Ansatz für testgetriebene Entwicklung angesehen wird; ich werde eine Art Ansatz kritisieren, der auf Unit-Tests, Mocks und allem anderen basiert. Und sogar Gherkin-basierte Syntax-Stil Akzeptanztests. Wenn ihr eng damit verbunden seid und niemand euch jemals überzeugen wird, dass das der falsche Weg ist, etwas zu tun, möchtet ihr vielleicht jemand anderen finden, mit dem ihr sprechen könnt, denn das werde ich heute versuchen. Und wenn das nichts für euch ist, ich möchte nichts davon hören, richtig? Kein Grund, hier zu sein. Richtig. 
+---
 
-## Offenheit für neue Methoden erforderlich, besonders wenn bisherige Versuche mit TDD gescheitert sind.
+# Was euch erwartet
 
-## Ziel des Vortrags: Verständnis für alternative TDD-Methoden bieten, die möglicherweise besser funktionieren.
-Wenn ihr offen seid, werden wir versuchen, verschiedene Weisen des Vorgehens zu erklären. Und wenn ihr TDD ausprobiert habt und es für euch nicht funktioniert hat, könnte dies euch helfen zu verstehen warum, und könnte euch einen Weg aufzeigen, der vielleicht besser für euch funktioniert. Hoffentlich werdet ihr in der Lage sein, weniger, einfachere, bessere Tests zu schreiben. 
+* theoretischer Vortrag 
+* nur ein Codebeispiel
 
-## Der Vortrag ist theoriebasiert, behandelt die korrekte Durchführung von TDD und ist nicht demo-lastig.
-Dies ist auch kein codebasierter Vortrag, richtig? Dies ist ein theoriebasierter Vortrag, der die Theorie erklärt, wie man TDD korrekt durchführt. Also, wenn ihr etwas demo-lastiges wollt, ist das auch nicht dieser Vortrag. 
+<!--
+Der Vortrag ist theoriebasiert, behandelt die korrekte Durchführung von TDD und ist nicht demo-lastig.
 
-## ich bin auch kein Experte
-Es gibt oft in Vorlesungsstil-Beziehungen ein bisschen den Eindruck, dass ich irgendwie, ihr wisst schon, der Experte bin und ihr nicht. Wir sind alle nur Softwareingenieure, ich hatte nur das Glück, vor über 20 auf die Buch über XP und TDD von Kent Beck zu stolpern und bekam dann auch die Gelegenheit rel ungestört für 2 Jahre meine ersten Erfahrungen mit Java und TDD zu machen.
+Es gibt auch nur ein einziges Code Beispiel
+ 
+ Ich bin auch kein Experte
+  * ich hatte nur das Glück, vor über 20 auf die Buch über XP und TDD von Kent Beck zu stolpern 
+  * und bekam dann auch die Gelegenheit rel ungestört für 2 Jahre meine ersten Erfahrungen mit Java und TDD zu machen, damals .
+  * und hatte Gelegentheit die letzten 2 Jahre an 2 Greenfield Java Projekte mit Spring Boot und TDD zu arbeiten.
 
 aber ich bin wirklich nicht klüger als ihr? ich habe halt ein paar Sachen ausprobiert die nicht so gut funktioniert haben und ein paar die ganz gut funktioniert haben.
 
-## viele locales Optimum
+## gut möglich dass ich auch nur in einem  locales Optimum bin 
 
 ## vom Tretroller zum Fahrrad
+
 -->
+
 ---
+
+![bg right:50% 90%](assets/images/mentimeter_qr_code_1.png)
+# Wie viel TDD - Praxis hast du ?
+
+https://www.menti.com/al9bcx57niwx
+
+---
+![bg left:50% 70%](assets/images/Bodo_kofferPortät_ausschnitt.jpg)
 ## Wer ich bin:
 * Bodo Teichmann
 * Softwareentwickler seit mehr als 30 Jahren
@@ -96,23 +157,21 @@ aber ich bin wirklich nicht klüger als ihr? ich habe halt ein paar Sachen auspr
 * 6 Jahre `C` Erfahrung, 10 Jahre `Java`
 * CI-Automatisierung, ein wenig `Angular`, diverse Script Sprachen, 
 * zuletzt 2 Jahre `Spring Boot` 
+<!--
+* Hobbies: Musik, Fliegen, Tanzen 
+-->
 
 ---
-![bg right:40% 80%](assets/images/DEV_Logohoch.png)
-
-* Wir suchen Softwareentwickler, Scrummaster, Product Owner, UI/UX-ExpertInnen
-* Angular und Spring-boot
-* [brandad.dev](https://brandad.dev)
-
----
-
-![bg right:50% 85%](assets/images/Missconceptions_TDD.webp)
-# Die Irrtümer von TDD
-
---- 
 
 ![bg left:70% 90%](assets/images/tdd-cycle.png)
 # TDD, ganz einfach ?
+
+<!--
+Schöne graphic für ein Buchcover oder ein Präsentationsfolie
+
+* Ist aber leider sehr Irreführend
+
+-->
 
 ---
 
@@ -125,24 +184,46 @@ backgroundPosition: top 0px right 0px
 
 
 <!--
-# Flowchart vom Autor Kent Beck selbst autorisiert 
-# zugehöriger Text im Substack Link zu finden.
+
+* kommt der Sache schon etwas näher,
+* orangenen Kästen weisen auf häufig begangene Fehler hin 
+
+* erfasst aber eigentlich noch nicht alle wichtigen Aspekte!
+
+* Flowchart vom Autor Kent Beck selbst autorisiert 
+* zugehöriger Text im Substack Link zu finden.
 
 -->
 
-
 ---
-
 <!--  footer: '🔗bodote.github.io' 
 backgroundImage: url(assets/images/BRANDAD_Logo.png)
 backgroundSize: 150px 
 backgroundPosition: top 20px right 20px
 -->
+
+![bg right:50% 85%](assets/images/Missconceptions_TDD.webp)
+# Die Irrtümer von TDD
+
+<!--
+Es gibt viele Missverständnisse rund um TDD und man kann viel falsch machen
+
+Das sage ich nicht um euch von TDD abzuhalten, sondern ich um euch vorzuwarnen 
+dass es nicht so einfach ist , wie es aussieht
+
+* hoffentlich klar, dass ich der Meinung bin , dass sich der Aufwand lohnt TDD richtig zu lernen
+(unter bestimmten Umständen!)
+-->
+
+--- 
+
+
+
 ![bg right:50% 80%](assets/images/Devs_Not_Unittests.jpeg)
 # Irrtum 1: Softwareentwickler schreiben Unittest 
 <!--  TDD ist nicht gleichzusetzen mit Unit-Tests.
 
-# Der erste und vielleicht bedeutendste Irrtum der testgetriebenen Entwicklung ist, dass Entwickler Unit-Tests schreiben. Nichts könnte weiter von der Wahrheit entfernt sein. 
+# Der erste und vielleicht bedeutendste Irrtum der testgetriebenen Entwicklung ist, dass Entwickler "Unit"-Tests schreiben. Nichts könnte weiter von der Wahrheit entfernt sein. 
 
 -->
 
@@ -150,21 +231,33 @@ backgroundPosition: top 20px right 20px
 # Irrtum 1: Softwareentwickler schreiben Unittest 
 ## TDD hat absolut nichts mit "Unit-Tests" zu tun. 
 
-* [Zitat](https://en.wikipedia.org/wiki/Software_testing#Unit_testing) : "Unit testing refers to verifying the behavior of a relatively small portion of the code, a unit, in **isolation from the rest of the codebase**. A unit is often a function, module, method or class. [21] To isolate the unit, a test substitutes dependences with test doubles."
+* [Zitat](https://en.wikipedia.org/wiki/Software_testing#Unit_testing) : "Unit testing refers to verifying the behavior of a **relatively small portion** of the code, a unit, in **isolation from the rest of the codebase**. A unit is often a **function**, module, **method** or **class**. [21] To isolate the unit, a test substitutes dependences with test doubles."
 
-* Verwirrung um den Begriff "Unit" im zusammenhang mit "Test": "Junit5" als _Tool_ ist prima!
+* Verwirrung um den Begriff "Unit" im Zusammenhang mit "Test": "JUnit5" als **_Tool_** ist prima!
 
 <!--
-Also, wenn ich auf Wikipedia schaue, kann ich eine vernünftige Definition von Unit-Testing bekommen, richtig. Wikipedia sagt, um Probleme, die auftreten können, zu isolieren. Jeder Testfall sollte unabhängig getestet werden, Ersatzmittel, wie Methoden-Stubs, Mock-Objekte, Fakes und Test-Harnesses können verwendet werden, um das Testen eines Moduls in Isolation zu unterstützen. Was bedeutet das? Richtig? -->
+# Wikipedia sagt 
+
+1. dass das  Problem soll isoliert werden soll. 
+2. eine UNIT sei eine Funktion , Modul oder Klasse
+2. Methoden-Stubs, Mock-Objekte, Fakes und Test-Harnesses können verwendet werden, um das Testen eines Moduls in Isolation zu unterstützen. 
+3. das man die UNIT isoliert testen soll, 
+
+Ich sag nicht, dass Wikipedia falsch ist, ich sag nur dass wenn man TDD machen will darf man die Definition von UNIT nicht mit der verwechseln die in Wikipedia steht. 
+
+von den 3 Aussagen hilft für TDD nur einer so halb weiter, nämlich: 
+* Jeder **Testfall** sollte unabhängig VON ANDEREN TESTS sein,
+
+ -->
 
 --- 
 ![bg left:50% 80%](assets/images/TDD_vs_Unittest_isolation.webp)
 # Irrtum 1: TDD ≠ Unittesting
 
-* Unit-Tests laut Definition konzentriert sich auf die __Isolation__ von Fehlern in einer Komponente durch den **Einsatz von Test-Doubles**.
+* Unit-Tests laut Wikipedia-Definition konzentriert sich auf die __Isolation__ von Fehlern in einer **_Unit_** durch den **Einsatz von Test-Doubles**.
 
 <!-- 
-# __Isolation__ von Fehlern in einer Komponente scheint erstmal eine Gute Idee
+# __Isolation__ von Fehlern in einer Komponente scheint erst einmal eine Gute Idee
 # ist es aber nicht
 -->
 
@@ -172,14 +265,18 @@ Also, wenn ich auf Wikipedia schaue, kann ich eine vernünftige Definition von U
 
 # Irrtum 1: Das große "Unit" Missverständnis (1) 
 
-* Isolation der Test: JA! : Isolation der getesteten "Units": vermeide wenn möglich
-* Unit = zusammengehörige Code-Teil (im Sinne von DDD ) , also ein "Modul" mit defnierter API : Prima !
-* Unit = Java- oder TypeScript - Klasse : großes **Missverständniss** !
+* Isolation der **Test**: JA! 
+* Isolation der getesteten **"Units"** durch **"test doubles"** : vermeide wenn möglich
+* **Unit** = zusammengehörige Code-Teil (im Sinne von DDD ) , also ein "Modul" mit definierter API : Prima !
+* **Unit** = Java- oder TypeScript - **Klasse** : großes **Missverständnis** !
+<!--
 
+* Unit als Funktion oder Klasse ist schlicht falsch, wenn wir TDD machen wollen ! 
+* sondern ein größere MODUL mit einer stabile API
 
-<!-- Es gab eine Zeit, als wir darüber sprachen, wie wir das Testen automatisieren würden, testeten wir Module, Module nebulös definiert, richtig? Es könnte eine Klasse sein, es könnte viel größer sein. Und die Idee war, dass das Modul als Black Box behandelt wird, und dein Test das Modul von außen prüft. Und du wolltest sicherstellen, dass alle Fehler, die dein Test dir gab, innerhalb der Box waren. Also alle Abhängigkeiten, die diese Box hat, würdest du mit einem Fake oder Ersatz ersetzen, das ist klassisches automatisiertes Testen. -->
-
+-->
 ---
+
 
 # Irrtum 1: "Unit" Missverständnis (2)
 * "Unit" im Sinne von Kent Beck (Autor von TDD): GUT!
@@ -187,66 +284,142 @@ Also, wenn ich auf Wikipedia schaue, kann ich eine vernünftige Definition von U
 * "Unit" als einzelne Klasse und "wegmocken" aller Dependecies : **SCHLECHT**!
 * Angulars automatische *.spec.ts für jedes *.ts : **SCHLECHT** ! 
 
-<!-- Okay. Das Problem ist, dies als Paradigma für testgetriebene Entwicklung anzuwenden. Also was passierte, als die testgetriebene Entwicklung aufkam, nahmen einige Leute, die mit automatisiertem Testen vertraut waren, an und begannen anderen Menschen beizubringen, TDD sei nur automatisiertes Testen, und das ist es nicht. Also gibt es einige Probleme damit, richtig? Das erste Problem ist, es gibt viel Fokus auf Isolation beim automatisierten Testen. Die Idee ist, dass ich für die Fehlerlokalisierung verstehen muss, dass alle Fehler in dieser Komponente sind, nicht in einem seiner Dependencies. Daher muss ich Mocks oder Test-Doubles verwenden, den ich für alle seine Dependencies einsetzte. Test-Doubles sind ein Begriff, den wir tendenziell verwenden, um diese Dinge zu beschreiben. Die Idee geht um ein Stunt-Double, richtig, etwas, das für den Schauspieler steht, den wir nicht der Gefahr aussetzen können. -->
+<!-- 
+WEIL: nächste Folie
+-->
+
 ---
 
 # Irrtum 1: Warum sind "Unit" Tests schlecht? (1)
-## Weil : führt zu Tests die Refactoring extrem erschweren
 * zu enge Kopplung von Test zu Implementierung 
 * zu enge Kopplung an Interna (private methods) der Implementierung
 
+# Führt zu: 
+* Tests, die Refactoring extrem erschweren
+
 
 <!-- 
-# Teil 2
-## Einfluss von Unit-Tests führt dazu, dass Entwickler Klassen als Module betrachten und deren Abhängigkeiten durch Substitute ersetzen.
-Und so passiert es, dass viele Leute, die von Unit-Tests beeinflusst sind, eine Klasse nehmen, weil sie entscheiden, dass dies dem Äquivalent eines Moduls aus dem automatisierten Software-Engineering-Test entspricht. Und sie ersetzen alle ihre Abhängigkeiten durch Substitute. 
+# NAIVE Herangehensweise:
 
-## Entwicklung eines Denkparadigmas in der testgetriebenen Entwicklung, bekannt als bedarfsorientierte Entwicklung, wie im Buch "Growing object oriented software with tests" beschrieben.
-Und letztendlich führte dies zu einem Denkparadigma in der testgetriebenen Entwicklung, manchmal als bedarfsorientierte Entwicklung bezeichnet, diejenigen unter Ihnen, die das Buch "Growing object oriented software with tests" gelesen haben. Dieses Buch vertritt besonders diese Philosophie der sogenannten bedarfsorientierten Entwicklung. 
-## Bedarfsorientierte Entwicklung ist eine Variation von TDD, bei der der Code von außen nach innen geschrieben wird, beginnend mit der Funktion oder Methode, die getestet wird.
-Es ist eine Variation des testgetriebenen Entwicklungsprozesses, bei dem der Code von außen nach innen geschrieben wird. Mit anderen Worten, man beginnt effektiv von außen mit der Art von Funktion oder Methode, die man testet. Und alle davon abhängigen Codes werden durch Mock-Objekte ersetzt, die die erwarteten indirekten Ausgaben des geschriebenen Codes überprüfen. 
-## Abhängige Codes werden durch Mock-Objekte ersetzt, die die indirekten Ausgaben des geschriebenen Codes überprüfen.
-Mit anderen Worten, wenn ich irgendeine Art von Kollaborateur habe, dann werde ich ihn durch ein Substitute ersetzen. Und ich werde in meinem Test die Aufrufe, die ich an dieses Substitute mache, überprüfen. 
+* im Tutorial ok: 1 Klasse -> eine Testclasse 
+* im Tutorial ok: je Entscheidung in jeder Methode je eine Test-Methode
+
+# Völlig OK , sich so TDD anzunähern 
+
+# Völlig falsch , in nicht trivialen Projekten dabei zu bleiben
+
 -->
 ---
 
 # Irrtum 1: Warum sind "Unit" Tests schlecht? (2)
-## Weil : Upfront-Design nötig
+## Weil : Upfront-Design aller Implementierungsdetails nötig
 * Test sollen das Design "treiben" ("driven") nicht umgekehrt
 * Vorteil von TDD fürs Design wird verschenkt
+* statt dessen : Upfront-Design **NUR** für die API gegen die die Test geschrieben werden
 <!--
-## Vorausschauendes Design ist erforderlich, um zu verstehen, wie der Domänenraum in Objekte unterteilt wird, wobei Verantwortlichkeiten außerhalb des getesteten Objekts durch Mocks oder Stubs ersetzt werden.
+Denn Wenn ich auf Klassenebene testen will muss ich die Klassen auch vorab Designen
+* Methodennamen und - Parameter festlegen sonst kompiliert mein Test ja gar nicht
+* führt zu diese engen Kopplung
+* änderen sich meine Klassen auch nur minimal (z.B. Methode verschieben von Klasse A zu Klasse B) muss sich auch mein Test ändern
 
-Eines der Probleme hierbei ist, dass dies im Allgemeinen ein vorausschauendes Design erfordert, ich muss vielleicht verstehen, vielleicht habe ich [CRC-Karten (Class Responsibility Collaborator (CRC))](https://agilemodeling.com/artifacts/crcModel.htm) verwendet, 
-vielleicht hatte ich eine Tafel, warum ich meinen Domänenraum in Objekte unterteile, 
+Das wollen wir vermeiden !
 
-weil ich wissen muss, nun, diese Verantwortung liegt nicht beim getesteten Objekt, sie ist die Verantwortung von etwas anderem, das ich effektiv durch einen Mock oder ein Stopp ersetzen würde. Also mache ich ein vorausschauendes Design, ich lasse nicht die Tests mein Design informieren.
+-->
+---
+<!-- _class: lead -->
+# Korrektur des Irrtum 1 mit API (1): 
+* Teste Module mit stabiler API
+* API-Design **vor** dem schreiben der Tests
+* Implementierung **nach** dem schreiben des Tests
+* Test greift nur auf stabile API zu 
+* **EINE** API für 10-100 Klassen
+
+<!--
+
+__API__ für ein "Modul" , das vielleicht 10-100 Klassen enthält
+
+Beispiel zu API-Design **vor** dem schreiben der Tests 
+
+* API == "REST Controller" mit INput/Output festlegen
+
 -->
 
 ---
+![bg right:50% 80%](assets/images/hexaGonalRund.png)
+# Welches Architekturmuster verwendest du ?
+* keines 
+* layered 
+* hexagonal
+* onion
+* "Clean" 
+<!--
+Starker Einfluss der gewählten __Softwarearchitektur__ (Clean , Hexagonal, Zwiebel, Layerd)
+
+* ARCHITEKTUR: du sollest eine API auch zwischen den 
+  * "Layern", oder "Zwiebelringen" , 
+  * Hexagonal: "Infrastruktur" und "Application" code. 
+  * Clean Architecture: zwischen "Application Business Rules" und "Interface Adapters"
+
+# Wichtig : API sollte sich nicht dauernd ändern
+-> oder wenn, dann möglichst rückwärtskompatibel 
+
+-->
+---
+<!-- _class: lead -->
+# Korrektur des Irrtum 1 mit MOCKS (2): 
+* prüfe wo du Mocks oder andere Test Doubles verwendetst
+* Mocks für externen Abhängigkeiten (externe REST services, Datenbank ..) OK
+* Mocks für Klassen in DEINEM Code -> ganz schlecht
+
+<!--
+Verwendung von Test Doubles , Mocks , Spys
+sind guter Indikator ob du auf dem richtigen Web bist 
+-->
+---
+
 ![bg right:50% 80%](assets/images/SpagettiCode.webp)
 # Irrtum 2: TDD ist unflexibel
 * stimmt, wenn  zu viel Mocks  und  Tests  an die Implementierung statt an die Anforderungen gekoppelt sind
 * stimmt, wenn du den "refaktorieren" - Teil des TDD nicht wirklich ernst nimmst
 <!--
- Wenig Refactoring ist ein Anzeichen dafür, dass effektiv ein Design im Voraus vorliegt, das du jetzt unter Test bekommen möchtest.
-* denn in der grünen Phase solltest du alles tun, was du kannst, um den Algorithmus zu finden, den du benötigst, um den Test zu bestehen. 
+ Zu Wenig Refactoring ist ein Anzeichen dafür, dass effektiv ein Design im Voraus vorliegt, das du jetzt unter Test bekommen möchtest.
+
+* denn in der __grünen__ Phase solltest du alles tun, was du kannst, um den Algorithmus zu finden, den du benötigst, um den Test zu bestehen. 
 Du kannst Code von Stack Overflow kopieren, das ist absolut in Ordnung in der grünen Phase. 
-Du kannst ChatGPT bitten, dir zu sagen, wie du den Code schreiben sollst, und ihn einfügen, das ist in der grünen Phase absolut in Ordnung. 
-* Du wirst den Code gut machen, sobald er den Test besteht, denn jetzt weißt du genau, welchen Code du brauchst, um den Test zu bestehen, und du kannst dann refaktorieren, um qualitativ hochwertigen Code zu schreiben.
+
+* Du kannst ChatGPT bitten, dir zu sagen, wie du den Code schreiben sollst, und ihn einfügen, das ist in der grünen Phase absolut in Ordnung. 
+
+* Du wirst den Code gut machen in der __blauen__ Phase, sobald er den Test besteht, denn jetzt weißt du genau, welchen Code du brauchst, um den Test zu bestehen, und du kannst dann refaktorieren, um qualitativ hochwertigen Code zu schreiben.
 -->
 ---
-![bg left:50% 80%](assets/images/Dali_time.webp)
+![bg left:40% 80%](assets/images/Dali_time.webp)
 # Irrtum 3: TDD kostet viel Zeit und verlangsamt die Entwicklung
 * ja, wenn du es falsch angehst (siehe Irrtum 1 und 2)
-* nein, wenn du das Konzept wirklich ausnutzt
+* vielleicht ja:  Projekt klein, kurzfristig oder nur  Proof Of Conzept 
+* vielleicht ja: Legacy Projekt ohne gute Testabdeckung
 
 <!--
-# negativ: 
-## zu viel mocks -> Refaktoring bricht die Tests-> kostst viel zeit das zu fixedn
+TDD als Teil des Softwareentwicklungsprozesses passt nicht immer
+
+Bewusste Entscheidung nötig
+-->
+
+---
+![bg right:40% 80%](assets/images/Dali_time.webp)
+# Irrtum 3: TDD kostet viel Zeit und verlangsamt die Entwicklung
+* nein, wenn du das Konzept wirklich ausnutzt
+* nein wenn dein Projekt groß und langfristig ist
+
+
+<!--
+weitere __negativ__ faktoren: 
+
 ## geänderte Anforderungen->geänderte Test, aber die Test müsse leicht verständlich sein, was sie oft nicht sind
-# positiv
+
+ __positiv__
+ 
 ## du sparst viel zeit beim suchen und fixen von Bugs, weil TDD-Software viel stabiler ist.
+
 ## du sparst zeit beim Refactoring weil deine tests nicht dauernt brechen
 -->
 
@@ -402,8 +575,13 @@ Nur um klar zu sein, dies sind dieselben Tests.-->
 # Quellen: 
 * https://bodote.github.io/blog/TDD-Video-Tips
 * praktisch alle Fehler schon selbst begangen, also eigene Erfahrung
----
-![bg right:100% 50%](assets/images/TheEnd.webp)
-The End
-___
 
+---
+
+![bg right:40% 80%](assets/images/DEV_Logohoch.png)
+
+* Wir suchen Softwareentwickler, Scrummaster, Product Owner, UI/UX-ExpertInnen
+* Angular und Spring-boot
+* [brandad.dev](https://brandad.dev)
+
+---

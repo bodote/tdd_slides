@@ -26,6 +26,7 @@ Test-driven Development (TDD): Warum ist das eine sehr gute Idee ?
 
 * Schön dass Ihr da seid! 
 
+# Werbetext: 
 Selbst in großen Software-Projekten wird oft erst ganz am Ende getestet – warum aber halten so viele Entwickelnde fast schon dogmatisch an dieser „Test Last“-Philosophie fest? 
 
 Im Vortrag gehen wir dieser Frage gemeinsam auf den Grund. Auf dem Weg zu einer Antwort klären wir außerdem, was mit Test-driven Development und Test First überhaupt gemeint ist, untersuchen den Status Quo und tragen mit einem Blick in Literatur sowie einschlägige Studien die vielen nachgewiesenen Vorteile dieser Entwicklungsmethoden zusammen. 
@@ -40,10 +41,13 @@ In diesem rund 45minütigen Vortrag erfährst du, wer TDD „erfunden“ hat, wa
 # Warum bis **du** hier ?
 
 <!--
+* kann schon früher starten bis die Nachzügler kommen
+
 * Stimmen aus dem Publikum, jeweils 1-2 Sätze
+* was erwartest du ?
 * Warum ausgerechnet in einem TDD - Vortrag ?
 
-* Warum bin ich hier ? 
+* Warum bin ICH hier und was biete ich hier an  ? 
 * Euch zu erklären WARUM Ihr euch näher mit dem Thema befassen sollte
 * ich erkläre NICHT wie TDD im Detail funktioniert (mach ein Tutorial oder les ein Buch zum Thema )
 * KEIN Workshop 
@@ -56,7 +60,7 @@ In diesem rund 45minütigen Vortrag erfährst du, wer TDD „erfunden“ hat, wa
 # Hast du TDD schon mal selbst ausprobiert?
 Umfrage: https://www.menti.com/al9bcx57niwx
 <!-- 
-* https://www.menti.com/al9bcx57niwx
+* https://www.mentimeter.com/app/presentation/n/alhyyrr74bsywk5qzdr4eoki42pem5nz/present?question=fry1o938t3s5
 -->
 ---
 ![bg left:50% 70%](assets/images/Bodo_kofferPortät_ausschnitt.jpg)
@@ -66,8 +70,10 @@ Umfrage: https://www.menti.com/al9bcx57niwx
 * "early adopter" von TDD 
 * 6 Jahre `C` Erfahrung, 10 Jahre `Java`
 * CI-Automatisierung, ein wenig `Angular`, diverse Script Sprachen, 
-* zuletzt 2 Jahre `Spring Boot` 
-
+* zuletzt 2 Jahre `Spring Boot`
+<!--
+* Hobbies: Musik, Fliegen, Tanzen 
+-->
 
 ---
 ![bg left:50% 70%](assets/images/gangs-of-four-design-patterns-book.png)
@@ -77,14 +83,17 @@ Umfrage: https://www.menti.com/al9bcx57niwx
 * in der Geschichte der Softwareentwicklung gab es auch anderen grundlegende Werke die nach wie vor gültig sind, z.B. "Design Patterns" von 1994
 * die heute in vielen erfolgreichen Softwareprojekten und Fameworks (z.B. Spring Boot, Angular) nach wie vor verwendet werden
 * TDD gehört da aus meiner Sicht auch dazu
- -->
+
+-->
 ---
 ![bg right:50% 68%](assets/images/Domain-Driven-Design.jpeg)
 # Warum solltet Ihr jemandem vertrauen... 
 ... obwohl du nicht sofort verstehst, warum **Y**  eine gute Idee ist?
 <!-- 
 * oder Domain-Driven Design (ca 2003)
- -->
+
+* METRIK: wieviele andere Veröffentlichung verweisen auf ein Buch/Konzept
+-->
 ---
 ![bg left:50% 68%](assets/images/bookManyPages.jpeg)
 # Dicke (theoretische) Bücher lesen ?
@@ -95,6 +104,8 @@ oder doch lieber
 theoretische Idee , ein mentales Modell braucht um sich der Sache praktisch anzunähern
 
 * Manche sind intuitiver andere nicht. 
+* Machen habe eine flache Lernkurfe, lasses sich also incrementell erschließen
+* andere haben eine Steile Lernkurfe, stellen also eine Anfangs höhere Hürde dar
 -->
 ---
 ![bg left:50% 68%](assets/images/HappySmiley.jpeg)
@@ -136,7 +147,8 @@ Wer von euch hat etwas schwieriges mühsam gelernt und erst viel später den Nut
 ![bg left:50% 80%](assets/images/DALL·E_fast_feedback.webp)
 # Wie lernt  Mensch (oder eine Maschine) trotzdem ohne schnelles Feedback?
 * Maschine: historische Daten sammeln
-* Mensch: historische Daten sammeln (von Menschen vor euch, die die Erfahrung gemacht haben)
+* Mensch: historische Daten sammeln (von Menschen vor euch, die die Erfahrung gemacht haben) 
+* Regeln lernen und befolgen, auch wenn man erstmal keinen unmittelbaren Nutzen sieht.
 
 ---
 
@@ -145,14 +157,12 @@ Wer von euch hat etwas schwieriges mühsam gelernt und erst viel später den Nut
 * Grundidee: Test First! 
 * Also: Wir schreiben automatisch Tests **BEVOR** wir den Produktions-Code schreiben 
 
-
 <!-- 
 * Buchcover ist die erste fundierte Veröffentlichung
 * zum Thema TDD von ca 2002 
 * vorher schon im Rahmen des "Extreme Programming" vom gleichen Autor in 1999 in Kapitel 18 auf nur 4 Seiten erwähnt.
 * also vor 22 Jahren,
-* der Autor selbst und viele anderen
-* haben das Konzept über die Jahre  in vielen Aspekte ergänzt
+* der Autor selbst und viele anderen haben das Konzept über die Jahre  in vielen Aspekte ergänzt
 * Grundkonzept ist aber nach wie vor gültige
 
 # Autor konnte aber die vielen Missverständnisse beim Lernen des Konzepts nicht vorhersehen.
@@ -167,6 +177,11 @@ Wer von euch hat etwas schwieriges mühsam gelernt und erst viel später den Nut
 ---
 # Warum ist TDD so (scheinbar) schwierig zu lernen?
 -> kein schnelles Feedback!
+und
+* das Thema hat viele Aspekte.
+* Nimm dir Zeit dich dem Thema anzunähern
+* Rückschläge sind zu erwarten
+* Der Weg ist das Ziel
 <!--
 # kein schnelles Feedback, wenn es gut funktioniert
 # auch kein schnelles Feedback, wenn bei TDD Fehler gemacht werden
@@ -210,7 +225,8 @@ offensichtlich Stabilität und Qualität
 
 ![bg left:60% 80%](assets/images/DALL·ETDD_vs_unitTests.webp)
 # TDD ist NICHT Unittests !
-... sondern eher das Gegenteil, wenn man nach der Definition von Unittests in Wikipedia geht !
+... sondern eher das Gegenteil, wenn man nach der Definition von "Unittests" in Wikipedia geht !
+
 <!--
 
 - Unit-Tests das Testen der 'Unit' in Isolation mit Mocks bevorzugen,
@@ -228,6 +244,10 @@ offensichtlich Stabilität und Qualität
 * TDD ist **NICHT** Testklasse:Implemetationklasse 1:1 -> führt zu viele Problemen !
 * TDD ist **NICHT GLEICH** Unittests !
 * Junit ist **nur** ein gutes Werkzeug und definiert nicht die Methode mit der man vorgeht!
+
+---
+# "JUnit" als Tool auch für TDD hilfreich
+... "Unittest" als Begriff wird  oft auch abseits der Definition von Wikipedia verwendet, z.B: Unit-Test-tool "xJunit", z.B. "JUnit"
 
 ---
 
