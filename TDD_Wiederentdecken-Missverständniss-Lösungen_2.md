@@ -55,7 +55,7 @@ style: |
     text-align: left;
     color: #31A802
   }
- 
+
 backgroundImage: url(assets/images/BRANDAD_Logo.png)
 #backgroundImage: url(assets/mermaid/mermaid-test-1.svg)
 
@@ -364,22 +364,37 @@ Starker Einfluss der gewählten __Softwarearchitektur__ (Clean , Hexagonal, Zwie
 -> oder wenn, dann möglichst rückwärtskompatibel 
 
 -->
+
 ---
-<!-- _class: lead -->
-# Korrektur des Irrtum 1 mit MOCKS (2): 
-* prüfe wo du Mocks oder andere Test Doubles verwendetst
-* Mocks für externen Abhängigkeiten (externe REST services, Datenbank ..) OK
+![bg left:50% 80%](assets/images/Mocks_ambiguity.webp)
+# Irrtum 2: Verwende Mocks wo es nur geht
+prüfe wo du Mocks oder andere Test Doubles verwendetst
 * Mocks für Klassen in DEINEM Code -> ganz schlecht
+* viele Mocks -> enger Kopplung von Test zu Code -> deutlich erschwertes Refactoring
+<!--
+# Wenn du viele Mocks in deinem Code für deine eigenen Codeteile verwendest, fürht das zwangsläufig zu einer
+engen Kopplung der Tests an deine IMplmentierung die Refactoring exterm erschwert und 
+
+# du musst deine Tests dauern ändern
+-->
+
+
+---
+![bg right:50% 80%](assets/images/Mocks_ambiguity.webp)
+# Irrtum 2: Verwende Mocks wo es nur geht
+im Gegenteil: Mocks nur sehr sparsam verwenden
+* Mocks nur für **externe** Dependencies (externe Services, Filesystem)
+* In Frontend-Test : Mock für Backend ok
 
 <!--
-Verwendung von Test Doubles , Mocks , Spys
-sind guter Indikator ob du auf dem richtigen Web bist 
+
+Verwendung von Test Doubles , Mocks , Spys sind guter Indikator ob du auf dem richtigen Web bist 
 -->
 ---
 
 ![bg right:50% 80%](assets/images/SpagettiCode.webp)
-# Irrtum 2: TDD ist unflexibel
-* stimmt, wenn  zu viel Mocks  und  Tests  an die Implementierung statt an die Anforderungen gekoppelt sind
+# Irrtum 3: TDD ist unflexibel
+* stimmt, wenn zu viel Mocks und Tests an die Implementierung statt an die Anforderungen gekoppelt sind
 * stimmt, wenn du den "refaktorieren" - Teil des TDD nicht wirklich ernst nimmst
 <!--
  Zu Wenig Refactoring ist ein Anzeichen dafür, dass effektiv ein Design im Voraus vorliegt, das du jetzt unter Test bekommen möchtest.
@@ -387,13 +402,13 @@ sind guter Indikator ob du auf dem richtigen Web bist
 * denn in der __grünen__ Phase solltest du alles tun, was du kannst, um den Algorithmus zu finden, den du benötigst, um den Test zu bestehen. 
 Du kannst Code von Stack Overflow kopieren, das ist absolut in Ordnung in der grünen Phase. 
 
-* Du kannst ChatGPT bitten, dir zu sagen, wie du den Code schreiben sollst, und ihn einfügen, das ist in der grünen Phase absolut in Ordnung. 
+  * Du kannst ChatGPT bitten, dir zu sagen, wie du den Code schreiben sollst, und ihn einfügen, das ist in der grünen Phase absolut in Ordnung. 
 
-* Du wirst den Code gut machen in der __blauen__ Phase, sobald er den Test besteht, denn jetzt weißt du genau, welchen Code du brauchst, um den Test zu bestehen, und du kannst dann refaktorieren, um qualitativ hochwertigen Code zu schreiben.
+* Code / CodeStruktur verbessern in der __blauen__ Phase, sobald er den Test besteht, denn jetzt weißt du genau, welchen Code du brauchst, um den Test zu bestehen, und du kannst dann refaktorieren, um qualitativ hochwertigen Code zu schreiben.
 -->
 ---
 ![bg left:40% 80%](assets/images/Dali_time.webp)
-# Irrtum 3: TDD kostet viel Zeit und verlangsamt die Entwicklung
+# Irrtum 4: TDD kostet viel Zeit und verlangsamt die Entwicklung
 * ja, wenn du es falsch angehst (siehe Irrtum 1 und 2)
 * vielleicht ja:  Projekt klein, kurzfristig oder nur  Proof Of Conzept 
 * vielleicht ja: Legacy Projekt ohne gute Testabdeckung
@@ -402,13 +417,27 @@ Du kannst Code von Stack Overflow kopieren, das ist absolut in Ordnung in der gr
 TDD als Teil des Softwareentwicklungsprozesses passt nicht immer
 
 Bewusste Entscheidung nötig
+
+__Legacy__ Projekte ohne gute Testabdeckung: TDD nachträglich praktisch unmöglich. 
+
+Es sei denn man schafft es für neue Features neuen Code zu schreiben der sehr weitgehend vom Legacy Projekte separiert ist. 
+
+Heißt: API für Legacy Code muss definiert und umgesetzt werden an dem man den neuen Code "Andocken" kann. 
+
+Das kann eine getrennte deploybare neue Codestructur sein (ich vermeide den Begriff Microservice)
+
+Das kann aber auch ein mit dem Legacy Code gemeinsam deploybares Modul sein. 
+
+Dann aber: Stelle sicher, dass alle Dependencys die API nicht verletzten (ArchUnit)
+
+Sonst wird der neue Code ganz schnell wieder im Spagettibrei des Legacy Codes vergammeln.
 -->
 
 ---
 ![bg right:40% 80%](assets/images/Dali_time.webp)
-# Irrtum 3: TDD kostet viel Zeit und verlangsamt die Entwicklung
+# Irrtum 4: TDD kostet viel Zeit und verlangsamt die Entwicklung
 * nein, wenn du das Konzept wirklich ausnutzt
-* nein wenn dein Projekt groß und langfristig ist
+* nein, wenn dein Projekt groß und langfristig ist
 
 
 <!--
@@ -417,39 +446,33 @@ weitere __negativ__ faktoren:
 ## geänderte Anforderungen->geänderte Test, aber die Test müsse leicht verständlich sein, was sie oft nicht sind
 
  __positiv__
- 
+
 ## du sparst viel zeit beim suchen und fixen von Bugs, weil TDD-Software viel stabiler ist.
 
 ## du sparst zeit beim Refactoring weil deine tests nicht dauernt brechen
+
+## TDD zahlt sich vor allem längerfristig aus, je größer das Projekt desto mehr
 -->
 
 ---
 ![bg right:50% 80%](assets/images/DerWegIstDasZiel.webp)
-# Irrtum 4: TDD ist nur für erfahrene Entwickler
+# Irrtum 5: TDD ist nur für erfahrene Entwickler
 * nein: nur  Denkweise und Lösungsstrategie ist anders, braucht Übung
 * unabhängig von Vorerfahrung
 * verstehe TDD eher als einen **langen UND sehr interessanter** Weg, 
 * verstehe TDD **nicht als Ziel** an dem man schnell ankommen will
 
 <!--
-There's a notion that TDD is suitable only for experienced developers and that beginners or less experienced team members will struggle with the methodology. While TDD does require a certain level of discipline and understanding of testing principles, it can also be an invaluable learning tool for less experienced developers. TDD encourages developers to think critically about their code's design and behavior, which can accelerate the learning process and improve overall development skills.
+Angeblich wäre TDD nur für erfahrene Entwickler: Stimmt nicht, ich hab TDD und Java damals gleichzeitig gelernt
 
-Understanding and addressing these misconceptions is crucial for teams considering adopting TDD. By clarifying these misunderstandings, developers can more effectively harness TDD's benefits to improve software quality, reliability, and maintainability.
+TDD kann eben auch für weniger Erfahrene eine Hilfe beim Lernen sein, weil es anregt kritisch über den eigenen Code nachzudenken. 
 
-This video discusses the speaker's experiences and insights into the practice and challenges of Test-Driven Development (TDD), exploring both its potential benefits and its common pitfalls. The speaker, who has been practicing TDD since around 2004, reflects on how TDD practice has evolved over time, the resistance to it, and how to effectively implement it to avoid common mistakes.
+TDD bietet eben große Sicherheit beim Ändern von Code, was wiederum das Lernen beschleunigen kann.
+
+TDD erfordert aber auch Disziplin und eine Verständniss der Testprinzipien
+
 -->
 
----
-![bg left:50% 80%](assets/images/Mocks_ambiguity.webp)
-# Irrtum 5: Verwende Mocks wo es nur geht
-* im Gegenteil: Mocks nur sehr sparsam verwenden
-* Mocks nur für **externe** Dependencies (externe Services, Filesystem)
-
-<!--
-# Wenn du viele Mocks in deinem Code für deine eigenen Codeteile verwendest, fürht das zwangsläufig zu einer
-engen Kopplung der Tests an deine IMplmentierung die Refactoring exterm erschwert und 
-# du musst deine Tests dauern ändern
--->
 
 ---
 ![bg right:50% 80%](assets/images/NamenSindNichtNurSchallUndRauch.webp)
@@ -459,18 +482,26 @@ engen Kopplung der Tests an deine IMplmentierung die Refactoring exterm erschwer
 
 <!--
 
+Beispiel folgt nach Irrtum 7
+
+Solange sich die Anforderungen nicht ändern (sondern nur neue hinzu kommen) ändern sich auch die Tests nicht
+
+ABER: wenn bestehende Anforderunge geändert werden MÜSSEN sich die Tests ändern-> je leichter lesbar die sind , desto leichter lassen sie sich ändern
+
 -->
 
 ---
 ![bg left:50% 80%](assets/images/ProductOwerNotWritingTestSpec.webp)
 # Irrtum 7: BDD ist toll: der PO schreibt jetzt meine Tests
 * BDD = "Behaviour Driven Development" 
-* das wird nicht passieren
+* das wird nicht passieren, PO schreibt keine Tests
 * BDD - tools wie Gherkin oder JBehave führen zu nichts als Overhead für den Entwickler
 * besser : JGiven: Entwickler schreibt, PO liest
 <!--
-# BDD : es geht nicht um Tools sonder ums Konzept
+# BDD : es geht nicht um Tools sondern ums Konzept
 # BDD: besserer Name für TDD ? 
+
+Beispiel folgt gleich
 -->
 ---
 ![bg right:50% 80%](assets/images/SchnellesVerstehen.webp)
@@ -570,6 +601,8 @@ Test Class: jgiven.BlogTest
 
 <!-- jetzt hast du keine Ahnung, wie der getestete Code tatsächlich funktioniert. Du weißt nicht einmal, ob dies eine Webanwendung ist.
 
+ABER: du verstehst sofort um welche fachlichen Anforderung es hier geht, und das ist viel hilfreicher.
+
 Nur um klar zu sein, dies sind dieselben Tests.-->
 ---
 # Quellen: 
@@ -580,8 +613,19 @@ Nur um klar zu sein, dies sind dieselben Tests.-->
 
 ![bg right:40% 80%](assets/images/DEV_Logohoch.png)
 
+# BRANDAD Development GmbH
+
 * Wir suchen Softwareentwickler, Scrummaster, Product Owner, UI/UX-ExpertInnen
-* Angular und Spring-boot
-* [brandad.dev](https://brandad.dev)
+* viel Angular und Spring-boot, aber auch anderen Frameworks, offen für neues
+* [https://brandad.dev](https://brandad.dev)
 
 ---
+
+
+![bg right:40% 80%](assets/images/brandad_dev.png)
+
+# BRANDAD Development GmbH
+
+* Wir suchen Softwareentwickler, Scrummaster, Product Owner, UI/UX-ExpertInnen
+* viel Angular und Spring-boot, aber auch anderen Frameworks, offen für neues
+* [https://brandad.dev](https://brandad.dev)
