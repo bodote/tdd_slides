@@ -16,7 +16,7 @@ footer: ' 🔗bodote.github.io'
 
 ---
 ![bg right:50% 100%](assets/images/tdd-cycle.png)
-# **Warum Test Driven Development (TDD) ?**
+# **Test-driven Development (TDD): Warum ist das eine sehr gute Idee ?**
 
 
 <!-- 
@@ -114,9 +114,6 @@ theoretische Idee , ein mentales Modell braucht um sich der Sache praktisch anzu
 <!-- 
 # Radfahren
 # Singen oder ein Instrument 
-# (schlechte) Software schreiben die zunächst trotzdem funktioniert
-## schlechte Softwarearchitektur, die zunächst nicht weiter auffällt
-## schlechte automatische Testabdeckung, die zunächst nicht weiter auffällt.
 # Computerspiele sind extrem nach dem Muster gestrickt möglichst schneller Feedback eines Erfolgserlebnisses zu vermitteln, damit der Spieler dabei bleibt.
  -->
 ---
@@ -138,7 +135,6 @@ Wer von euch hat etwas schwieriges mühsam gelernt und erst viel später den Nut
 # DISKUSSION, 
 # NOTFALLS Beispiele:
 # Latein lernen und Jahrs später froh sein, dass man diese Studienvorraussetzung schon hat.
-# Singenübungen für größeren Stimmumfang 
 # langfristig gut wartbare und erweiterbar Software schreiben 
 ## gute automatische Testabdeckung und sich Monate später nicht ängstigen müssen, dass jede kleine Änderung ein bestehendes Feature kaputt macht. 
 -->
@@ -230,9 +226,10 @@ offensichtlich Stabilität und Qualität
 <!--
 
 - Unit-Tests das Testen der 'Unit' in Isolation mit Mocks bevorzugen,
-- TDD Programmierer Tests im Gegensatz Nicht-Verwenden von Mocks, 
-- sondern versteht die 'Einheit' als möglicherweise größere Entität als eine Klasse in Java. 
-- Ein TDD-Programmierer testet ein ganzes Modul oder sogar einen REST-Service mit Controller UND Service UND Repository.
+- vs TDD Programmierer Tests Vermeiden von Mocks, nur externe Dependencies 
+- sondern versteht die __Einheit__ als möglicherweise größere Entität als eine Klasse in Java. 
+- Ein TDD-Programmierer testet ein ganzes Modul aus vielen Klassen oder sogar einen REST-Service mit Controller UND Service UND Repository. 
+- nur die Datenbank wird vieleicht weggemockt
 - verwirrender Weise ist trotzdem Junit5 ein gute Werkzeug auch für TDD 
 
 -->
@@ -280,6 +277,7 @@ backgroundPosition: top 20px right 20px
 <!--
 - NEIN: legacy code mit schlechter Test-Code Abdeckung.
 - NEIN: Frontend : Layout und Texte nicht mit TDD; 
+- NEIN: kurzfristige , kleine Projekte, großer Zeitdruck (->im START_UP)
 - JA : Frontend - User interaction : sehr gut mit TDD
 -->
 
@@ -294,7 +292,6 @@ wirklich ? Ja, siehe auf [bodote.github.io: TDD Blog Teil 2: Architektur](https:
 # Beweise, Beweise !
 
 <!-- 
-einzige zu dem Thema.
 
 -  Bücher über TDD selbst, werden immer wieder neu herausgebracht. Kent Becks Buch ist also bei weitem nicht das Bücher über Softwarearchitektur z.B.
 
@@ -360,8 +357,22 @@ einzige zu dem Thema.
 
 
 ---
+
 ![bg right:40% 80%](assets/images/DEV_Logohoch.png)
-# Übrigens: 
+
+# BRANDAD Development GmbH
+
 * Wir suchen Softwareentwickler, Scrummaster, Product Owner, UI/UX-ExpertInnen
-* Angular und Spring-boot
-* [brandad.dev](https://brandad.dev)
+* viel Angular und Spring-boot, aber auch anderen Frameworks, offen für neues
+* [https://brandad.dev](https://brandad.dev)
+
+---
+
+
+![bg right:40% 80%](assets/images/brandad_dev.png)
+
+# BRANDAD Development GmbH
+
+* Wir suchen Softwareentwickler, Scrummaster, Product Owner, UI/UX-ExpertInnen
+* viel Angular und Spring-boot, aber auch anderen Frameworks, offen für neues
+* [https://brandad.dev](https://brandad.dev)

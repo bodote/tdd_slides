@@ -66,13 +66,12 @@ footer: '🔗brandad.dev  🔗bodote.github.io'
 # source: Jan Cooper - NDC Porto 2023 "TDD revisited"
 
 ---
-# TDD (Wieder-)Entdecken
+# An Test-driven Development gescheitert? Hier erfährst du, warum.
 ## Fallen und Missverständnisse vermeiden
 
 <!--
 * Herzlich Willkommen zum Vortag TDD
 
-Test-driven Development (TDD): Warum ist das eine sehr gute Idee ?
 
 * Schön dass Ihr da seid! 
 # An Test-driven Development gescheitert? Hier erfährst du, warum.
@@ -231,7 +230,7 @@ dass es nicht so einfach ist , wie es aussieht
 # Irrtum 1: Softwareentwickler schreiben Unittest 
 ## TDD hat absolut nichts mit "Unit-Tests" zu tun. 
 
-* [Zitat](https://en.wikipedia.org/wiki/Software_testing#Unit_testing) : "Unit testing refers to verifying the behavior of a **relatively small portion** of the code, a unit, in **isolation from the rest of the codebase**. A unit is often a **function**, module, **method** or **class**. [21] To isolate the unit, a test substitutes dependences with test doubles."
+* [Wikipedia](https://en.wikipedia.org/wiki/Software_testing#Unit_testing): "Unit testing refers to verifying the behavior of a **relatively small portion** of the code, a unit, in **isolation from the rest of the codebase**. A unit is often a **function**, module, **method** or **class**. [21] To isolate the unit, a test substitutes dependences with test doubles."
 
 * Verwirrung um den Begriff "Unit" im Zusammenhang mit "Test": "JUnit5" als **_Tool_** ist prima!
 
@@ -240,13 +239,13 @@ dass es nicht so einfach ist , wie es aussieht
 
 1. dass das  Problem soll isoliert werden soll. 
 2. eine UNIT sei eine Funktion , Modul oder Klasse
-2. Methoden-Stubs, Mock-Objekte, Fakes und Test-Harnesses können verwendet werden, um das Testen eines Moduls in Isolation zu unterstützen. 
-3. das man die UNIT isoliert testen soll, 
+3. Methoden-Stubs, Mock-Objekte, Fakes und Test-Harnesses können verwendet werden, um das Testen eines Moduls in Isolation zu unterstützen. 
+4. das man die UNIT isoliert testen soll, 
 
-Ich sag nicht, dass Wikipedia falsch ist, ich sag nur dass wenn man TDD machen will darf man die Definition von UNIT nicht mit der verwechseln die in Wikipedia steht. 
+** Ich sag nicht, dass Wikipedia falsch ist, ich sag nur dass wenn man TDD machen will darf man die Definition von UNIT nicht mit der verwechseln die in Wikipedia steht. 
 
-von den 3 Aussagen hilft für TDD nur einer so halb weiter, nämlich: 
-* Jeder **Testfall** sollte unabhängig VON ANDEREN TESTS sein,
+** von den 3 Aussagen hilft für TDD nur einer so halb weiter, nämlich: 
+*** Jeder **Testfall** sollte unabhängig VON ANDEREN TESTS sein,
 
  -->
 
@@ -282,7 +281,7 @@ von den 3 Aussagen hilft für TDD nur einer so halb weiter, nämlich:
 * "Unit" im Sinne von Kent Beck (Autor von TDD): GUT!
 * J-"Unit" als Tool: sehr hilfreich, (ebenso: Jasmin, Jest)
 * "Unit" als einzelne Klasse und "wegmocken" aller Dependecies : **SCHLECHT**!
-* Angulars automatische *.spec.ts für jedes *.ts : **SCHLECHT** ! 
+* Angulars automatische `*.spec.ts` für jedes `*.ts` : **SCHLECHT** ! 
 
 <!-- 
 WEIL: nächste Folie
@@ -608,6 +607,10 @@ Nur um klar zu sein, dies sind dieselben Tests.-->
 # Quellen: 
 * https://bodote.github.io/blog/TDD-Video-Tips
 * praktisch alle Fehler schon selbst begangen, also eigene Erfahrung
+
+---
+
+# Danke für eure Aufmerksamkeit!
 
 ---
 
