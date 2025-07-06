@@ -12,7 +12,7 @@ style: |
 backgroundImage: url(assets/images/BRANDAD_Logo.png)
 backgroundSize: 150px 
 backgroundPosition: top 20px right 20px 
-footer: ' 🔗bodote.github.io'
+footer: ' 🔗https://bodote.github.io'
 
 transition: drop
 ---
@@ -333,7 +333,7 @@ offensichtlich Stabilität und Qualität
 ... ganz einfach (wirklich ?)
 
 ---
-<!-- footer: '🔗substack.com/home/post/p-139601698'  
+<!-- footer: '🔗https://substack.com/home/post/p-139601698'  
 backgroundImage: url(assets/images/Cannon-TDD.png) 
 backgroundSize: 103% 103%
 backgroundPosition: top 0px right 0px-->
@@ -345,7 +345,7 @@ backgroundPosition: top 0px right 0px-->
 -->
 ---
 
-<!--  footer: '🔗bodote.github.io' 
+<!--  footer: '🔗https://bodote.github.io' 
 backgroundImage: url(assets/images/BRANDAD_Logo.png)
 backgroundSize: 150px 
 backgroundPosition: top 20px right 20px
@@ -451,7 +451,7 @@ backgroundPosition: top 0px right 0px-->
 
 
 ---
-<!--  footer: '🔗https://www.menti.com/al9bcx57niwx' 
+<!--  footer: '🔗https://bodote.github.io' 
 backgroundImage: url(assets/images/BRANDAD_Logo.png)
 backgroundSize: 150px 
 backgroundPosition: top 20px right 20px
@@ -501,7 +501,7 @@ https://youtu.be/LCEmiRjPEtQ?si=QaQxjyuhEDy0rlRW&t=1329):
 ---
 
 # Danke für eure Aufmerksamkeit!
-<!--  footer: '🔗bodote.github.io' 
+<!--  footer: '🔗https://bodote.github.io' 
 backgroundImage: url(assets/images/BRANDAD_Logo.png)
 backgroundSize: 150px 
 backgroundPosition: top 20px right 20px

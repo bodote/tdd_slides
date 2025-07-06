@@ -520,10 +520,24 @@ ABER: wenn bestehende Anforderunge geändert werden MÜSSEN sich die Tests ände
 Beispiel folgt gleich
 -->
 ---
+
+<!--  footer: '🔗https://bodote.github.io' 
+backgroundImage: url(assets/images/7Bruecken.png)
+backgroundSize: 100% 100% 
+backgroundPosition: top 0px right 0px
+-->
+
+---
+
 ![bg right:50% 80%](assets/images/SchnellesVerstehen.webp)
 # Aus Irrtum 6 + 7 kann was gutes entstehen (1):
 * schreibe  Tests-Methoden so, dass der PO den Test lesen, verstehen und gegen seine Anforderungen und Akzeptanzkriterien abgleichen kann
 * Prima: jetzt verstehst du selber die Tests auch nach 4 Woche noch!
+<!--  footer: '🔗https://bodote.github.io' 
+backgroundImage: url(assets/images/BRANDAD_Logo.png)
+backgroundSize: 150px 
+backgroundPosition: top 20px right 20px
+-->
 
 ---
 
@@ -621,6 +635,31 @@ ABER: du verstehst sofort um welche fachlichen Anforderung es hier geht, und das
 
 Nur um klar zu sein, dies sind dieselben Tests.-->
 ---
+![bg right:60% 99%](assets/images/ai-assisted-development.webp)
+# TDD und AI-assisted coding
+
+Ist TDD in Zeiten von KI-unterstützter Sofwareentwicklung noch sinnvoll ?
+
+
+---
+
+<!-- footer: '🔗https://www.publicissapient.com/insights/guide-to-ai-assisted-software-development'  
+backgroundImage: url(assets/images/ai-assisted-development.webp) 
+backgroundSize: 103% 103%
+backgroundPosition: top 0px right 0px-->
+
+---
+
+# AI-assisted coding mit Cursor und TDD 
+Live Beispiel 
+<!--  footer: '🔗https://bodote.github.io' 
+backgroundImage: url(assets/images/BRANDAD_Logo.png)
+backgroundSize: 150px 
+backgroundPosition: top 20px right 20px
+-->
+
+---
+
 # Quellen: 
 * https://bodote.github.io/blog/TDD-Video-Tips
 * praktisch alle Fehler schon selbst begangen, also eigene Erfahrung
