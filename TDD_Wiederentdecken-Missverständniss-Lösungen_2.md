@@ -62,7 +62,7 @@ backgroundImage: url(assets/images/BRANDAD_Logo.png)
 backgroundSize: 150px 
 backgroundPosition: top 20px right 20px 
 header: 'TDD Wiederentdeckt'
-footer: '🔗brandad.dev  🔗bodote.github.io'
+footer: '🔗https://brandad.dev  🔗https://bodote.github.io'
 # source: Jan Cooper - NDC Porto 2023 "TDD revisited"
 
 ---
@@ -155,7 +155,7 @@ https://www.menti.com/al9bcx57niwx
 * "early adopter" von TDD 
 * 6 Jahre `C` Erfahrung, 10 Jahre `Java`
 * CI-Automatisierung, ein wenig `Angular`, diverse Script Sprachen, 
-* zuletzt 2 Jahre `Spring Boot` 
+* zuletzt 3 Jahre `Spring Boot` 
 <!--
 * Hobbies: Musik, Fliegen, Tanzen 
 -->
@@ -175,7 +175,7 @@ Schöne graphic für ein Buchcover oder ein Präsentationsfolie
 ---
 
 <!-- 
-footer: '🔗substack.com/home/post/p-139601698'  
+footer: '🔗https://substack.com/home/post/p-139601698'  
 backgroundImage: url(assets/images/Cannon-TDD.png) 
 backgroundSize: 103% 103%
 backgroundPosition: top 0px right 0px
@@ -195,14 +195,14 @@ backgroundPosition: top 0px right 0px
 -->
 
 ---
-<!--  footer: '🔗bodote.github.io' 
+<!--  footer: '🔗https://bodote.github.io' 
 backgroundImage: url(assets/images/BRANDAD_Logo.png)
 backgroundSize: 150px 
 backgroundPosition: top 20px right 20px
 -->
 
 ![bg right:50% 85%](assets/images/Missconceptions_TDD.webp)
-# Die Irrtümer von TDD
+# 7 Irrtümer von TDD
 
 <!--
 Es gibt viele Missverständnisse rund um TDD und man kann viel falsch machen
@@ -215,7 +215,19 @@ dass es nicht so einfach ist , wie es aussieht
 -->
 
 --- 
+![bg right:50% 67%](assets/images/7buecken.jpg)
+# .. oder "Über 7 Brücken musst du gehen, 7 dunkle Jahre überstehen"
 
+
+---
+
+<!--  footer: '🔗https://bodote.github.io' 
+backgroundImage: url(assets/images/7Bruecken.png)
+backgroundSize: 100% 100% 
+backgroundPosition: top 0px right 0px
+-->
+
+---
 
 
 ![bg right:50% 80%](assets/images/Devs_Not_Unittests.jpeg)
@@ -224,6 +236,11 @@ dass es nicht so einfach ist , wie es aussieht
 
 # Der erste und vielleicht bedeutendste Irrtum der testgetriebenen Entwicklung ist, dass Entwickler "Unit"-Tests schreiben. Nichts könnte weiter von der Wahrheit entfernt sein. 
 
+-->
+<!--  footer: '🔗https://bodote.github.io' 
+backgroundImage: url(assets/images/BRANDAD_Logo.png)
+backgroundSize: 150px 
+backgroundPosition: top 20px right 20px
 -->
 
 ---
