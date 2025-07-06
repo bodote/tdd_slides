@@ -217,7 +217,10 @@ dass es nicht so einfach ist , wie es aussieht
 --- 
 ![bg right:50% 67%](assets/images/7buecken.jpg)
 # .. oder "Über 7 Brücken musst du gehen, 7 dunkle Jahre überstehen"
-
+<audio controls>
+  <source src="assets/jingles/7bruecken_chorus.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
 
 ---
 
@@ -528,6 +531,20 @@ backgroundPosition: top 0px right 0px
 -->
 
 ---
+# play audio file
+
+<audio controls>
+  <source src="assets/jingles/7bruecken_chorus.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<!--  footer: '🔗https://bodote.github.io' 
+backgroundImage: url(assets/images/BRANDAD_Logo.png)
+backgroundSize: 150px 
+backgroundPosition: top 20px right 20px
+-->
+---
+
 
 ![bg right:50% 80%](assets/images/SchnellesVerstehen.webp)
 # Aus Irrtum 6 + 7 kann was gutes entstehen (1):
