@@ -70,14 +70,21 @@ footer: '🔗https://brandad.dev  🔗https://bodote.github.io'
 ## Fallen und Missverständnisse vermeiden
 
 <!--
-* Herzlich Willkommen zum Vortag TDD
+ Herzlich Willkommen zum Vortag TDD
 
 
-* Schön dass Ihr da seid! 
-# An Test-driven Development gescheitert? Hier erfährst du, warum.
+ Schön dass Ihr da seid! 
+ An Test-driven Development gescheitert? Hier erfährst du, warum.
 
+In Teil zwei widmen wir uns schwerpunktmäßig einem kuriosen Phänomen: Immer wieder hören und lesen wir in Fachbeiträgen oder auf Konferenzen von TDD, 
 
-In Teil zwei widmen wir uns schwerpunktmäßig einem kuriosen Phänomen: Immer wieder hören und lesen wir in Fachbeiträgen oder auf Konferenzen von TDD, aber kaum jemand kennt Entwickelnde, die wirklich konsequent „TDD machen“. Warum ist das so? Warum ist TDD so schwer zu lernen, welche Missverständnisse und Fallen führen uns in die Irre und wie kannst du es doch schaffen, Projekte mit TDD zum Erfolg zu führen? Wir versuchen herauszufinden, wie du TDD in deinen Projekten implementierst (oder vermeidest) und ob TDD überhaupt noch sinnvoll ist, wenn die KI sowieso alles für dich programmiert und testet – dabei klären wir alle Fragen, die du zum Thema mitbringst. Let's discuss!
+aber kaum jemand kennt Entwickelnde, die wirklich konsequent „TDD machen“. Warum ist das so? 
+
+Warum ist TDD so schwer zu lernen, welche Missverständnisse und Fallen führen uns in die Irre und wie kannst du es doch schaffen, Projekte mit TDD zum Erfolg zu führen? 
+
+Wir versuchen herauszufinden, wie du TDD in deinen Projekten implementierst (oder vermeidest) 
+
+und ob TDD überhaupt noch sinnvoll ist, wenn die KI sowieso alles für dich programmiert und testet – dabei klären wir alle Fragen, die du zum Thema mitbringst. Let's discuss!
 
 Teil 2 (16:30 Uhr – 18:00 Uhr): Test-Driven Development (TDD): Du bist an TDD gescheitert? Hier erfährst du warum. Welche Fallen es bei TDD zu vermeiden gilt
 Warum „Test-First“-Prinzip von TDD  besser ist als „Test Last“ haben wir im vorherigen Vortrag geklärt. Jetzt geht es um die Fragen was man bei TDD alles falsch machen kann und wie man das vermeidet – und, ob TDD in Zeiten von KI überhaupt noch relevant ist.
@@ -87,11 +94,13 @@ Warum „Test-First“-Prinzip von TDD  besser ist als „Test Last“ haben wir
 # Warum bis **du** hier ?
 
 <!--
-* kann schon früher starten bis die Nachzügler kommen
+kann schon früher starten bis die Nachzügler kommen
 
-* Stimmen aus dem Publikum, jeweils 1-2 Sätze
-* was erwartest du ?
-* Warum ausgerechnet in einem TDD - Vortrag ?
+Stimmen aus dem Publikum, jeweils 1-2 Sätze
+
+was erwartest du ?
+
+Warum ausgerechnet in einem TDD - Vortrag ?
 -->
 
 ---
@@ -104,15 +113,20 @@ Warum „Test-First“-Prinzip von TDD  besser ist als „Test Last“ haben wir
 * keine Pläne noch jahrelang in einem Legacy - Projekt ohne Testabdeckung zu arbeiten
 
 <!--
-# Warum bin ICH hier und was biete ich hier an  ? 
+Warum bin ICH hier und was biete ich hier an  ? 
 
-## Voraussetzung: Verständnis von TDD als Prozess, bei dem Tests vor dem Code geschrieben werden.
+Voraussetzung: Verständnis von TDD als Prozess, bei dem Tests vor dem Code geschrieben werden.
+
 Also würde ich erwarten, dass ihr zumindest versteht, dass TDD ein Prozess ist, bei dem wir Tests schreiben, bevor wir den Code schreiben. 
 
-## Zyklus von Rot zu Grün und Refactoring: Fehlschlagende Tests schreiben und dann passieren lassen.
+Zyklus von Rot zu Grün und Refactoring: Fehlschlagende Tests schreiben und dann passieren lassen.
+
 Zyklus von Rot zu Grün der Test und dann Refactoring: 
+
   * einen fehlschlagenden Test schreiben, 
+
   * dann diesen Test bestehen lassen. 
+
   * Refactoring durchfürhen, um die Qualität unseres Codes zu verbessern. 
 -->
 
@@ -120,24 +134,12 @@ Zyklus von Rot zu Grün der Test und dann Refactoring:
 
 # Was euch erwartet
 
-* theoretischer Vortrag 
+* hauptsächlich theoretischer Vortrag 
 * nur ein Codebeispiel
+* kleiner Einblick in KI-gestütztes TDD -Entwicklung
 
 <!--
-Der Vortrag ist theoriebasiert, behandelt die korrekte Durchführung von TDD und ist nicht demo-lastig.
 
-Es gibt auch nur ein einziges Code Beispiel
- 
- Ich bin auch kein Experte
-  * ich hatte nur das Glück, vor über 20 auf die Buch über XP und TDD von Kent Beck zu stolpern 
-  * und bekam dann auch die Gelegenheit rel ungestört für 2 Jahre meine ersten Erfahrungen mit Java und TDD zu machen, damals .
-  * und hatte Gelegentheit die letzten 2 Jahre an 2 Greenfield Java Projekte mit Spring Boot und TDD zu arbeiten.
-
-aber ich bin wirklich nicht klüger als ihr? ich habe halt ein paar Sachen ausprobiert die nicht so gut funktioniert haben und ein paar die ganz gut funktioniert haben.
-
-## gut möglich dass ich auch nur in einem  locales Optimum bin 
-
-## vom Tretroller zum Fahrrad
 
 -->
 
@@ -146,7 +148,7 @@ aber ich bin wirklich nicht klüger als ihr? ich habe halt ein paar Sachen auspr
 ![bg right:50% 90%](assets/images/mentimeter_qr_code_1.png)
 # Wie viel TDD - Praxis hast du ?
 
-https://www.menti.com/al9bcx57niwx
+[Mentimeter](https://www.mentimeter.com/app/presentation/alhyyrr74bsywk5qzdr4eoki42pem5nz/edit?question=wfsznf3agy6m)
 
 ---
 ![bg left:50% 70%](assets/images/Bodo_kofferPortät_ausschnitt.jpg)
@@ -233,12 +235,11 @@ backgroundPosition: top 0px right 0px
 
 ---
 
-
 ![bg right:50% 80%](assets/images/Devs_Not_Unittests.jpeg)
 # Irrtum 1: Softwareentwickler schreiben Unittest 
 <!--  TDD ist nicht gleichzusetzen mit Unit-Tests.
 
-# Der erste und vielleicht bedeutendste Irrtum der testgetriebenen Entwicklung ist, dass Entwickler "Unit"-Tests schreiben. Nichts könnte weiter von der Wahrheit entfernt sein. 
+Der erste und vielleicht bedeutendste Irrtum der testgetriebenen Entwicklung ist, dass Entwickler "Unit"-Tests schreiben. Nichts könnte weiter von der Wahrheit entfernt sein. 
 
 -->
 <!--  footer: '🔗https://bodote.github.io' 
@@ -249,24 +250,28 @@ backgroundPosition: top 20px right 20px
 
 ---
 # Irrtum 1: Softwareentwickler schreiben Unittest 
-## TDD hat absolut nichts mit "Unit-Tests" zu tun. 
+## Falsches Verständnis von "Unit" . 
 
-* [Wikipedia](https://en.wikipedia.org/wiki/Software_testing#Unit_testing): "Unit testing refers to verifying the behavior of a **relatively small portion** of the code, a unit, in **isolation from the rest of the codebase**. A unit is often a **function**, module, **method** or **class**. [21] To isolate the unit, a test substitutes dependences with test doubles."
+* **alte** Wikipedia definition: "Unit testing refers to verifying the behavior of a **relatively small portion** of the code, a unit, in **isolation from the rest of the codebase**. A unit is often a **function**, module, **method** or **class**. [21] To isolate the unit, a test substitutes dependences with test doubles."
 
-* Verwirrung um den Begriff "Unit" im Zusammenhang mit "Test": "JUnit5" als **_Tool_** ist prima!
+* [Wikipedia neu:](https://en.wikipedia.org/wiki/Software_testing#Unit_testing) Unit testing, a.k.a. component or module testing, is a form of software testing by which isolated source code is tested to validate expected behavior.
 
 <!--
-# Wikipedia sagt 
+jedenfalls die "Unittest", die   Wikipedia beschreibt 
 
-1. dass das  Problem soll isoliert werden soll. 
-2. eine UNIT sei eine Funktion , Modul oder Klasse
-3. Methoden-Stubs, Mock-Objekte, Fakes und Test-Harnesses können verwendet werden, um das Testen eines Moduls in Isolation zu unterstützen. 
-4. das man die UNIT isoliert testen soll, 
+1. dass das  Problem soll isoliert werden soll. OK
 
-** Ich sag nicht, dass Wikipedia falsch ist, ich sag nur dass wenn man TDD machen will darf man die Definition von UNIT nicht mit der verwechseln die in Wikipedia steht. 
+2. eine UNIT sei eine Funktion , Modul oder Klasse (2 von 3 falsch)
 
-** von den 3 Aussagen hilft für TDD nur einer so halb weiter, nämlich: 
-*** Jeder **Testfall** sollte unabhängig VON ANDEREN TESTS sein,
+3. Methoden-Stubs, Mock-Objekte, Fakes und Test-Harnesses können verwendet werden, um das Testen eines Moduls in Isolation zu unterstützen. VORSICHT FALLE
+
+4. das man die UNIT isoliert testen soll, OK
+
+Zum Lernen METHODE = UNIT ok, aber komme so schnell wie möglich davon wg. zu viel größeren UNITs
+
+von den 4 Aussagen hilft für TDD nur die letzte so halb weiter, nämlich: 
+ 
+Jeder Testfall sollte UNABHÄNGIG von anderen sein,
 
  -->
 
@@ -291,8 +296,13 @@ backgroundPosition: top 20px right 20px
 * **Unit** = Java- oder TypeScript - **Klasse** : großes **Missverständnis** !
 <!--
 
-* Unit als Funktion oder Klasse ist schlicht falsch, wenn wir TDD machen wollen ! 
-* sondern ein größere MODUL mit einer stabile API
+Unit als Funktion oder Klasse ist schlicht FALSCH, wenn wir TDD machen wollen ! 
+
+ABER OK, wenn du grad die Grundbegriffe lernst
+
+Vorsicht SACKGASSE!
+
+sondern ein größere MODUL mit einer stabile API
 
 -->
 ---
@@ -477,10 +487,11 @@ weitere __negativ__ faktoren:
 ---
 ![bg right:50% 80%](assets/images/DerWegIstDasZiel.webp)
 # Irrtum 5: TDD ist nur für erfahrene Entwickler
-* nein: nur  Denkweise und Lösungsstrategie ist anders, braucht Übung
+* nein: andere Denkweise🧐 und Lösungsstrategie
 * unabhängig von Vorerfahrung
-* verstehe TDD eher als einen **langen UND sehr interessanter** Weg, 
-* verstehe TDD **nicht als Ziel** an dem man schnell ankommen will
+* TDD **nicht ein Ziel** an dem man schnell ankommen will
+* TDD ist ein **langer UND sehr interessanter** Weg 
+
 
 <!--
 Angeblich wäre TDD nur für erfahrene Entwickler: Stimmt nicht, ich hab TDD und Java damals gleichzeitig gelernt
@@ -492,6 +503,14 @@ TDD bietet eben große Sicherheit beim Ändern von Code, was wiederum das Lernen
 TDD erfordert aber auch Disziplin und eine Verständniss der Testprinzipien
 
 -->
+
+---
+![bg left:40% 80%](assets/images/DerWegIstDasZiel.webp)
+# Irrtum 5: TDD ist nur für erfahrene Entwickler
+* ⚡️ Fehler:  
+  * Anforderung -> Implementierung : FALSCH !! ⚡️
+* 😎 Statt dessen : 
+  * Anforderung -> Wie Anforderung testen ? 😎
 
 
 ---
