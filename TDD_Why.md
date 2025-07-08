@@ -29,13 +29,14 @@ Test-driven Development (TDD): Warum ist das eine sehr gute Idee ?
 * Schön dass Ihr da seid! 
 
 # Werbetext: 
-Selbst in großen Software-Projekten wird oft erst ganz am Ende getestet – warum aber halten so viele Entwickelnde fast schon dogmatisch an dieser „Test Last“-Philosophie fest? 
+Selbst in großen Software-Projekten wird oft erst ganz am Ende getestet – woher aber kommt diese „Test Last“-Philosophie und warum halten so viele Entwickler so überzeugt daran fest? 
 
-Im Vortrag gehen wir dieser Frage gemeinsam auf den Grund. Auf dem Weg zu einer Antwort klären wir außerdem, was mit Test-driven Development und Test First überhaupt gemeint ist, untersuchen den Status Quo und tragen mit einem Blick in Literatur sowie einschlägige Studien die vielen nachgewiesenen Vorteile dieser Entwicklungsmethoden zusammen. 
+In diesem zweiteiligen Vortrag gehen wir gemeinsam zuerst dieser sehr grundsätzlichen Frage  nach. Auf dem Weg zu einer Antwort klären wir außerdem, was mit Test-driven Development und Test First überhaupt gemeint ist, untersuchen den Status Quo und tragen mit einem Blick in Literatur sowie einschlägige Studien die vielen nachgewiesenen Vorteile dieser Entwicklungsmethoden zusammen. 
 
-Wir wollen Vorurteile abbauen und die wichtigsten Fragen rund um Test-driven Development beantworten.
+Wir wollen Vorurteile abbauen und die wichtigsten Fragen rund um Test-driven Development beantworten. Und wir schauen uns an, wie KI uns das Leben mit TDD vereinfachen kann.
 
-In diesem rund 45minütigen Vortrag erfährst du, wer TDD „erfunden“ hat, was dahinter steckt, welche Versprechungen TDD macht, welche bekannten Softwareprojekte und -Teams TDD verwenden und was die empirische Forschung dazu bis dato herausgefunden hat.
+Teil 1 (15:00 Uhr – 16:30 Uhr): Test-Driven Development (TDD): Warum ist das eine sehr gute Idee?
+Warum ist das „Test-First“-Prinzip von TDD besser als „Test Last“? TDD konsequent umzusetzen ist für viele schwerer als gedacht. Wir gehen dem Thema theoretisch auf den Grund.
 
 -->
 ---
@@ -47,13 +48,19 @@ In diesem rund 45minütigen Vortrag erfährst du, wer TDD „erfunden“ hat, wa
 * kann schon früher starten bis die Nachzügler kommen
 
 * Stimmen aus dem Publikum, jeweils 1-2 Sätze
+
 * was erwartest du ?
+
 * Warum ausgerechnet in einem TDD - Vortrag ?
 
 * Warum bin ICH hier und was biete ich hier an  ? 
+
 * Euch zu erklären WARUM Ihr euch näher mit dem Thema befassen sollte
+
 * ich erkläre NICHT wie TDD im Detail funktioniert (mach ein Tutorial oder les ein Buch zum Thema )
+
 * KEIN Workshop 
+
 * NICHT für Fortgeschrittenen, für die Fortgeschrittenen ist der NÄchste Vortrag in 1 Stunde
 
 -->
@@ -61,7 +68,7 @@ In diesem rund 45minütigen Vortrag erfährst du, wer TDD „erfunden“ hat, wa
 ---
 ![bg right:50% 90%](assets/images/mentimeter_qr_code_1.png)
 # Hast du TDD schon mal selbst ausprobiert?
-Umfrage: https://www.menti.com/al9bcx57niwx
+[https://www.menti.com/al9bcx57niwx](https://www.menti.com/al9bcx57niwx)
 <!-- notes:
 * https://www.mentimeter.com/app/presentation/n/alhyyrr74bsywk5qzdr4eoki42pem5nz/present?question=fry1o938t3s5
 -->
@@ -84,18 +91,21 @@ Umfrage: https://www.menti.com/al9bcx57niwx
 TDD = **Test-Driven Development**
 
 * **Test** First!
-* **Driven** erst Test dann Produktions-Code
-
-* **Tests**  automatisiert, nicht manuelle Tests
+* **Driven**: erst Test dann Produktions-Code
+* **Tests**:  automatisiert, nicht manuelle Tests
 
 <!--
-* **Test** First, also Tests schreiben **BEVOR** der Produktions-Code geschrieben wird
-* **Driven** , also der Test-Code treibt die Entwicklung des Produktions-Codes an
-* **Development** , also Softwareentwicklung, nicht nur Tests schreiben
-* **Test** , also automatisierte Tests, nicht manuelle Tests
+TEST FIRST, also Tests schreiben **BEVOR** der Produktions-Code geschrieben wird
 
-## ich könnte jetzt weitermachen und euch erklären, wie TDD funktioniert, aber das ist nicht das Ziel dieses Vortrags
-* das gibt es soo viel Tutorials, Büchern, Videos, Blogs, ...
+DRIVEN , also der Test-Code treibt die Entwicklung des Produktions-Codes an
+
+DEVELPOPMENT , also Softwareentwicklung, nicht nur Tests schreiben
+
+TESTS, also automatisierte Tests, nicht manuelle Tests
+
+Ich könnte jetzt WEITERMACHEN und euch erklären, wie TDD funktioniert, aber das ist nicht das Ziel dieses Vortrags
+
+da gibt es soo viel Tutorials, Büchern, Videos, Blogs, ...
 
 -->
 ---
@@ -103,13 +113,19 @@ TDD = **Test-Driven Development**
 
 <!-- 
 Es gibt ein Problem mit TDD:
-* TDD ist nicht so einfach zu lernen, wie es aussieht
+
+TDD ist nicht so einfach zu lernen, wie es aussieht
 
 -->
 
 ---
-![height:600px brightness:1.1 sepia:0%](assets/TDDHürde2.png)
+![height:700px brightness:1.1 sepia:0%](assets/TDDHürde2.png)
+<!-- 
+ich muss euch motivieren, euch mit dem Thema zu befassen obwohl es nicht so einfach ist, wie es aussieht
 
+ich muss Vertrauen bei euch herstellen dass es sich lohnt, sich mit dem Thema zu befassen, obwohl es nicht so einfach ist, wie es aussieht
+
+-->
 ---
 ![bg left:50% 90%](assets/images/Klettern-Sturztraining-Sturzangst.jpg)
 # Vertrauen aufbauen
@@ -127,29 +143,70 @@ ich muss Vertrauen bei euch herstellen dass es sich lohnt, sich mit dem Thema zu
 ![bg left:50% 70%](assets/images/gangs-of-four-design-patterns-book.png)
 # Warum solltet Ihr jemandem vertrauen... 
 ... der euch empfiehlt, **X**  zu lernen? 
+
+nach 32 Jahren AMAZON Verkaufsrang 3 (Objectorientiertes Softwaredesign )
 <!-- 
-* in der Geschichte der Softwareentwicklung gab es auch anderen grundlegende Werke die nach wie vor gültig sind, z.B. "Design Patterns" von 1994
-* die heute in vielen erfolgreichen Softwareprojekten und Fameworks (z.B. Spring Boot, Angular) nach wie vor verwendet werden
-* TDD gehört da aus meiner Sicht auch dazu
+in der Geschichte der Softwareentwicklung gab es auch anderen grundlegende Werke die nach wie vor gültig sind, z.B. "Design Patterns" 
+
+von 1994
+
+die heute in vielen erfolgreichen Softwareprojekten und Fameworks (z.B. Spring Boot, Angular) nach wie vor verwendet werden
+
+AMAZON Verkaufsrang 3 (Object Oriented Softwaredesign )
 
 -->
 ---
 ![bg right:50% 68%](assets/images/Domain-Driven-Design.jpeg)
 # Warum solltet Ihr ein anspruchsvolles Konzept lernen... 
-* ... obwohl du nicht sofort verstehst, warum das eine gute Idee ist?
-* ... obwohl du für deine Übungsprojekte in deiner Ausbildung auch prima ohne ausgekommen bist?
-* ... obwohl deswegen dein Ausbilder das Thema nichtmal erwähnt hat?
-<!-- 
-* oder Domain-Driven Design (ca 2003)
 
-* METRIK: wie oft wird ein  Buch/Konzept zitiert ?
+obwohl....
+<!-- 
+oder Domain-Driven Design (ca 2003) verkaufsrang 7 bei AMAZON
+
+... obwohl du nicht sofort verstehst, warum das eine gute Idee ist?
+
+... obwohl du für deine Übungsprojekte in deiner Ausbildung auch prima ohne ausgekommen bist?
+
+... obwohl deswegen dein Ausbilder das Thema nichtmal erwähnt hat?
+
+METRIK: wie oft wird ein  Buch/Konzept zitiert ?
 
 -->
 ---
-![bg left:50% 68%](assets/images/bookManyPages.jpeg)
-# Dicke (theoretische) Bücher lesen ?
-oder doch lieber
-# "learning by doing" ? 
+![bg right:50% 70%](assets/images/TDD_Book.jpeg)
+# **Test Driven Development**
+* Grundidee: Test First! 
+* Also: Wir schreiben automatisch Tests **BEVOR** wir den Produktions-Code schreiben 
+
+<!-- 
+
+TDD gehört da aus meiner Sicht auch dazu
+
+von 2002 (erste Idee veröffentlich 1999) 
+
+wird nach wie vor aufgelegt, immer noch aktuell
+
+also vor 23 Jahren,
+
+der Autor selbst und viele anderen haben das Konzept über die Jahre  in vielen Aspekte ergänzt
+
+Grundkonzept ist aber nach wie vor gültige
+
+Autor konnte aber die vielen Missverständnisse beim Lernen des Konzepts nicht vorhersehen.
+
+daher kommen mache wichtige Punkte vielleicht nicht sofort klar rüber
+
+daher wichtig auch, sich mit den häufigsten Fehler bei Anwendung des TDD Konzept zu befassen. 
+
+nicht unbedingt der beste Einstieg ins Thema aber das erste grundlegende Buch vom "Erfinder" selbst
+
+Idee basiert auf jahrelanger Vorerfahrung und Expermentieren des Autors 
+
+-->
+---
+![bg left:50% 70%](assets/images/TDD_Book.jpeg)
+# **Buch lesen und fertig ?**
+
 <!-- 
 Es gibt viele Konzepte in der Softwareentwicklung für die man erst mal eine 
 theoretische Idee , ein mentales Modell braucht um sich der Sache praktisch anzunähern
@@ -160,8 +217,16 @@ Machen habe eine flache Lernkurfe, lasses sich also incrementell erschließen
 
 andere haben eine Steile Lernkurfe, stellen also eine Anfangs höhere Hürde dar
 
+manche scheinen so einfach, aber plötzlich meint man in einer Sackgasse zu stecken.
+
 manche Konzepte spielen erst in größeren Projekten ihre Stärken aus
 -->
+
+---
+![height:700px brightness:1.1 sepia:0%](assets/TDDHürde2.png)
+
+
+
 ---
 ![bg left:50% 68%](assets/images/HappySmiley.jpeg)
 # Reden wir darüber, wie Menschen (und Maschinen) lernen 
@@ -211,46 +276,20 @@ Wer von euch hat etwas schwieriges mühsam gelernt und erst viel später den Nut
 ![bg left:50% 80%](assets/images/FolgeDenRegeln.png)
 # Wie lernt  Mensch (oder eine Maschine) trotzdem ohne schnelles Feedback?
 
-* Regeln lernen und befolgen, auch wenn man erstmal keinen unmittelbaren Nutzen sieht.
 
 <!-- 
 
 Ich hoffe jetzt dass ihr jetzt das nötige Vertrauen habt, dass es sich lohnt, sich mit dem Thema TDD zu befassen.
 
+Um den Regeln zu folgen, bis du ein schließlich ein tiefes Verständnis für das Thema hast und die Regeln auch ohne Nachdenken befolgen kannst.
+
+
+
 -->
 
 ---
 
 
-
-![bg right:50% 70%](assets/images/TDD_Book.jpeg)
-# **Test Driven Development**
-* Grundidee: Test First! 
-* Also: Wir schreiben automatisch Tests **BEVOR** wir den Produktions-Code schreiben 
-
-<!-- 
-* Buchcover ist die erste fundierte Veröffentlichung
-* zum Thema TDD von ca 2002 
-* vorher schon im Rahmen des "Extreme Programming" vom gleichen Autor in 1999 in Kapitel 18 auf nur 4 Seiten erwähnt.
-* also vor 23 Jahren,
-* der Autor selbst und viele anderen haben das Konzept über die Jahre  in vielen Aspekte ergänzt
-
-* Grundkonzept ist aber nach wie vor gültige
-
-# Autor konnte aber die vielen Missverständnisse beim Lernen des Konzepts nicht vorhersehen.
-
-# daher kommen mache wichtige Punkte vielleicht nicht sofort klar rüber
-
-# daher wichtig auch, sich mit den häufigsten Fehler bei Anwendung des TDD Konzept zu befassen. 
-
-# z.B. Video von Ian Cooper 
-
-* nicht unbedingt der beste Einstieg ins Thema aber das erste grundlegende Buch vom "Erfinder" selbst
-
-* Idee basiert auf jahrelanger Vorerfahrung und Expermentieren des Autors 
-
--->
----
 # Warum ist TDD so (scheinbar) schwierig zu lernen?
 -> kein schnelles Feedback!
 und
@@ -274,27 +313,39 @@ und
 * also sehr stabil im Betrieb war, 
 * sondern auch durchdachte leicht verständliche Architektur hatte
 * die auch noch leicht erweiterbar war ?
-
-->[Abstimmung](https://www.menti.com/al9bcx57niwx)
+* [Mentimeter https://www.menti.com/al9bcx57niwx ](https://www.mentimeter.com/app/presentation/alhyyrr74bsywk5qzdr4eoki42pem5nz/present?question=2ttp9u1s9hi2)
 
 <!-- 
-Hint: Spring Boot 
+
+warum scheitert ein Großteil der Softwareprojekte in Unternehmen ?
+machen Untersuchungen sprechen von 50%
+
+75% haben erhebliche Probleme mit Zeit oder Budgetüberschreitungen
+
+Schlechte Ausbildung der Entwickler,
+damit schlechte Methodik
+
+andere Gründe : unklare Anforderungen 
+
+Positiv Beispiel: Spring Boot  (später mehr)
+
+also : viele von Euch haben noch keine positive praktischer Erfahrung mit TDD gemacht, oder ?
+
 -->
 
 ---
 
 ![bg left:50% 80%](assets/images/DALL·ESoftwareQuality.webp)
 # Was soll TDD (angeblich) leisten ?
-offensichtlich Stabilität und Qualität 
-
-... und weniger offensichtlich ? ...
+* offensichtlich Stabilität und Qualität 
+* ... und weniger offensichtlich ? ...
 
 ---
 ![bg right:50% 80%](assets/images/DALL·ESWArchitecture.webp)
 # TDD -> fast automatisch bessere Architektur
-... durch die der Code besser verständlich ist,
-... besser wartbar bleibt
-... und sich leichter an neue Anforderungen anpassen lässt
+* ... durch die der Code besser verständlich ist,
+* ... besser wartbar bleibt
+* ... und sich leichter an neue Anforderungen anpassen lässt
 
 ---
 
@@ -304,13 +355,11 @@ offensichtlich Stabilität und Qualität
 ... sondern eher das Gegenteil, wenn man nach der Definition von "Unittests" in Wikipedia geht !
 
 <!--
+ABER du must TDD auch RICHTIG anwenden.
 
-- Unit-Tests das Testen der 'Unit' in Isolation mit Mocks bevorzugen,
-- vs TDD Programmierer Tests Vermeiden von Mocks, nur externe Dependencies 
-- sondern versteht die __Einheit__ als möglicherweise größere Entität als eine Klasse in Java. 
-- Ein TDD-Programmierer testet ein ganzes Modul aus vielen Klassen oder sogar einen REST-Service mit Controller UND Service UND Repository. 
-- nur die Datenbank wird vieleicht weggemockt
-- verwirrender Weise ist trotzdem Junit5 ein gute Werkzeug auch für TDD 
+Was du alles falsch machen kannst (und wirst) -> siehe Teil 2 des Vortrags später
+
+ 
 
 -->
 ---
@@ -322,10 +371,29 @@ offensichtlich Stabilität und Qualität
 * TDD ist **NICHT GLEICH** Unittests !
 * Junit ist **nur** ein gutes Werkzeug und definiert nicht die Methode mit der man vorgeht!
 
+<!--
+
+A fool with a tool is still a fool!
+
+Unit-Tests das Testen der 'Unit' in Isolation mit Mocks bevorzugen,
+
+(besser  TDD Programmierer Tests Vermeiden von Mocks, nur externe Dependencies Mocken) 
+
+sondern versteht die __Einheit__ als möglicherweise größere Entität als eine Klasse in Java. 
+
+Ein TDD-Programmierer testet ein ganzes Modul aus vielen Klassen oder sogar einen REST-Service mit Controller UND Service UND Repository. 
+
+nur die Datenbank wird vieleicht weggemockt
+
+verwirrender Weise ist trotzdem Junit5 ein gute Werkzeug auch für TDD 
+
+-->
+
 ---
 # "JUnit" als Tool auch für TDD hilfreich
-... "Unittest" als Begriff wird  oft auch abseits der Definition von Wikipedia verwendet, z.B: Unit-Test-tool "xJunit", z.B. "JUnit"
+... "Unittest" als Begriff wird  oft auch abseits der Definition von Wikipedia verwendet, z.B: Unit-Test-tool "xUnit", z.B. "JUnit"
 
+<!-- das ist übrigens einer der Punkte die im Buch von Kent Beck nicht wirklich klar herausgestellt wurde -->
 ---
 
 ![bg right:70% 99%](assets/images/Test-Driven-Development-TDD-InfoGrafik.png)
@@ -339,8 +407,10 @@ backgroundSize: 103% 103%
 backgroundPosition: top 0px right 0px-->
 
 <!--
-# Flowchart vom Autor Kent Beck selbst autorisiert 
-# zugehöriger Text im Substack Link zu finden.
+die orangenen Kästen weise auf mögliche Fehler hin, die oft gemacht werden
+
+Flowchart vom Autor Kent Beck selbst autorisiert 
+zugehöriger Text im Substack Link zu finden.
 
 -->
 ---
@@ -365,22 +435,32 @@ backgroundPosition: top 20px right 20px
 ![](assets/TDD_gescheitert.png)
 
 <!-- 
-wenn überhaupt , dann erstmal testabdeckung schaffen für schon existierenden code 
+wenn überhaupt , dann erstmal Testabdeckung schaffen für schon existierenden Code, hat aber erstmal nix mit TDD zu tun
 
-aber eigentlich rate ich euch: lasst die Finger davon und Augen auf bei der Projektwahl
+aber EIGENTLICH rate ich euch: lasst die Finger davon und Augen auf bei der Projektwahl
 
-am besten das beim Einstellungsgespräch gleich abfragen :
-
-
+NACH so viel WARNUNGEN 
 
 -->
 
 ---
+![bg left:50% 99%](assets/images/Fazit.png)
 
-![bg right:50% 68%](assets/images/TDD_Teil2_qrcode_image_600.png)
-# TDD führt (automatisch) zu besserer Softwarearchitektur ?
+* TDD ist aber nicht so einfach zu lernen, wie es aussieht
+* du kannst auch viel falsch machen.
+* TDD macht große Versprechungen
 
-wirklich ? Ja, siehe auf [bodote.github.io: TDD Blog Teil 2: Architektur](https://bodote.github.io/blog/TDD-TestFirst-Teil2-Architektur/)
+<!--
+beim ersten Punkt kann ich euch leider nicht wirklich helfen 
+
+-> Bücker lesen , Videos schauen , Tutorials anschauen und dann einfach machen 
+
+Die wichtigsten Irrtümer, Missverständnisse und Fallen bei TDD werde ich im zweiten Teil des Vortrags behandeln.
+
+Zu den großen Versprechungen kommen wir jetzt:
+
+-->
+
 
 ---
 ![bg left:50% 68%](assets/images/DALL·EBibliotek.webp)
@@ -388,7 +468,7 @@ wirklich ? Ja, siehe auf [bodote.github.io: TDD Blog Teil 2: Architektur](https:
 
 <!-- 
 
--  Bücher über TDD selbst, werden immer wieder neu herausgebracht. Kent Becks Buch ist also bei weitem nicht das Bücher über Softwarearchitektur z.B.
+- Bücher über TDD selbst, werden immer wieder neu herausgebracht. Kent Becks Buch ist also bei weitem nicht das Bücher über Softwarearchitektur z.B.
 
 - eine Reihe von wissenschaftlichen Studien, z.T. sogar richtige Vergleichsstudien
 
@@ -396,6 +476,15 @@ wirklich ? Ja, siehe auf [bodote.github.io: TDD Blog Teil 2: Architektur](https:
 
 - sogar einige Metastudien zu dem Thema konnte ich finden.
 -->
+---
+
+![bg right:50% 68%](assets/images/TDD_Teil2_qrcode_image_600.png)
+# TDD führt (automatisch) zu besserer Softwarearchitektur ?
+
+* wirklich ? 
+* Ja, siehe ausführlich unter [bodote.github.io: TDD Blog Teil 2: Architektur](https://bodote.github.io/blog/TDD-TestFirst-Teil2-Architektur/)
+
+
 
 ---
 ![bg right:50% 68%](assets/images/TDD_Literaturrecherche_qrcode_image_600.png)
@@ -436,7 +525,7 @@ wirklich ? Ja, siehe auf [bodote.github.io: TDD Blog Teil 2: Architektur](https:
   > " _Test First_ ist **besser** darin, **lose gekoppelte** Softwarekomponenten hervorzubringen als _test last_." _Lose gekoppelt_ bewirkt zum Beispiel bessere Wartbarkeit, Verständlichkeit für die Entwickler, ist also was sehr gutes.
 
 ---
-![bg right:60% 99%](assets/images/ai-assisted-development.webp)
+![bg left:60% 99%](assets/images/TDD_assisted_coding.png)
 # TDD und AI-assisted coding
 
 Ist TDD in Zeiten von KI-unterstützter Sofwareentwicklung noch sinnvoll ?
@@ -448,7 +537,21 @@ Ist TDD in Zeiten von KI-unterstützter Sofwareentwicklung noch sinnvoll ?
 backgroundImage: url(assets/images/ai-assisted-development.webp) 
 backgroundSize: 103% 103%
 backgroundPosition: top 0px right 0px-->
+<!--
+ Auf jeden Fall!
 
+ funktioniert so gar sehr gut.
+
+ in "Cursor" entscheidend: 
+
+1. ein Regelset
+
+2. ein Test-Framework(s) genau vorgeben und beschreiben wir es anzuwenden ist
+
+3. das "richtige" LLM verwenden (Claude-4-sonnet (thinking))
+
+
+-->
 
 ---
 <!--  footer: '🔗https://bodote.github.io' 
@@ -469,7 +572,7 @@ https://youtu.be/LCEmiRjPEtQ?si=QaQxjyuhEDy0rlRW&t=1329):
 ![bg left:50% 100%](assets/images/mentimeter_qr_code_3.png)
 # Neugierig geworden?
 
--> [zur Abstimmung](https://www.menti.com/al9bcx57niwx)
+-> [zur Abstimmung](https://www.mentimeter.com/app/presentation/alhyyrr74bsywk5qzdr4eoki42pem5nz/edit?question=obhq62mfdhow)
 
 
 ---
@@ -488,7 +591,7 @@ https://youtu.be/LCEmiRjPEtQ?si=QaQxjyuhEDy0rlRW&t=1329):
 ---
 
 
-![bg right:40% 80%](assets/images/brandad_dev.png)
+![bg left:40% 99%](assets/images/brandad_dev.png)
 
 # BRANDAD Development GmbH
 
@@ -499,7 +602,7 @@ https://youtu.be/LCEmiRjPEtQ?si=QaQxjyuhEDy0rlRW&t=1329):
 - [https://brandad.dev](https://brandad.dev)
 
 ---
-
+![bg left:40% 99%](assets/images/qrcode_Folien.png)
 # Danke für eure Aufmerksamkeit!
 <!--  footer: '🔗https://bodote.github.io' 
 backgroundImage: url(assets/images/BRANDAD_Logo.png)
@@ -509,4 +612,6 @@ backgroundPosition: top 20px right 20px
 
 # Fragen ?
 
----
+Präsentation unter https://bodote.github.io/vortr%C3%A4ge/TDD-Nuernberg-Digital (QR-Code links)
+
+<!-- ENDE -->

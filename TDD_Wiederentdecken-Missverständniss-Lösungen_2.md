@@ -77,9 +77,10 @@ footer: '🔗https://brandad.dev  🔗https://bodote.github.io'
 # An Test-driven Development gescheitert? Hier erfährst du, warum.
 
 
-Immer wieder hörst und liest du von TDD in Konferenzbeiträgen und Fachartikeln – aber die meisten von uns kennen niemanden persönlich, der wirklich konsequent TDD „macht“. Warum ist das so? Warum ist TDD so schwer zu lernen, welche Missverständniss und Fallen führen uns in die Irre und wie kannst du es doch schaffen, Projekte mit TDD zum Erfolg zu führen?
+In Teil zwei widmen wir uns schwerpunktmäßig einem kuriosen Phänomen: Immer wieder hören und lesen wir in Fachbeiträgen oder auf Konferenzen von TDD, aber kaum jemand kennt Entwickelnde, die wirklich konsequent „TDD machen“. Warum ist das so? Warum ist TDD so schwer zu lernen, welche Missverständnisse und Fallen führen uns in die Irre und wie kannst du es doch schaffen, Projekte mit TDD zum Erfolg zu führen? Wir versuchen herauszufinden, wie du TDD in deinen Projekten implementierst (oder vermeidest) und ob TDD überhaupt noch sinnvoll ist, wenn die KI sowieso alles für dich programmiert und testet – dabei klären wir alle Fragen, die du zum Thema mitbringst. Let's discuss!
 
-So viel schon mal vorweg: Für „Greenfield“-Projekte auf grüner Wieser, ist TDD perfekt. Bei anderen Projekten sind es manchmal die Umstände und die Projekthistorie, die TDD tatsächlich unmöglich machen. Wir versuchen herauszufinden, wie du das in deinen Projekten erkennst – und klären alle weiteren Fragen, die du zum Thema noch so mitbringst. Let's discuss!
+Teil 2 (16:30 Uhr – 18:00 Uhr): Test-Driven Development (TDD): Du bist an TDD gescheitert? Hier erfährst du warum. Welche Fallen es bei TDD zu vermeiden gilt
+Warum „Test-First“-Prinzip von TDD  besser ist als „Test Last“ haben wir im vorherigen Vortrag geklärt. Jetzt geht es um die Fragen was man bei TDD alles falsch machen kann und wie man das vermeidet – und, ob TDD in Zeiten von KI überhaupt noch relevant ist.
 -->
 ---
 ![bg left:50% 70%](assets/images/questionmark.jpg)
