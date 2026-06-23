@@ -11,7 +11,7 @@ style: |
 backgroundImage: url(../../assets/images/BRANDAD_Logo.png)
 backgroundSize: 150px
 backgroundPosition: top 20px right 20px
-footer: ' 🔗https://bodote.github.io 🔗https://www.linkedin.com/in/ansgar-simon-a60906141/ '
+footer: '  🔗https://www.linkedin.com/in/ansgar-simon-a60906141/ 🔗https://bodote.github.io'
 transition: drop
 ---
 
@@ -87,217 +87,170 @@ Eine präzise, maschinenlesbare „Single Source of Truth". Thoughtworks führt 
 
 ## GitHub Spec Kit
 
-**Ansatz**
+| | |
+|---|---|
+| **Ansatz** | Open-Source-CLI, Checkpoints: Specify → Plan → Tasks → Implement |
+| **Agenten** | 30+ (Claude Code, Copilot, Amazon Q, Gemini CLI) |
+| **Reife** | 93.000+ Stars, v0.8.7 (07.05.2026) |
+| **Architektur** | „Constitution" (Markdown) als persistenter Vertrag über alle Sessions |
+| **Ideal für** | SDD-Einstieg, portabel, bestehende IDE bleibt |
 
-Open-Source-CLI (Python). Workflow mit Checkpoints: Specify → Plan → Tasks → Implement. Unterstützt 30+ Agenten (Claude Code, Copilot, Amazon Q, Gemini CLI).
-
-**Reife**
-
-93.000+ Stars, v0.8.7 (07.05.2026) — die am breitesten adoptierte Open-Source-Option für SDD.
-
----
-
-## GitHub Spec Kit (Forts.)
-
-**Architektur**
-
-Eine „Constitution" (Markdown) hält unveränderliche Grundprinzipien für alle Sessions fest — der persistente Vertrag zwischen Entwickler und Agent.
-
-**Ideal für**
-
-Default-Einstieg für SDD-Neulinge und die portabelste Option, wenn die bestehende IDE bleiben soll.
+<!-- 
+Detailnotizen:
+- die am breitesten adoptierte Open-Source-Option für SDD
+- Constitution hält unveränderliche Grundprinzipien fest — der persistente Vertrag zwischen Entwickler und Agent
+- Default-Einstieg für SDD-Neulinge und die portabelste Option, wenn die bestehende IDE bleiben soll
+-->
 
 ---
 
 ## Fission-AI OpenSpec
 
-**Ansatz**
+| | |
+|---|---|
+| **Ansatz** | Proposal-zentriert, Delta-Marker (ADDED/MODIFIED/REMOVED) |
+| **Charakter** | Leichtgewichtig, keine harten Approval-Gates |
+| **Stärke** | Auditierbares Change-Management, Eval-Gesamtsieger (02/2026) |
+| **Schwäche** | Proposals können bei langer Umsetzung driften |
+| **Ideal für** | Brownfield & Iteration, wenn Doku-Trail Priorität hat |
 
-Proposal-zentrierter Workflow mit Delta-Markern (ADDED/MODIFIED/REMOVED) — relativ zur bestehenden Funktionalität statt Greenfield-Beschreibung.
-
-**Charakter**
-
-Laut eigener Doku leichtgewichtig & flexibel: liefert Struktur, ohne harte Approval-Gates zwischen den Phasen zu erzwingen.
-
----
-
-## Fission-AI OpenSpec (Forts.)
-
-**Stärke**
-
-Auditierbares Change-Management. In einer unabhängigen Eval (02/2026, 13 Kategorien, Python-Backend) Gesamtsieger.
-
-**Schwäche / Ideal für**
-
-Proposals sind statisch und können bei langer Umsetzung driften → für große Multi-Service-Vorhaben mit Living-Spec-Plattform kombinieren. Ideal, wenn Doku-Trail vor Living-Spec-Sync geht.
+<!-- 
+Detailnotizen:
+- relativ zur bestehenden Funktionalität statt Greenfield-Beschreibung
+- laut eigener Doku leichtgewichtig & flexibel: liefert Struktur, ohne harte Approval-Gates zwischen den Phasen zu erzwingen
+- unabhängige Eval: 13 Kategorien, Python-Backend — Gesamtsieger
+- für große Multi-Service-Vorhaben mit Living-Spec-Plattform kombinieren
+-->
 
 ---
 
 ## BMAD-METHOD
 
-**Ansatz**
+| | |
+|---|---|
+| **Ansatz** | 12+ spezialisierte Agenten über den gesamten SDLC mit dateibasierten Handoffs |
+| **Reife** | MIT, v6.6.0 (29.04.2026), 46.700+ Stars, 5.500+ Forks, kostenlos |
+| **Architektur** | 3 Schichten: BMad Core, Method, Builder — läuft auf Claude Code, Cursor, Codex |
+| **Ideal für** | Rollengetrennte Multi-Agenten-Workflows ohne Vendor-Lock-in |
 
-„Build More Architect Dreams" — orchestriert 12+ spezialisierte Agenten über den gesamten SDLC (PM, Architektur, UX, Dev, QA, Scrum Master) mit dateibasierten Handoffs.
-
-**Reife**
-
-MIT-Lizenz, v6.6.0 (29.04.2026), 46.700+ Stars, 5.500+ Forks. Komplett kostenlos, kein Paywall.
-
----
-
-## BMAD-METHOD (Forts.)
-
-**Architektur**
-
-3 Schichten: BMad Core, BMad Method, BMad Builder. „Cross Platform Agent Team" läuft ohne Umbau auf Claude Code, Cursor, Codex u. a.
-
-**Ideal für**
-
-Teams, die hochstrukturierte, rollengetrennte Multi-Agenten-Workflows ohne Vendor-Lock-in wollen.
+<!-- 
+Detailnotizen:
+- „Build More Architect Dreams"
+- Rollen: PM, Architektur, UX, Dev, QA, Scrum Master
+- „Cross Platform Agent Team" läuft ohne Umbau auf Claude Code, Cursor, Codex u. a.
+- Komplett kostenlos, kein Paywall
+-->
 
 ---
 
 ## AWS Kiro
 
-**Ansatz**
+| | |
+|---|---|
+| **Ansatz** | Agentic IDE, 3 Phasen: Requirements → Design → Tasks (EARS-Notation) |
+| **Automatisierung** | Agent-Hooks bei Save/Create: Tests, README, Security-Scans |
+| **Technik** | Code OSS, CLI + Web, Auto-Router (Sonnet, Qwen, DeepSeek …), kein AWS-Konto nötig |
+| **Ideal für** | Formale Spec-Workflows in vertrauter IDE-Umgebung |
 
-Agentic IDE, die die Intent zuerst formalisiert. Drei Phasen — Requirements, Design, Tasks → requirements.md, design.md, tasks.md. User Stories in EARS-Notation.
-
-**Automatisierung**
-
-Agent-Hooks feuern bei Save/Create und übernehmen Test-Updates, README-Refreshes und Security-Scans ohne manuelles Prompten.
-
----
-
-## AWS Kiro (Forts.)
-
-**Technik**
-
-Gebaut auf Code OSS (VS-Code-Feeling), CLI + Web. Auto-Router wählt pro Task aus Claude Sonnet, Qwen, DeepSeek, GLM, MiniMax. Kein AWS-Konto nötig.
-
-**Ideal für**
-
-Teams, die formale Spec-Workflows in einer vertrauten Entwicklungsumgebung brauchen.
-
----
-
-## GSD — Get Shit Done
-
-**Ansatz**
-
-Spec-driven Meta-Prompting / Context-Engineering, primär für Claude Code & kompatible Agenten. Positioniert als lean, low-ceremony Alternative zu BMAD.
-
-**Reife**
-
-61.000+ Stars seit Dez 2025 (von 0 in unter 5 Monaten). Installation via npx, model-agnostisch — auch OpenRouter und lokale Modelle.
-
----
-
-## GSD — Get Shit Done (Forts.)
-
-**Technik**
-
-Multi-Agenten-Orchestrierung mit parallelen Researchern, Plannern, Executors und Verifiers — jeder in frischem Kontext mit bis zu 200K Token.
-
-**Ideal für**
-
-„Komplexität gehört ins System, nicht in den Workflow." Füllt Lücken von Claude Code: Kontext-Rotation, Quality-Gates, Planungs-State über Sessions.
+<!-- 
+Detailnotizen:
+- Ausgabe: requirements.md, design.md, tasks.md
+- Auto-Router wählt pro Task aus Claude Sonnet, Qwen, DeepSeek, GLM, MiniMax
+- Agent-Hooks übernehmen Test-Updates, README-Refreshes und Security-Scans ohne manuelles Prompten
+-->
 
 ---
 
 ## Tessl
 
-**Ansatz**
+| | |
+|---|---|
+| **Ansatz** | „Tiles" im .tessl/-Verzeichnis lehren jeden MCP-Agenten den Spec-Workflow |
+| **Architektur** | Specs im Code als Langzeitgedächtnis, 2 Schichten: Prozess- + Library-Kontext |
+| **Differenzierer** | Spec Registry: 10.000+ Specs für externe Libraries („npm für Spezifikationen") |
+| **Ideal für** | Prozess-Chaos UND API-Halluzination gleichzeitig verhindern |
 
-Language-agnostic Agent-Enablement. Das Tessl Framework liegt als „Tiles" im .tessl/-Verzeichnis und lehrt jeden MCP-Agenten den Spec-Workflow: fragen → Spec schreiben → Freigabe → implementieren.
-
-**Architektur**
-
-Specs leben im Code als Langzeitgedächtnis → Audit-Trail und kohärente Weiterentwicklung. Zwei Schichten: Prozess- + Library-Kontext.
-
----
-
-## Tessl (Forts.)
-
-**Differenzierer**
-
-Tessl Spec Registry: offenes Verzeichnis von 10.000+ Specs für externe Libraries („npm für Spezifikationen") gegen API-Halluzinationen.
-
-**Ideal für**
-
-Teams, die Prozess-Chaos UND Doku-Halluzination zugleich verhindern wollen.
+<!-- 
+Detailnotizen:
+- language-agnostic Agent-Enablement
+- Workflow: fragen → Spec schreiben → Freigabe → implementieren
+- Specs als Audit-Trail und für kohärente Weiterentwicklung
+- Registry schützt vor API-Halluzinationen
+-->
 
 ---
 
 ## Augment Code
 
-**Ansatz**
+| | |
+|---|---|
+| **Ansatz** | Kontext-Layer, kein Spec-Authoring — Context Engine über 400.000+ Dateien |
+| **Stärke** | Schließt Cross-Repository-Kontextlücke in großen Brownfields |
+| **Kennzahlen** | 70,6 % SWE-bench, 59 % F-Score (Hersteller-Angaben) |
+| **Agenten** | BYOA: Claude Code, Codex, OpenCode oder nativer Auggie |
+| **Ideal für** | Enterprise Multi-Service — wo Kontext-Drift das Hauptproblem ist |
 
-Setzt am Kontext-Layer an, nicht beim Spec-Authoring. Die Context Engine hält ein persistentes Architekturverständnis über 400.000+ Dateien.
-
-**Stärke**
-
-Schließt die Cross-Repository-Kontextlücke, die Spec-Workflows in großen Multi-Service-Brownfields bricht.
-
----
-
-## Augment Code (Forts.)
-
-**Kennzahlen**
-
-70,6 % SWE-bench, 59 % F-Score (Hersteller-Angaben — entsprechend einordnen). BYOA: Claude Code, Codex, OpenCode oder nativer Auggie.
-
-**Ideal für**
-
-Enterprise mit komplexen Multi-Service-Architekturen — wo Kontext-Drift, nicht Spec-Erstellung, das Hauptproblem ist. Authort selbst keine Specs.
+<!-- 
+Detailnotizen:
+- persistentes Architekturverständnis über 400.000+ Dateien
+- Kennzahlen sind Hersteller-Angaben — entsprechend einordnen
+- authort selbst keine Specs
+-->
 
 ---
 
 ## Claude Code
 
-**Ansatz**
+| | |
+|---|---|
+| **Ansatz** | Agentisches CLI für vollautonome Entwicklung ohne ständiges Prompten |
+| **Spec-Layer** | CLAUDE.md erzwingt persistenten Kontext, Standards und Constraints — de facto SDD |
+| **Stärke** | Große Specs in einer kohärenten Session verarbeiten und implementieren |
+| **Rolle** | Ausführungs-Agent für BMAD, GSD und GitHub Spec Kit |
 
-Anthropics agentisches CLI — auf vollautonome Entwicklung ausgelegt: planen, mehrstufige Workflows orchestrieren und nachfragen, ohne ständiges Prompten.
-
-**Spec-Layer**
-
-CLAUDE.md-Dateien erzwingen persistenten Projektkontext, Coding-Standards und Architektur-Constraints über jede Session — de facto SDD.
-
----
-
-## Claude Code (Forts.)
-
-**Stärke**
-
-Verarbeitet große Spezifikationsdokumente in einer kohärenten Session und generiert Implementierungen in einem Durchgang.
-
-**Rolle**
-
-Häufig unterstützter Ausführungs-Agent quer über BMAD, GSD und GitHub Spec Kit.
+<!-- 
+Detailnotizen:
+- planen, mehrstufige Workflows orchestrieren und nachfragen
+- CLAUDE.md-Dateien über jede Session hinweg
+- häufig unterstützter Ausführungs-Agent quer über BMAD, GSD und GitHub Spec Kit
+-->
 
 ---
 
 ## Cursor — Plan Mode + Project Rules
 
-**Ansatz**
+| | |
+|---|---|
+| **Ansatz** | Plan Mode: reviewbarer Plan vor Code (Fragen, Dateien, Freigabe) |
+| **Spec-Kontext** | Project Rules unter .cursor/rules/ — persistenter, portabler Kontext |
+| **Schwäche** | Kein nativer Spec-Lifecycle, keine Drift-Detection oder Living-Spec-Sync |
+| **Ideal für** | Strukturierte AI-Entwicklung ohne vollen SDD-Overhead — solider Mittelweg |
 
-Plan Mode erstellt vor jedem Code einen reviewbaren Plan: klärende Fragen, betroffene Dateien, Freigabe durch den Entwickler — verhindert verfrühte Code-Generierung.
-
-**Spec-Kontext**
-
-Project Rules unter .cursor/rules/ liefern persistenten, portablen Kontext (das alte .cursorrules gilt als Legacy).
+<!-- 
+Detailnotizen:
+- verhindert verfrühte Code-Generierung
+- das alte .cursorrules gilt als Legacy
+- Spec-Support ist nicht in der Architektur verankert
+-->
 
 ---
 
-## Cursor (Forts.)
+## 🟢 GSD — Get Shit Done
 
-**Schwäche**
+| | |
+|---|---|
+| **Ansatz** | Meta-Prompting / Context-Engineering, lean Alternative zu BMAD |
+| **Reife** | 61.000+ Stars seit Dez 2025 (0→61K in 5 Monaten), via npx, model-agnostisch |
+| **Technik** | Parallele Researcher, Planner, Executors, Verifiers — je bis zu 200K Kontext |
+| **Ideal für** | Kontext-Rotation, Quality-Gates, Planungs-State über Sessions |
 
-Kein nativer Spec-Lifecycle, keine Drift-Detection oder Living-Spec-Sync — Spec-Support ist nicht in der Architektur verankert.
-
-**Ideal für**
-
-Strukturierte AI-Entwicklung in einem vertrauten, hochwertigen Editor ohne vollen SDD-Overhead — ein solider Mittelweg.
+<!-- 
+Detailnotizen:
+- primär für Claude Code & kompatible Agenten
+- auch OpenRouter und lokale Modelle
+- „Komplexität gehört ins System, nicht in den Workflow."
+- füllt Lücken von Claude Code: Kontext-Rotation, Quality-Gates, Planungs-State über Sessions
+-->
 
 ---
 
