@@ -68,7 +68,7 @@ Warum ist das „Test-First“-Prinzip von TDD besser als „Test Last“? TDD k
 ---
 ![bg right:50% 90%](assets/images/mentimeter_qr_code_1.png)
 # Hast du TDD schon mal selbst ausprobiert?
-[https://www.menti.com/al9bcx57niwx](https://www.menti.com/al9bcx57niwx)
+[https://www.menti.com/al9bcx57niwx](https://www.mentimeter.com/app/presentation/alhyyrr74bsywk5qzdr4eoki42pem5nz/present?question=fry1o938t3s5)
 <!-- notes:
 * https://www.mentimeter.com/app/presentation/n/alhyyrr74bsywk5qzdr4eoki42pem5nz/present?question=fry1o938t3s5
 -->

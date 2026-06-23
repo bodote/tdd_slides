@@ -64,7 +64,7 @@ backgroundPosition: top 20px right 20px
 header: 'TDD Wiederentdeckt'
 footer: '🔗https://brandad.dev  🔗https://bodote.github.io'
 # source: Jan Cooper - NDC Porto 2023 "TDD revisited"
-
+transition: drop
 ---
 # An Test-driven Development gescheitert? Hier erfährst du, warum.
 ## Fallen und Missverständnisse vermeiden
@@ -148,7 +148,7 @@ Zyklus von Rot zu Grün der Test und dann Refactoring:
 ![bg right:50% 90%](assets/images/mentimeter_qr_code_1.png)
 # Wie viel TDD - Praxis hast du ?
 
-[Mentimeter](https://www.mentimeter.com/app/presentation/alhyyrr74bsywk5qzdr4eoki42pem5nz/edit?question=wfsznf3agy6m)
+[Mentimeter](https://www.mentimeter.com/app/presentation/alhyyrr74bsywk5qzdr4eoki42pem5nz/present?question=wfsznf3agy6m)
 
 ---
 ![bg left:50% 70%](assets/images/Bodo_kofferPortät_ausschnitt.jpg)
@@ -312,7 +312,6 @@ sondern ein größere MODUL mit einer stabile API
 * "Unit" im Sinne von Kent Beck (Autor von TDD): GUT!
 * J-"Unit" als Tool: sehr hilfreich, (ebenso: Jasmin, Jest)
 * "Unit" als einzelne Klasse und "wegmocken" aller Dependecies : **SCHLECHT**!
-* Angulars automatische `*.spec.ts` für jedes `*.ts` : **SCHLECHT** ! 
 
 <!-- 
 WEIL: nächste Folie
@@ -362,7 +361,7 @@ Das wollen wir vermeiden !
 * API-Design **vor** dem schreiben der Tests
 * Implementierung **nach** dem schreiben des Tests
 * Test greift nur auf stabile API zu 
-* **EINE** API für 10-100 Klassen
+* bei Backends: **EINE**  eine API für 5-20 Klassen 
 
 <!--
 
@@ -374,26 +373,7 @@ Beispiel zu API-Design **vor** dem schreiben der Tests
 
 -->
 
----
-![bg right:50% 80%](assets/images/hexaGonalRund.png)
-# Welches Architekturmuster verwendest du ?
-* keines 
-* layered 
-* hexagonal
-* onion
-* "Clean" 
-<!--
-Starker Einfluss der gewählten __Softwarearchitektur__ (Clean , Hexagonal, Zwiebel, Layerd)
 
-* ARCHITEKTUR: du sollest eine API auch zwischen den 
-  * "Layern", oder "Zwiebelringen" , 
-  * Hexagonal: "Infrastruktur" und "Application" code. 
-  * Clean Architecture: zwischen "Application Business Rules" und "Interface Adapters"
-
-# Wichtig : API sollte sich nicht dauernd ändern
--> oder wenn, dann möglichst rückwärtskompatibel 
-
--->
 
 ---
 ![bg left:50% 80%](assets/images/Mocks_ambiguity.webp)
@@ -426,15 +406,22 @@ Verwendung von Test Doubles , Mocks , Spys sind guter Indikator ob du auf dem ri
 # Irrtum 3: TDD ist unflexibel
 * stimmt, wenn zu viel Mocks und Tests an die Implementierung statt an die Anforderungen gekoppelt sind
 * stimmt, wenn du den "refaktorieren" - Teil des TDD nicht wirklich ernst nimmst
+---
+
+![bg right:50% 80%](assets/images/tdd-cycle.png)
+# Irrtum 3: TDD ist sehr flexibel wenn du 
+* größere "Units" mit API testest
+* wenig Mocks hast.
+* sobald der Test grün✅ 
+🔵refaktorieren🔵, 
 <!--
- Zu Wenig Refactoring ist ein Anzeichen dafür, dass effektiv ein Design im Voraus vorliegt, das du jetzt unter Test bekommen möchtest.
+Zu Wenig Refactoring ist ein Anzeichen dafür, dass effektiv ein up-front-Design der Implementierung vorliegt, 
 
-* denn in der __grünen__ Phase solltest du alles tun, was du kannst, um den Algorithmus zu finden, den du benötigst, um den Test zu bestehen. 
-Du kannst Code von Stack Overflow kopieren, das ist absolut in Ordnung in der grünen Phase. 
+und dass damit die Test zu eng an die Implementierung gekoppelt ist.
 
-  * Du kannst ChatGPT bitten, dir zu sagen, wie du den Code schreiben sollst, und ihn einfügen, das ist in der grünen Phase absolut in Ordnung. 
+denn in der __grünen__ Phase solltest du alles tun, was du kannst, um den Algorithmus zu finden, den du benötigst, um den Test zu bestehen. 
 
-* Code / CodeStruktur verbessern in der __blauen__ Phase, sobald er den Test besteht, denn jetzt weißt du genau, welchen Code du brauchst, um den Test zu bestehen, und du kannst dann refaktorieren, um qualitativ hochwertigen Code zu schreiben.
+Code / CodeStruktur verbessern in der __blauen__ Phase, sobald er den Test besteht, denn jetzt weißt du genau, welchen Code du brauchst, um den Test zu bestehen, und du kannst dann refaktorieren, um qualitativ hochwertigen Code zu schreiben.
 -->
 ---
 ![bg left:40% 80%](assets/images/Dali_time.webp)
@@ -530,15 +517,19 @@ ABER: wenn bestehende Anforderunge geändert werden MÜSSEN sich die Tests ände
 -->
 
 ---
-![bg left:50% 80%](assets/images/ProductOwerNotWritingTestSpec.webp)
+![bg left:40% 80%](assets/images/ProductOwerNotWritingTestSpec.webp)
 # Irrtum 7: BDD ist toll: der PO schreibt jetzt meine Tests
 * BDD = "Behaviour Driven Development" 
 * das wird nicht passieren, PO schreibt keine Tests
 * BDD - tools wie Gherkin oder JBehave führen zu nichts als Overhead für den Entwickler
 * besser : JGiven: Entwickler schreibt, PO liest
 <!--
-# BDD : es geht nicht um Tools sondern ums Konzept
-# BDD: besserer Name für TDD ? 
+BDD : es geht nicht um Tools sondern ums Konzept
+
+BDD: besserer Name für TDD ?
+
+oder noch besser: Entwickler schreibt UND versteht seine Tests auch noch nach 2 Wochen
+
 
 Beispiel folgt gleich
 -->
@@ -551,7 +542,7 @@ backgroundPosition: top 0px right 0px
 -->
 
 ---
-# play audio file
+# Nochmal "Über 7 Brücken musst du gehen, 7 dunkle Jahre überstehen" ? 
 
 <audio controls>
   <source src="assets/jingles/7bruecken_chorus.mp3" type="audio/mpeg">
@@ -569,7 +560,7 @@ backgroundPosition: top 20px right 20px
 ![bg right:50% 80%](assets/images/SchnellesVerstehen.webp)
 # Aus Irrtum 6 + 7 kann was gutes entstehen (1):
 * schreibe  Tests-Methoden so, dass der PO den Test lesen, verstehen und gegen seine Anforderungen und Akzeptanzkriterien abgleichen kann
-* Prima: jetzt verstehst du selber die Tests auch nach 4 Woche noch!
+* Prima: jetzt verstehst du selber die Tests auch nach 4 Wochen noch!
 <!--  footer: '🔗https://bodote.github.io' 
 backgroundImage: url(assets/images/BRANDAD_Logo.png)
 backgroundSize: 150px 
@@ -622,7 +613,10 @@ void test10() {
 }
 ```
 
-<!--Und es sagt nicht, was dieser Code tun soll.
+<!--
+30sec lesezeit
+
+Und es sagt nicht, was dieser Code tun soll.
 
 Wenn du das genau studierst und etwas über Webentwicklung und Selenium, das Selenium-Testframework, weißt, könntest du vielleicht nach sorgfältigem Lesen herausfinden, was dieser Test tut.
 
@@ -645,6 +639,10 @@ void should_find_a_blog_about_TDD() {
 
 ```
 
+<!--
+30sec lesezeit
+-->
+
 --- 
 
 Der 2. Test erzeugt einen Report mit  `jGiven`:
@@ -659,6 +657,9 @@ Test Class: jgiven.BlogTest
     Then blog post "TDD Where it did go wrong" should be found
      And when clicked "TDD Where it did go wrong" should be the title
 ```
+<!--
+30sec lesezeit
+-->
 ---
 
 # Sehr gut lesbare Testmethoden:
@@ -695,6 +696,12 @@ backgroundSize: 150px
 backgroundPosition: top 20px right 20px
 -->
 
+<!--
+seit vieleicht einem halben Jahr echt möglich 
+
+Cursor zeigen, Montor auf "spiegeln" 
+-->
+
 ---
 
 # Quellen: 
@@ -716,8 +723,6 @@ backgroundPosition: top 20px right 20px
 * [https://brandad.dev](https://brandad.dev)
 
 ---
-
-
 ![bg right:40% 80%](assets/images/brandad_dev.png)
 
 # BRANDAD Development GmbH
@@ -725,3 +730,30 @@ backgroundPosition: top 20px right 20px
 * Wir suchen Softwareentwickler, Scrummaster, Product Owner, UI/UX-ExpertInnen
 * viel Angular und Spring-boot, aber auch anderen Frameworks, offen für neues
 * [https://brandad.dev](https://brandad.dev)
+
+---
+![bg right:40% 80%](assets/images/qr-feedback-1.png)
+# Euer Feedback ist wertvoll!
+---
+# Reservefolien
+
+---
+![bg right:50% 80%](assets/images/hexaGonalRund.png)
+# Welches Architekturmuster verwendest du ?
+* keines 
+* layered 
+* hexagonal
+* onion
+* "Clean" 
+<!--
+Starker Einfluss der gewählten __Softwarearchitektur__ (Clean , Hexagonal, Zwiebel, Layerd)
+
+* ARCHITEKTUR: du sollest eine API auch zwischen den 
+  * "Layern", oder "Zwiebelringen" , 
+  * Hexagonal: "Infrastruktur" und "Application" code. 
+  * Clean Architecture: zwischen "Application Business Rules" und "Interface Adapters"
+
+# Wichtig : API sollte sich nicht dauernd ändern
+-> oder wenn, dann möglichst rückwärtskompatibel 
+
+-->
