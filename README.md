@@ -4,10 +4,7 @@ Marp-basierte Präsentationen zu Test-Driven Development.
 
 ## Präsentationen
 
-| Datei | Inhalt |
-|---|---|
-| `TDD_Why.md` | Teil 1: Warum TDD eine gute Idee ist |
-| `TDD_Wiederentdecken-Missverständniss-Lösungen_2.md` | Teil 2: Missverständnisse und Lösungen |
+im `src` - Ordner
 
 ## Voraussetzungen
 
@@ -34,7 +31,7 @@ marp --server .
 ./scripts/create_pdf_pptx.sh TDD_Why
 # Ausgabe landet in slides/
 ```
-oder `marp --server .` starten , dann auf http://localhost:8080/ gehen und einfach wählen: 
+oder `marp --server src` starten , dann auf http://localhost:8080/ gehen und einfach wählen: 
 ![verzeichniss Screenshot](<marp_verzeichnis_screenshot.png>)
 
 ## VS Code
