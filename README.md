@@ -32,9 +32,10 @@ marp --server .
 ```bash
 # PDF und PPTX erzeugen:
 ./scripts/create_pdf_pptx.sh TDD_Why
-
 # Ausgabe landet in slides/
 ```
+oder `marp --server .` starten , dann auf http://localhost:8080/ gehen und einfach wählen: 
+![verzeichniss Screenshot](<marp_verzeichnis_screenshot.png>)
 
 ## VS Code
 
