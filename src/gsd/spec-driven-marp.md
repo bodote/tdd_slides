@@ -55,7 +55,7 @@ Eine präzise, maschinenlesbare „Single Source of Truth". Thoughtworks führt 
 
 ---
 
-## Die führenden Frameworks (1/3)
+## Die führenden Frameworks (1..3/9)
 
 | Tool | Ansatz | Stärke | Ideal für |
 |------|--------|--------|-----------|
@@ -65,23 +65,23 @@ Eine präzise, maschinenlesbare „Single Source of Truth". Thoughtworks führt 
 
 ---
 
-## Die führenden Frameworks (2/3)
+## Die führenden Frameworks (3..6/9)
 
 | Tool | Ansatz | Stärke | Ideal für |
 |------|--------|--------|-----------|
 | **AWS Kiro** | Agentic IDE, 3 Phasen, EARS | Agent-Hooks, Auto-Router | Formale Specs, vertraute IDE |
-| **GSD** | Meta-Prompting, Claude Code | Parallele Agenten, 200K Kontext | Lean-Alternative zu BMAD |
+| **Augment Code** | Context-Layer (kein Spec-Autor) | Kontext über Multi-Service-Repos | Große Brownfield-Enterprise |
 | **Tessl** | Spec-as-source, Tiles + Registry | Schutz vor API-Halluzination | Langlebige Specs |
 
 ---
 
-## Die führenden Frameworks (3/3)
+## Die führenden Frameworks (6..9/9)
 
 | Tool | Ansatz | Stärke | Ideal für |
 |------|--------|--------|-----------|
-| **Augment Code** | Context-Layer (kein Spec-Autor) | Kontext über Multi-Service-Repos | Große Brownfield-Enterprise |
 | **Claude Code** | CLI, CLAUDE.md als Spec-Layer | Ausführungs-Agent für SDD-Tools | Autonome Implementierung |
 | **Cursor** | Plan Mode + Project Rules | Spec-first ohne Toolwechsel | Mittelweg, vertraute IDE |
+| 🟢 **GSD** | Meta-Prompting, Claude Code | Parallele Agenten, 200K Kontext | Lean-Alternative zu BMAD |
 
 ---
 
